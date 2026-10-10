@@ -140,7 +140,7 @@
     <div class="kpi"><div class="lab">Badan usaha discan</div><div class="val" id="k-n"></div><div class="sub">semua pemberi kerja, periode ini</div></div>
     <div class="kpi"><div class="lab">Masuk antrean</div><div class="val" id="k-q"></div><div class="sub">risiko ≥ sedang &amp; keyakinan ≥ sedang</div></div>
     <div class="kpi"><div class="lab">Potensi iuran di antrean</div><div class="val" id="k-rp"></div><div class="sub">estimasi kalkulator PayRay per tahun</div></div>
-    <div class="kpi"><div class="lab">Umpan balik petugas</div><div class="val" id="k-fb"></div><div class="sub" id="k-fb2"></div></div>
+    <div class="kpi"><div class="lab">Feedback petugas</div><div class="val" id="k-fb"></div><div class="sub" id="k-fb2"></div></div>
   </section>
 
   <section class="grid">
@@ -173,9 +173,9 @@
         <div id="h-skala"></div>
       </div>
       <div class="card">
-        <h3>Siklus umpan balik</h3>
+        <h3>Feedback loop</h3>
         <p class="fb">Setiap keputusan petugas (<strong>Wajar</strong> atau <strong>Terbukti</strong>) tersimpan sebagai label. Label ini melatih ulang urutan prioritas periode berikutnya.</p>
-        <button class="btn small ghost" id="export">Unduh label umpan balik (CSV)</button>
+        <button class="btn small ghost" id="export">Unduh label feedback (CSV)</button>
       </div>
     </div>
   </section>
@@ -192,7 +192,7 @@
 const DATA = __DATA__;
 const META = __META__;
 const PAGE = 12;
-const KEY = "payray_umpan_balik_v1";
+const KEY = "payray_feedback_v1";
 const nf = new Intl.NumberFormat("id-ID");
 const rp = (v) => v <= 0 ? "–" : v >= 1e9 ? "Rp" + (v / 1e9).toLocaleString("id-ID", { maximumFractionDigits: 1 }) + " M"
   : v >= 1e6 ? "Rp" + Math.round(v / 1e6).toLocaleString("id-ID") + " jt" : "Rp" + nf.format(Math.round(v / 1e3)) + " rb";
@@ -325,11 +325,11 @@ document.getElementById("export").onclick = () => {
     Object.entries(fb).map(([id, v]) => { const d = byId[id]; return [id, `"${d.nama}"`, d.skor, d.yakin, v].join(","); }));
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
-  a.download = "payray_label_umpan_balik.csv"; a.click();
+  a.download = "payray_label_feedback.csv"; a.click();
 };
 
 kpis(); side(); applyFilters();
-// ?buka=BU00001 membuka lembar hasil scan langsung (untuk demo / tangkapan layar)
+// ?buka=BU00001 membuka lembar hasil scan langsung (untuk demo / screenshot)
 const want = new URLSearchParams(location.search).get("buka");
 if (want) openSheet(want);
 </script>

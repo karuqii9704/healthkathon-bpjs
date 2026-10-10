@@ -356,10 +356,10 @@ async function build() {
   // ===================== 10. VALIDASI DATA SINTETIS (baru) =====================
   s = lightSlide("Teknis & data", "04 · DESAIN VALIDASI", "Data sintetis yang sengaja dibuat sulit");
   const v = [
-    [fa.FaBuilding, "Dunia jujur", "5.000 badan usaha, ±450 rb pekerja, 1,3 jt baris upah 2021–2025"],
-    [fa.FaUserSecret, "Penyisipan blind", "15% pelanggar, seed rahasia, kasus mudah & sulit, 1–2 modus"],
+    [fa.FaBuilding, "Ground truth", "5.000 badan usaha, ±450 rb pekerja, 1,3 jt baris upah 2021–2025"],
+    [fa.FaUserSecret, "Blind injection", "15% pelanggar, seed rahasia, easy & hard case, 1–2 modus"],
     [fa.FaMask, "Hard negative", "±500 usaha patuh yang tampak mencurigakan: padat karya di UMK, UMKM sah di bawah UMK, PHK massal sah"],
-    [fa.FaFlaskVial, "Uji di data baru", "Mesin dinilai pada dataset holdout yang tidak pernah dilihat saat penyetelan"],
+    [fa.FaFlaskVial, "Holdout test", "Mesin dinilai pada dataset holdout yang tidak pernah dilihat saat tuning"],
   ];
   const vw = (CW - 0.9) / 4;
   for (let i = 0; i < 4; i++) {
@@ -370,7 +370,7 @@ async function build() {
     text(s, h, { x: x + 0.28, y: 3.12, w: vw - 0.5, h: 0.4, fontFace: THEME.headFontFace, fontSize: 18, bold: true });
     text(s, d, { x: x + 0.28, y: 3.58, w: vw - 0.48, h: 1.5, fontSize: 14, color: S.muted });
   }
-  const chips = ["Kebocoran label: metadata AUC ≈ 0,5", "Upah dikalibrasi ke BPS (ρ = 0,90)", "Label hanya dibaca evaluator", "Precision dilaporkan terpisah: mudah vs sulit"];
+  const chips = ["Label leakage: AUC ≈ 0,5", "Upah dikalibrasi ke BPS (ρ = 0,90)", "Label hanya dibaca evaluator", "Precision terpisah: easy vs hard case"];
   const chw = (CW - 0.6) / 4;
   chips.forEach((t, i) => {
     const x = X + i * (chw + 0.2);
@@ -389,12 +389,12 @@ async function build() {
     showTitle: true, titleFontFace: "+mj-lt", titleFontSize: 15, titleColor: HEX.ink, barGapWidthPct: 55,
   };
   card(s, X, 2.0, 5.0, 4.55);
-  s.addChart(pres.charts.BAR, [{ name: "Precision", labels: ["Pilih acak", "Aturan tunggal terbaik", "PayRay"], values: [150, 538, 684] }], {
+  s.addChart(pres.charts.BAR, [{ name: "Precision", labels: ["Random", "Best single rule", "PayRay"], values: [150, 538, 684] }], {
     ...chartBase, x: X + 0.15, y: 2.1, w: 4.7, h: 4.3, barDir: "col", title: "Precision pada 10% skor tertinggi",
     chartColors: [HEX.mist, HEX.mist, HEX.green], valAxisMaxVal: 850, valAxisMinVal: 0, dataLabelFormatCode: '#0\\,0"%"', objectName: "grafik-precision",
   });
   card(s, X + 5.3, 2.0, 3.5, 4.55);
-  s.addChart(pres.charts.BAR, [{ name: "Iuran", labels: ["Pilih acak", "PayRay"], values: [53, 775] }], {
+  s.addChart(pres.charts.BAR, [{ name: "Iuran", labels: ["Random", "PayRay"], values: [53, 775] }], {
     ...chartBase, x: X + 5.45, y: 2.1, w: 3.2, h: 4.3, barDir: "col", title: "Rp miliar/thn per 100 pemeriksaan",
     chartColors: [HEX.mist, HEX.green], valAxisMaxVal: 950, valAxisMinVal: 0, dataLabelFormatCode: '0\\,00', objectName: "grafik-iuran",
   });
@@ -403,8 +403,8 @@ async function build() {
     text(s, b, { x: sx, y: 2.0 + i * 1.5, w: sw, h: 0.7, fontFace: THEME.headFontFace, fontSize: 36, bold: true, color: S.green });
     text(s, l, { x: sx, y: 2.7 + i * 1.5, w: sw, h: 0.65, fontSize: 14, color: S.muted });
   });
-  text(s, "Data simulasi holdout (5.000 badan usaha, tidak pernah dilihat saat penyetelan). Mesin aturan + Isolation Forest menilai tanpa label.", { x: X, y: 6.62, w: CW, h: 0.28, fontSize: 12, color: S.muted });
-  s.addNotes("Slide baru. Angka dari hasil_holdout/laporan_akurasi.md (seed dunia 2026, seed injeksi berbeda). Aturan tunggal terbaik = rasio pekerja vs OSS (53,8%). Data dev: 69,4% / 4,63×. Akui kelemahan bila ditanya: recall modus sulit 18–37%, salah tandai menengah/besar ±6%.");
+  text(s, "Data simulasi holdout (5.000 badan usaha, tidak pernah dilihat saat tuning). Mesin aturan + Isolation Forest menilai tanpa label.", { x: X, y: 6.62, w: CW, h: 0.28, fontSize: 12, color: S.muted });
+  s.addNotes("Slide baru. Angka dari hasil_holdout/laporan_akurasi.md (seed dunia 2026, seed injeksi berbeda). Best single rule = rasio pekerja vs OSS (53,8%). Data dev: 69,4% / 4,63×. Akui kelemahan bila ditanya: recall modus sulit 18–37%, salah tandai menengah/besar ±6%.");
 
   // ===================== 12. ALUR KERJA PETUGAS (baru) =====================
   s = lightSlide("Hasil", "05 · ALUR KERJA PETUGAS", "PayRay di meja petugas pemeriksa");
@@ -415,12 +415,12 @@ async function build() {
     [fa.FaUserCheck, "Pemeriksaan", "Keputusan & sanksi tetap di petugas"],
     [fa.FaRotate, "Hasil jadi label", "Urutan berikutnya makin tajam"],
   ];
-  // tangkapan layar asli dashboard (dashboard/index.html?buka=BU04224)
+  // screenshot asli dashboard (dashboard/index.html?buka=BU04224)
   const iw = 7.4, ih = iw * 10 / 16, iy = 1.95;
   card(s, X - 0.06, iy - 0.06, iw + 0.12, ih + 0.12, { lineColor: HEX.line });
   s.addImage({ path: path.join(__dirname, "img", "dashboard_lembar_scan.png"), x: X, y: iy, w: iw, h: ih, objectName: "tangkapan-dashboard",
-    altText: "Tangkapan layar dashboard PayRay: antrean pemeriksaan dan lembar hasil scan PT Cahaya Mandiri" });
-  text(s, "Tangkapan layar asli prototype dashboard (data sintetis)", { x: X, y: iy + ih + 0.1, w: iw, h: 0.28, fontSize: 12, color: S.muted });
+    altText: "Screenshot dashboard PayRay: antrean pemeriksaan dan lembar hasil scan PT Cahaya Mandiri" });
+  text(s, "Screenshot asli prototype dashboard (data sintetis)", { x: X, y: iy + ih + 0.1, w: iw, h: 0.28, fontSize: 12, color: S.muted });
   const fx = X + iw + 0.4, fwid = W - X - fx;
   for (let i = 0; i < 5; i++) {
     const [ic, h, d] = flow[i], y = iy + i * 0.64;
@@ -431,7 +431,7 @@ async function build() {
   card(s, fx, 5.3, fwid, 1.33, { fill: S.mint, noLine: true });
   text(s, "21,8% → 26,8%", { x: fx + 0.25, y: 5.42, w: fwid - 0.4, h: 0.5, fontFace: THEME.headFontFace, fontSize: 24, bold: true, color: S.green });
   text(s, "precision putaran berikutnya setelah belajar dari 500 hasil pemeriksaan (simulasi)", { x: fx + 0.25, y: 5.92, w: fwid - 0.45, h: 0.62, fontSize: 13 });
-  s.addNotes("Tangkapan layar asli dari dashboard/index.html (HTML statis, dibangun dari output mesin; buka langsung di browser). Tombol Tandai wajar / Temuan terbukti menyimpan label umpan balik dan bisa diunduh sebagai CSV. Siklus umpan balik disimulasikan di engine/feedback.py: precision putaran 2 naik 21,8% → 26,8%, iuran tertangkap Rp1,60 M → Rp1,81 M (holdout). Waktu menyusun daftar: 5.000 badan usaha diskor dalam hitungan detik.");
+  s.addNotes("Screenshot asli dari dashboard/index.html (HTML statis, dibangun dari output mesin; buka langsung di browser). Tombol Tandai wajar / Temuan terbukti menyimpan label feedback dan bisa diunduh sebagai CSV. Feedback loop disimulasikan di engine/feedback.py: precision putaran 2 naik 21,8% → 26,8%, iuran tertangkap Rp1,60 M → Rp1,81 M (holdout). Waktu menyusun daftar: 5.000 badan usaha diskor dalam hitungan detik.");
 
   // ===================== 13. KEMATANGAN =====================
   s = lightSlide("Hasil", "05 · TINGKAT KEMATANGAN", "Posisi kami, dan target saat submit");
@@ -481,7 +481,7 @@ async function build() {
   const phases = [
     ["FASE 1 · ±3 BULAN", "Pilot", ["1 Kantor Cabang, data riil berizin", "Kalibrasi model dengan hasil pemeriksaan", "Ukur hit rate vs cara saat ini"]],
     ["FASE 2 · ±6 BULAN", "Integrasi", ["Kerja sama data BPJS TK & OSS", "Scan Headcount & Status versi penuh", "Terhubung ke sistem internal"]],
-    ["FASE 3 · BERTAHAP", "Skala nasional", ["Scan rutin setiap periode", "Model diperbarui dari umpan balik", "Dashboard per wilayah"]],
+    ["FASE 3 · BERTAHAP", "Skala nasional", ["Scan rutin setiap periode", "Model diperbarui dari feedback", "Dashboard per wilayah"]],
   ];
   phases.forEach(([k, h, items], i) => {
     const x = X + i * (bw + gap8);
@@ -519,7 +519,7 @@ async function build() {
   s.addImage({ data: await icon(fa.FaTriangleExclamation, HEX.green), x: X + 0.3, y: 5.55, w: 0.34, h: 0.34, objectName: "ikon-peringatan" });
   s.addText([{ text: "Semua angka adalah hasil pada " }, { text: "data simulasi", options: { bold: true } }, { text: ". Nilai riil baru diukur saat pilot." }],
     { isTextBox: true, x: X + 0.85, y: 5.3, w: CW - 1.1, h: 0.85, fontSize: 16, color: S.ink, margin: 0, valign: "middle", objectName: "catatan-metrik" });
-  s.addNotes("Revisi: placeholder terisi. Precision 68,4% sedikit di bawah target 70%. Sampaikan jujur: target ≥70% dikejar lewat siklus umpan balik.");
+  s.addNotes("Revisi: placeholder terisi. Precision 68,4% sedikit di bawah target 70%. Sampaikan jujur: target ≥70% dikejar lewat feedback loop.");
 
   // ===================== 17. PENERIMA MANFAAT =====================
   s = lightSlide("Dampak", "07 · PENERIMA MANFAAT", "Siapa yang diuntungkan");
@@ -545,7 +545,7 @@ async function build() {
     [fa.FaLock, "Perlindungan data (UU PDP)", ["Prototype 100% data sintetis", "Analisis agregat per badan usaha, NIK dipseudonimisasi", "Enkripsi, akses berbasis peran, audit log"]],
     [fa.FaScaleBalanced, "Bias & keterbatasan", ["UMKM dikecualikan dari upah minimum (PP 36/2021): aturan dibedakan per skala", "Wilayah minim data diberi keyakinan rendah"]],
     [fa.FaPeopleArrows, "Human-in-the-loop", ["PayRay hanya mengurutkan prioritas", "Keputusan pemeriksaan & sanksi tetap di petugas", "Hasil pemeriksaan kembali jadi label"]],
-    [fa.FaGears, "Mitigasi risiko utama", ["Salah tandai → ambang skor + review petugas", "Model usang → retrain berkala dari umpan balik", "Kebocoran data → minimisasi data + enkripsi"]],
+    [fa.FaGears, "Mitigasi risiko utama", ["Salah tandai → ambang skor + review petugas", "Model usang → retrain berkala dari feedback", "Kebocoran data → minimisasi data + enkripsi"]],
   ];
   for (let i = 0; i < 4; i++) {
     const [ic, h, items] = eth[i], x = X + (i % 2) * (bw17 + 0.3), y = 1.95 + Math.floor(i / 2) * 2.25;
