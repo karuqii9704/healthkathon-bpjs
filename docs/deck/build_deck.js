@@ -455,7 +455,7 @@ async function build() {
     text(s, ok ? t : `${t} (sedang dikerjakan)`, { x: X + 0.42, y: 4.58 + i * 0.47, w: 5.6, h: 0.36, fontSize: 15, color: ok ? S.ink : S.muted });
   }
   text(s, "Bukti yang dilampirkan", { x: X + 6.6, y: 4.1, w: 5, h: 0.4, fontFace: THEME.headFontFace, fontSize: 19, bold: true });
-  text(s, bullets(["Link demo: [__]", "Video demo: [__]", "Repositori: github.com/rachdiaan/healthkathon-bpjs", "Status uji: internal, data sintetis"], { gap: 5 }), { x: X + 6.6, y: 4.58, w: 5, h: 1.9, fontSize: 15 });
+  text(s, bullets(["Link demo: rachdiaan.github.io/healthkathon-bpjs", "Video demo: [__]", "Repositori: github.com/rachdiaan/healthkathon-bpjs", "Status uji: internal, data sintetis"], { gap: 5 }), { x: X + 6.6, y: 4.58, w: 5, h: 1.9, fontSize: 15 });
   s.addNotes("Revisi: penanda 'Saat ini: Ide' dihapus. Isi link demo, video, dan repo sebelum submit.");
 
   // ===================== 14. RENCANA =====================

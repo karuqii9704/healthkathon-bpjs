@@ -132,3 +132,4 @@ Semua angka siap pakai per slide, beserta sumber dan status verifikasinya, ada d
 - [x] Dashboard HTML statis `dashboard/` (antrean + lembar hasil scan + label umpan balik ke CSV). Build: `python dashboard/build_dashboard.py`. Tangkapan layar ada di deck slide 12.
 - [ ] Berikutnya: API FastAPI + PostgreSQL di belakang dashboard; perbaiki kalkulator Rp (korelasi 0,30–0,36); video demo.
 - Repo: https://github.com/rachdiaan/healthkathon-bpjs (PUBLIK; data/, hasil/, label tidak di-commit)
+- Demo (GitHub Pages, branch main / root): https://rachdiaan.github.io/healthkathon-bpjs/ → redirect ke `dashboard/`. Sudah diisi di slide 13; tinggal video demo.
