@@ -129,4 +129,6 @@ Semua angka siap pakai per slide, beserta sumber dan status verifikasinya, ada d
 - [x] Minggu 3–4: mesin scan `engine/` (7 aturan transparan dalam 3 modul + Isolation Forest + skor gabungan + keyakinan + reason code + estimasi Rp + simulasi umpan balik). Setelah kalibrasi upah ke BPS (ρ = 0,90) dan regenerasi data: holdout 68,4% / lift 4,56× / salah tandai UMKM 2,7%; dev 69,4% / 4,63× / 2,5%. Mesin tidak disetel ulang setelah regenerasi.
   - Kelemahan: recall potong_sebagian ±20%, daftar_sebagian ±35%; kalkulator Rp berkorelasi 0,34; salah tandai menengah/besar 6–7% (padat karya sah).
   - Contoh slide 7: `hasil/lembar_scan/BU04224.md` (PT Cahaya Mandiri, skor 98, estimasi Rp212 jt vs kerugian sebenarnya Rp215 jt).
-- [ ] Minggu 5–6: dashboard (FastAPI + web) di atas `hasil/ranking_top.json` & lembar scan; perbaiki kalkulator Rp.
+- [x] Dashboard HTML statis `dashboard/` (antrean + lembar hasil scan + label umpan balik ke CSV). Build: `python dashboard/build_dashboard.py`. Tangkapan layar ada di deck slide 12.
+- [ ] Berikutnya: API FastAPI + PostgreSQL di belakang dashboard; perbaiki kalkulator Rp (korelasi 0,30–0,36); video demo.
+- Repo: https://github.com/rachdiaan/healthkathon-bpjs (PUBLIK; data/, hasil/, label tidak di-commit)
