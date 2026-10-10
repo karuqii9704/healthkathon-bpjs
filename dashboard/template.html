@@ -4,11 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PayRay · Antrean Pemeriksaan</title>
+<meta name="description" content="PayRay: AI risk score untuk memprioritaskan pemeriksaan kepatuhan pemberi kerja JKN. Prototype dengan data sintetis.">
 <style>
   :root {
     --night: #0E1C20; --panel: #17343A; --ink: #172A30; --paper: #F3F2EE; --card: #FFFFFF;
     --green: #1B7F57; --green-2: #2A9D6F; --lime: #A6CE39; --mint: #E3EFE7; --line: #DEDCD4;
     --muted: #5B6B70; --mist: #B9C7C9; --warm: #FBE3D6; --rust: #9A3B12; --amber-bg: #FFF1CC; --amber: #8A5A00;
+    --blue: #2F6690; --grey: #A3A9A6;
     --head: "Montserrat", "Segoe UI", system-ui, sans-serif;
     --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
   }
@@ -16,18 +18,22 @@
   html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15px; }
   button { font: inherit; cursor: pointer; }
   .wrap { max-width: 1480px; margin: 0 auto; padding: 0 28px; }
+  h2.sec { font-family: var(--head); font-size: 20px; margin: 26px 0 4px; }
+  p.lead { color: var(--muted); margin: 0 0 14px; max-width: 900px; line-height: 1.5; }
 
-  /* topbar */
-  header.top { background: var(--night); color: #fff; }
+  /* topbar + tabs */
+  header.top { background: var(--night); color: #fff; position: sticky; top: 0; z-index: 5; }
   header.top .wrap { display: flex; align-items: center; gap: 18px; height: 64px; }
   .logo { font-family: var(--head); font-weight: 800; font-size: 26px; letter-spacing: -.5px; }
   .logo b { color: var(--lime); font-weight: 800; }
-  .crumb { color: var(--mist); font-size: 15px; }
-  .crumb strong { color: #fff; font-weight: 600; }
+  nav.tabs { display: flex; gap: 4px; margin-left: 10px; }
+  nav.tabs button { background: none; border: 0; color: var(--mist); padding: 8px 12px; border-radius: 8px; font-weight: 600; }
+  nav.tabs button.on { background: var(--panel); color: #fff; }
   .spacer { flex: 1; }
-  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap; }
   .chip.dark { background: var(--panel); color: var(--mist); }
   .chip.lime { background: rgba(166,206,57,.16); color: var(--lime); }
+  .tab { display: none; } .tab.on { display: block; }
 
   /* kpi */
   .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 22px 0 18px; }
@@ -35,31 +41,40 @@
   .kpi .lab { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green); }
   .kpi .val { font-family: var(--head); font-weight: 700; font-size: 30px; margin-top: 6px; }
   .kpi .sub { color: var(--muted); font-size: 14px; margin-top: 2px; }
+  .kpi input[type=range] { width: 100%; accent-color: var(--green); margin-top: 8px; }
 
-  .grid { display: grid; grid-template-columns: 1fr 300px; gap: 16px; align-items: start; }
+  .grid { display: grid; grid-template-columns: 1fr 310px; gap: 16px; align-items: start; }
+  .grid > *, .cols2 > *, .cols3 > *, .kpis > * { min-width: 0; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+  .pad { padding: 16px 18px; }
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card h3 { margin: 0 0 4px; font-family: var(--head); font-size: 16px; }
+  .card .cap { color: var(--muted); font-size: 13.5px; margin: 0 0 10px; line-height: 1.4; }
 
   /* filter */
   .filters { display: flex; flex-wrap: wrap; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--line); align-items: center; }
-  .filters input[type=search], .filters select { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
-  .filters input[type=search] { min-width: 220px; }
+  .filters input[type=search], .filters select { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); max-width: 100%; }
+  .filters input[type=search] { min-width: 200px; }
   .toggle input { width: 16px; height: 16px; margin: 0; accent-color: var(--green); }
   .toggle { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 14px; }
   .count { color: var(--muted); font-size: 14px; margin-left: auto; }
 
+  .tscroll { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; }
-  th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; padding: 10px 14px; border-bottom: 1px solid var(--line); background: #FAFAF7; }
-  td { padding: 11px 14px; border-bottom: 1px solid #EEECE6; vertical-align: middle; }
-  tbody tr { cursor: pointer; }
-  tbody tr:hover { background: #F7FBF8; }
-  tbody tr.sel { background: var(--mint); }
-  .rank { color: var(--muted); font-variant-numeric: tabular-nums; width: 38px; }
+  th { text-align: left; font-size: 12.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; padding: 10px 12px; border-bottom: 1px solid var(--line); background: #FAFAF7; white-space: nowrap; }
+  td { padding: 10px 12px; border-bottom: 1px solid #EEECE6; vertical-align: middle; }
+  #rows tr { cursor: pointer; }
+  #rows tr:hover { background: #F7FBF8; }
+  #rows tr.sel { background: var(--mint); }
+  .rank { color: var(--muted); font-variant-numeric: tabular-nums; width: 34px; }
   .nm { font-weight: 700; }
   .meta { color: var(--muted); font-size: 13.5px; margin-top: 2px; }
-  .score { display: flex; align-items: center; gap: 8px; min-width: 120px; }
+  .score { display: flex; align-items: center; gap: 8px; min-width: 104px; }
   .bar { flex: 1; height: 7px; background: #ECEAE4; border-radius: 4px; overflow: hidden; }
   .bar i { display: block; height: 100%; background: var(--green); border-radius: 4px; }
-  .score b { font-family: var(--head); font-size: 15px; width: 30px; text-align: right; font-variant-numeric: tabular-nums; }
+  .bar.blue i { background: var(--blue); }
+  .score b { font-family: var(--head); font-size: 14.5px; min-width: 34px; text-align: right; font-variant-numeric: tabular-nums; }
   .badge { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 12.5px; font-weight: 700; white-space: nowrap; }
   .b-tinggi { background: var(--mint); color: var(--green); }
   .b-sedang { background: var(--amber-bg); color: var(--amber); }
@@ -67,86 +82,155 @@
   .r-Tinggi { background: var(--warm); color: var(--rust); }
   .r-Sedang { background: var(--amber-bg); color: var(--amber); }
   .r-Rendah { background: #EDEDED; color: var(--muted); }
+  .ag-y { background: var(--mint); color: var(--green); }
+  .ag-n { background: var(--amber-bg); color: var(--amber); }
   .mods { display: flex; gap: 4px; }
-  .mod { font-size: 12px; font-weight: 700; padding: 2px 7px; border-radius: 6px; background: #F1F0EC; color: #A3A9A6; }
+  .mod { font-size: 12px; font-weight: 700; padding: 2px 7px; border-radius: 6px; background: #F1F0EC; color: var(--grey); }
   .mod.on { background: var(--green); color: #fff; }
   .rp { font-family: var(--head); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+  .rng { display: block; font-family: var(--body); font-weight: 400; color: var(--muted); font-size: 12.5px; }
   .st { font-size: 13px; font-weight: 600; white-space: nowrap; }
-  .st-none { color: var(--muted); }
-  .st-jadwal { color: var(--amber); }
-  .st-wajar { color: var(--muted); }
-  .st-terbukti { color: var(--rust); }
-  .pager { display: flex; gap: 8px; align-items: center; justify-content: flex-end; padding: 12px 16px; color: var(--muted); font-size: 14px; }
+  .st-none { color: var(--muted); } .st-jadwal { color: var(--amber); } .st-wajar { color: var(--muted); } .st-terbukti { color: var(--rust); }
+  .pager { display: flex; gap: 8px; align-items: center; justify-content: flex-end; padding: 12px 16px; color: var(--muted); font-size: 14px; flex-wrap: wrap; }
   .pager button { border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 5px 12px; color: var(--ink); }
   .pager button:disabled { opacity: .4; cursor: default; }
 
   /* side */
   .side { display: flex; flex-direction: column; gap: 16px; }
-  .side .card { padding: 16px 18px; }
-  .side h3 { margin: 0 0 12px; font-family: var(--head); font-size: 16px; }
   .hrow { display: grid; grid-template-columns: 92px 1fr 44px; gap: 8px; align-items: center; margin: 9px 0; font-size: 14px; }
   .hrow .bar i { background: var(--green-2); }
   .hrow span:last-child { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
-  .fb { font-size: 14px; color: var(--muted); line-height: 1.45; }
+  .fb { font-size: 14px; color: var(--muted); line-height: 1.45; margin: 0 0 10px; }
   .fb strong { color: var(--ink); }
   .btn { border: 1px solid var(--green); background: var(--green); color: #fff; border-radius: 8px; padding: 9px 14px; font-weight: 700; }
   .btn.ghost { background: #fff; color: var(--green); }
   .btn.warn { background: #fff; color: var(--rust); border-color: #E6B9A3; }
   .btn.small { padding: 6px 11px; font-size: 13.5px; }
+  .btn:disabled { opacity: .4; cursor: default; }
 
-  /* drawer: lembar hasil scan */
-  .scrim { position: fixed; inset: 0; background: rgba(14,28,32,.35); opacity: 0; pointer-events: none; transition: opacity .15s; }
+  /* drawer */
+  .scrim { position: fixed; inset: 0; background: rgba(14,28,32,.35); opacity: 0; pointer-events: none; transition: opacity .15s; z-index: 8; }
   .scrim.on { opacity: 1; pointer-events: auto; }
-  aside.sheet { position: fixed; top: 0; right: 0; height: 100vh; width: 560px; max-width: 100vw; background: var(--paper); box-shadow: -10px 0 30px rgba(0,0,0,.12); transform: translateX(105%); transition: transform .18s ease-out; overflow-y: auto; }
+  aside.sheet { position: fixed; top: 0; right: 0; height: 100vh; width: 640px; max-width: 100vw; background: var(--paper); box-shadow: -10px 0 30px rgba(0,0,0,.12); transform: translateX(105%); transition: transform .18s ease-out; overflow-y: auto; z-index: 9; }
   aside.sheet.on { transform: none; }
-  .sheet .hd { background: var(--night); color: #fff; padding: 18px 24px; display: flex; align-items: center; gap: 12px; }
+  .sheet .hd { background: var(--night); color: #fff; padding: 16px 24px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 2; }
   .sheet .hd .t { font-family: var(--head); font-weight: 700; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; color: var(--lime); }
-  .sheet .hd button { background: none; border: 0; color: var(--mist); font-size: 22px; line-height: 1; margin-left: auto; }
-  .sheet .bd { padding: 20px 24px 28px; }
-  .sc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+  .sheet .hd button { background: none; border: 0; color: var(--mist); font-size: 14px; }
+  .sheet .hd #close { font-size: 24px; line-height: 1; }
+  .sheet .bd { padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+  .sc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
   .sc h2 { margin: 0; font-family: var(--head); font-size: 22px; }
-  .sc .row { display: flex; align-items: center; gap: 10px; }
-  .big { font-family: var(--head); font-weight: 800; font-size: 50px; letter-spacing: -1px; }
-  .big small { color: var(--muted); font-size: 24px; font-weight: 700; }
-  .lbl { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin: 18px 0 8px; }
+  .sc h4 { margin: 0 0 8px; font-family: var(--head); font-size: 14.5px; }
+  .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .big { font-family: var(--head); font-weight: 800; font-size: 46px; letter-spacing: -1px; line-height: 1; }
+  .big small { color: var(--muted); font-size: 22px; font-weight: 700; }
+  .lbl { font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin: 16px 0 8px; }
   .mbar { display: grid; grid-template-columns: 96px 1fr 34px; gap: 10px; align-items: center; margin: 7px 0; font-size: 14px; }
   .mbar span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
-  ol.why { margin: 0; padding-left: 20px; }
-  ol.why li { margin: 7px 0; line-height: 1.4; }
-  .est { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); margin-top: 16px; padding-top: 14px; }
-  .est .rp { font-size: 26px; font-weight: 700; }
+  ol.why { margin: 0; padding-left: 20px; } ol.why li { margin: 7px 0; line-height: 1.4; }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat { background: #FAFAF7; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .stat .k { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .stat .v { font-family: var(--head); font-weight: 800; font-size: 30px; margin-top: 2px; }
+  .stat .s { font-size: 13px; color: var(--muted); }
+  .contrib { display: grid; grid-template-columns: 1fr 160px 52px; gap: 8px; align-items: center; font-size: 13.5px; margin: 5px 0; }
+  .cbar { position: relative; height: 10px; background: #F1F0EC; border-radius: 3px; }
+  .cbar i { position: absolute; top: 0; height: 100%; border-radius: 3px; }
+  .cbar:after { content: ""; position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; background: var(--grey); }
+  .contrib span:last-child { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+  .wi { display: grid; grid-template-columns: 1fr 120px 70px; gap: 10px; align-items: center; font-size: 13.5px; margin: 8px 0; }
+  .wi input { width: 100%; accent-color: var(--blue); }
+  .wi b { text-align: right; font-variant-numeric: tabular-nums; }
+  .est { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .est .rp { font-size: 24px; font-weight: 700; }
   .brk { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 14px; color: var(--muted); margin-top: 8px; }
   .brk b { color: var(--ink); font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
-  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
-  .note { font-size: 13.5px; color: var(--muted); font-style: italic; margin-top: 14px; }
-  .nav { display: flex; justify-content: space-between; margin-top: 14px; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .note { font-size: 13.5px; color: var(--muted); font-style: italic; }
+  .nav { display: flex; justify-content: space-between; }
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .chart { background: #FAFAF7; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .chart .ct { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .chart .cl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  svg text { font-family: var(--body); }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+
+  /* tabel validasi */
+  table.mini th, table.mini td { padding: 8px 10px; font-size: 14px; }
+  #v-comp td:first-child { min-width: 150px; }
+  table.mini td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.hl td { background: var(--mint); font-weight: 700; }
+  .ok { color: var(--green); font-weight: 700; } .warnc { color: var(--amber); font-weight: 700; } .bad { color: var(--rust); font-weight: 700; }
+  .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; position: relative; }
+  .step .no { font-family: var(--head); font-weight: 800; color: var(--green); font-size: 13px; letter-spacing: .08em; }
+  .step h4 { margin: 4px 0 6px; font-family: var(--head); font-size: 15px; }
+  .step p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
+  ul.lim { margin: 6px 0 0; padding-left: 20px; color: var(--ink); line-height: 1.5; }
   footer { color: var(--muted); font-size: 13px; padding: 18px 0 30px; }
-  @media (max-width: 1100px) { .grid { grid-template-columns: 1fr; } .kpis { grid-template-columns: repeat(2, 1fr); } }
+  .callout { background: var(--mint); border: 1px solid #C5DECF; border-radius: 12px; padding: 14px 18px; line-height: 1.5; }
+
+  @media (max-width: 1100px) {
+    .grid, .cols2, .cols3 { grid-template-columns: 1fr; } .kpis { grid-template-columns: repeat(2, 1fr); } .flow { grid-template-columns: 1fr 1fr; }
+    nav.tabs button { padding: 8px 8px; }
+  }
+  @media (max-width: 720px) {
+    .wrap { padding: 0 16px; }
+    header.top .wrap { height: auto; flex-wrap: wrap; padding-top: 10px; padding-bottom: 8px; gap: 8px; }
+    nav.tabs { order: 3; width: 100%; margin: 0; overflow-x: auto; }
+    .hide-s { display: none; }
+    .kpis { grid-template-columns: 1fr; } .flow { grid-template-columns: 1fr; }
+    .charts, .duo { grid-template-columns: 1fr; }
+    .contrib { grid-template-columns: 1fr 100px 46px; }
+    .wi { grid-template-columns: 1fr 90px 60px; }
+    .sheet .bd { padding: 14px 16px 24px; }
+    .filters input[type=search] { min-width: 0; width: 100%; }
+    .filters select { flex: 1 1 140px; min-width: 0; }
+    .count { margin-left: 0; }
+  }
+  @media print {
+    header.top, main, .scrim, .sheet .hd, .nav, .actions, .whatif { display: none !important; }
+    aside.sheet { position: static; transform: none; box-shadow: none; width: auto; height: auto; overflow: visible; }
+  }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
     <div class="logo">Pay<b>Ray</b></div>
-    <div class="crumb"><strong>Antrean pemeriksaan</strong> · Kantor Cabang (simulasi)</div>
+    <nav class="tabs" role="tablist">
+      <button data-tab="antrean" class="on">Antrean pemeriksaan</button>
+      <button data-tab="validasi">Validasi model</button>
+      <button data-tab="kualitas">Kualitas data</button>
+      <button data-tab="metode">Metodologi</button>
+    </nav>
     <div class="spacer"></div>
-    <span class="chip dark" id="periode"></span>
+    <span class="chip dark hide-s" id="periode"></span>
     <span class="chip lime">Data sintetis</span>
   </div>
 </header>
 
 <main class="wrap">
+<!-- ============================================================ ANTREAN -->
+<section class="tab on" id="tab-antrean">
   <section class="kpis">
-    <div class="kpi"><div class="lab">Badan usaha discan</div><div class="val" id="k-n"></div><div class="sub">semua pemberi kerja, periode ini</div></div>
-    <div class="kpi"><div class="lab">Masuk antrean</div><div class="val" id="k-q"></div><div class="sub">risiko ≥ sedang &amp; keyakinan ≥ sedang</div></div>
-    <div class="kpi"><div class="lab">Potensi iuran di antrean</div><div class="val" id="k-rp"></div><div class="sub">estimasi kalkulator PayRay per tahun</div></div>
-    <div class="kpi"><div class="lab">Feedback petugas</div><div class="val" id="k-fb"></div><div class="sub" id="k-fb2"></div></div>
+    <div class="kpi"><div class="lab">Badan usaha discan</div><div class="val" id="k-n"></div><div class="sub" id="k-n2"></div></div>
+    <div class="kpi"><div class="lab">Kapasitas pemeriksaan</div><div class="val" id="k-cap"></div>
+      <input type="range" id="cap" min="10" max="500" step="10" value="100" aria-label="Kapasitas pemeriksaan"><div class="sub">geser sesuai jumlah petugas periode ini</div></div>
+    <div class="kpi"><div class="lab">Perkiraan temuan terbukti</div><div class="val" id="k-hit"></div><div class="sub" id="k-hit2"></div></div>
+    <div class="kpi"><div class="lab">Perkiraan iuran tertagih</div><div class="val" id="k-rp"></div><div class="sub" id="k-rp2"></div></div>
   </section>
 
   <section class="grid">
     <div class="card">
       <div class="filters">
-        <input id="q" type="search" placeholder="Cari nama badan usaha…" aria-label="Cari">
+        <input id="q" type="search" placeholder="Cari nama / ID badan usaha…" aria-label="Cari">
+        <select id="f-sort" aria-label="Urutan">
+          <option value="pg">Urut: peluang terbukti (gabungan)</option>
+          <option value="ev">Urut: nilai harapan (peluang × Rp)</option>
+          <option value="prio">Urut: prioritas rules</option>
+        </select>
         <select id="f-skala" aria-label="Skala"><option value="">Semua skala</option></select>
         <select id="f-sektor" aria-label="Sektor"><option value="">Semua sektor</option></select>
         <select id="f-wil" aria-label="Wilayah"><option value="">Semua wilayah</option></select>
@@ -156,179 +240,556 @@
         <label class="toggle"><input type="checkbox" id="f-all"> Tampilkan semua</label>
         <span class="count" id="count"></span>
       </div>
+      <div class="tscroll">
       <table>
-        <thead><tr><th>#</th><th>Badan usaha</th><th>Skor</th><th>Keyakinan</th><th>Modul</th><th style="text-align:right">Estimasi/thn</th><th>Status</th></tr></thead>
+        <thead><tr><th>#</th><th>Badan usaha</th><th>Skor rules</th><th>Peluang terbukti</th><th class="hide-s">Dua metode</th><th class="hide-s">Modul</th><th style="text-align:right">Estimasi/thn</th><th class="hide-s">Status</th></tr></thead>
         <tbody id="rows"></tbody>
       </table>
+      </div>
       <div class="pager"><span id="pg"></span><button id="prev">‹ Sebelumnya</button><button id="next">Berikutnya ›</button></div>
     </div>
 
     <div class="side">
-      <div class="card">
+      <div class="card pad">
+        <h3>Model berjalan di browser</h3>
+        <p class="fb" id="engine-note"></p>
+        <button class="btn small ghost" data-goto="validasi">Lihat validasi model →</button>
+      </div>
+      <div class="card pad">
         <h3>Modul yang menyala di antrean</h3>
         <div id="h-mod"></div>
       </div>
-      <div class="card">
+      <div class="card pad">
         <h3>Antrean per skala usaha</h3>
         <div id="h-skala"></div>
       </div>
-      <div class="card">
+      <div class="card pad">
         <h3>Feedback loop</h3>
-        <p class="fb">Setiap keputusan petugas (<strong>Wajar</strong> atau <strong>Terbukti</strong>) tersimpan sebagai label. Label ini melatih ulang urutan prioritas periode berikutnya.</p>
+        <p class="fb">Setiap keputusan petugas (<strong>Wajar</strong> atau <strong>Terbukti</strong>) tersimpan sebagai label. Label ini melatih ulang model periode berikutnya. <span id="k-fb"></span></p>
         <button class="btn small ghost" id="export">Unduh label feedback (CSV)</button>
       </div>
     </div>
   </section>
-  <footer>PayRay mengurutkan prioritas; keputusan pemeriksaan dan sanksi tetap di petugas. Semua data pada prototype ini sintetis, NIK dipseudonimisasi.</footer>
+</section>
+
+<!-- ============================================================ VALIDASI -->
+<section class="tab" id="tab-validasi">
+  <h2 class="sec">Seberapa bisa dipercaya?</h2>
+  <p class="lead" id="v-lead"></p>
+  <section class="kpis" id="v-kpis"></section>
+
+  <div class="cols2">
+    <div class="card pad">
+      <h3>Perbandingan metode</h3>
+      <p class="cap">Diuji di world holdout yang tidak pernah dilihat saat training maupun tuning. Precision dihitung pada 10% skor tertinggi, CI 95% dari 1.000 bootstrap.</p>
+      <div class="tscroll"><table class="mini" id="v-comp"></table></div>
+    </div>
+    <div class="card pad">
+      <h3>Precision@k: berapa yang benar saat kapasitas bertambah</h3>
+      <p class="cap">Sumbu x adalah porsi badan usaha yang diperiksa (dari skor tertinggi).</p>
+      <div id="v-curve"></div>
+    </div>
+  </div>
+
+  <div class="cols3" style="margin-top:16px">
+    <div class="card pad">
+      <h3>Kalibrasi probabilitas</h3>
+      <p class="cap">Titik di garis diagonal berarti "peluang 70%" memang terbukti ±70% kali. Ini yang membuat kapasitas dan Rp di antrean bisa diperkirakan.</p>
+      <div id="v-rel"></div>
+    </div>
+    <div class="card pad">
+      <h3>Dua metode independen</h3>
+      <p class="cap">Rules + Isolation Forest tidak memakai label; model ML hanya belajar dari hasil pemeriksaan. Kalau keduanya sepakat, hasilnya jauh lebih bisa dipegang.</p>
+      <div id="v-agree"></div>
+    </div>
+    <div class="card pad">
+      <h3>Learning curve</h3>
+      <p class="cap">Kualitas model terhadap jumlah hasil pemeriksaan yang menjadi label. Ini memperlihatkan nilai feedback loop.</p>
+      <div id="v-lc"></div>
+    </div>
+  </div>
+
+  <div class="cols3" style="margin-top:16px">
+    <div class="card pad">
+      <h3>Permutation importance</h3>
+      <p class="cap">Penurunan PR-AUC di holdout ketika satu fitur diacak. Monotonic constraint menjaga arah logika domain (mis. upah beku hanya boleh menaikkan risiko).</p>
+      <div id="v-imp"></div>
+    </div>
+    <div class="card pad">
+      <h3>Fairness per skala usaha</h3>
+      <p class="cap">UMKM patuh yang salah tandai harus tetap rendah.</p>
+      <div class="tscroll"><table class="mini" id="v-fair"></table></div>
+    </div>
+    <div class="card pad">
+      <h3>Rentang estimasi Rp</h3>
+      <p class="cap">Conformalized quantile regression dilatih dari pelanggar yang terbukti saat pemeriksaan.</p>
+      <div id="v-rp"></div>
+    </div>
+  </div>
+
+  <div class="cols2" style="margin-top:16px">
+    <div class="card pad">
+      <h3>Stabilitas & drift</h3>
+      <div id="v-stab"></div>
+    </div>
+    <div class="card pad">
+      <h3>Keterbatasan yang kami akui</h3>
+      <ul class="lim" id="v-lim"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ KUALITAS DATA -->
+<section class="tab" id="tab-kualitas">
+  <h2 class="sec">Kualitas data input</h2>
+  <p class="lead">Skor hanya bisa dipercaya kalau datanya bisa dipercaya. Setiap periode scan diawali pemeriksaan otomatis ini. Status <b>gagal</b> menghentikan scan; status <b>peringatan</b> diteruskan ke petugas data.</p>
+  <section class="kpis" id="q-kpis"></section>
+  <div class="card"><div class="tscroll"><table class="mini" id="q-tab"></table></div></div>
+  <p class="note" style="margin-top:10px">Pada prototype ini data berasal dari generator sintetis sehingga semua pemeriksaan lulus. Pada data riil, pemeriksaan yang sama dijalankan terhadap ekspor kepesertaan dan upah (lihat <code>ml/quality.py</code>).</p>
+</section>
+
+<!-- ============================================================ METODOLOGI -->
+<section class="tab" id="tab-metode">
+  <h2 class="sec">Cara kerja PayRay</h2>
+  <p class="lead">Dua lapis penilaian yang saling memeriksa: rules yang transparan untuk menjelaskan, dan machine learning yang belajar dari hasil pemeriksaan petugas untuk menajamkan urutan.</p>
+  <div class="flow">
+    <div class="step"><div class="no">01 · DATA</div><h4>Data quality checks</h4><p>17 pemeriksaan skema, integritas referensial, rentang nilai, dan kelengkapan UMK sebelum scan berjalan.</p></div>
+    <div class="step"><div class="no">02 · RULES</div><h4>7 rules + Isolation Forest</h4><p>Modul upah, headcount, dan status. Tanpa label, dibandingkan dengan peer sektor × wilayah × skala. Menghasilkan reason code.</p></div>
+    <div class="step"><div class="no">03 · ML</div><h4>Gradient boosting monoton</h4><p>HistGradientBoosting, 250 pohon, 17 fitur mentah. Dilatih hanya dari 750 hasil pemeriksaan dengan inverse propensity weighting.</p></div>
+    <div class="step"><div class="no">04 · KALIBRASI</div><h4>Stacking + isotonic</h4><p>Logistic stacking menggabungkan ML dan persentil rules menjadi peluang terbukti yang terkalibrasi.</p></div>
+    <div class="step"><div class="no">05 · RUPIAH</div><h4>Kalkulator + CQR</h4><p>Kalkulator iuran yang transparan, ditambah rentang 80% dari conformalized quantile regression.</p></div>
+    <div class="step"><div class="no">06 · ANTREAN</div><h4>Urut sesuai tujuan</h4><p>Peluang terbukti (paling sedikit salah tandai) atau nilai harapan peluang × Rp (paling banyak iuran kembali).</p></div>
+    <div class="step"><div class="no">07 · PETUGAS</div><h4>Keputusan tetap manusia</h4><p>Lembar hasil scan dengan bukti grafik, kontribusi fitur, dan what-if. PayRay hanya mengurutkan prioritas.</p></div>
+    <div class="step"><div class="no">08 · FEEDBACK</div><h4>Retrain tiap periode</h4><p>Hasil Wajar/Terbukti menjadi label baru, ditambah audit acak supaya model tidak hanya belajar dari yang sudah dicurigai.</p></div>
+  </div>
+  <div class="callout" style="margin-top:16px" id="m-guard"></div>
+</section>
+<footer class="wrap" style="padding-left:0;padding-right:0">PayRay mengurutkan prioritas; keputusan pemeriksaan dan sanksi tetap di petugas. Semua data pada prototype ini sintetis, NIK dipseudonimisasi. · <a href="https://github.com/rachdiaan/healthkathon-bpjs" style="color:var(--green)">Kode sumber</a></footer>
 </main>
 
 <div class="scrim" id="scrim"></div>
 <aside class="sheet" id="sheet" aria-label="Lembar hasil scan">
-  <div class="hd"><span class="t">Lembar hasil scan</span><button id="close" aria-label="Tutup">×</button></div>
+  <div class="hd"><span class="t">Lembar hasil scan</span><span class="spacer"></span><button id="print">Cetak / PDF</button><button id="close" aria-label="Tutup">×</button></div>
   <div class="bd" id="sheet-body"></div>
 </aside>
 
 <script>
 const DATA = __DATA__;
 const META = __META__;
+const MODEL = __MODEL__;
+const VAL = __VAL__;
 const PAGE = 12;
 const KEY = "payray_feedback_v1";
 const nf = new Intl.NumberFormat("id-ID");
 const rp = (v) => v <= 0 ? "–" : v >= 1e9 ? "Rp" + (v / 1e9).toLocaleString("id-ID", { maximumFractionDigits: 1 }) + " M"
   : v >= 1e6 ? "Rp" + Math.round(v / 1e6).toLocaleString("id-ID") + " jt" : "Rp" + nf.format(Math.round(v / 1e3)) + " rb";
+const pct = (v, d = 1) => v == null ? "–" : (v * 100).toLocaleString("id-ID", { maximumFractionDigits: d, minimumFractionDigits: d }) + "%";
+const dec = (v, d = 2) => v == null ? "–" : Number(v).toLocaleString("id-ID", { maximumFractionDigits: d, minimumFractionDigits: d });
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
-const inQueue = (d) => d.kat !== "Rendah" && d.yakin !== "rendah";
+const $ = (id) => document.getElementById(id);
 const STATUS = { jadwal: "Dijadwalkan", wajar: "Wajar", terbukti: "Terbukti" };
+
+/* ================================================================ model di browser
+   Evaluator untuk HistGradientBoosting yang diekspor dari Python (ml/model.py).
+   Atribusi Saabas: setiap langkah di pohon menyumbang (nilai anak − nilai induk) ke fitur yang membelah. */
+const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+function rawPredict(x, phi) {
+  let s = MODEL.base;
+  for (const t of MODEL.trees) {
+    let i = 0;
+    s += t.v[0];
+    while (!t.leaf[i]) {
+      const f = t.f[i], xv = x[f];
+      const j = (xv === null || Number.isNaN(xv)) ? (t.m[i] ? t.l[i] : t.r[i]) : (xv <= t.t[i] ? t.l[i] : t.r[i]);
+      if (phi) phi[f] += t.v[j] - t.v[i];
+      s += t.v[j] - t.v[i];
+      i = j;
+    }
+  }
+  return s;
+}
+function interp(x, xs, ys) {
+  if (x <= xs[0]) return ys[0];
+  if (x >= xs[xs.length - 1]) return ys[ys.length - 1];
+  let lo = 0, hi = xs.length - 1;
+  while (hi - lo > 1) { const m = (lo + hi) >> 1; if (xs[m] <= x) lo = m; else hi = m; }
+  return ys[lo] + (ys[hi] - ys[lo]) * (x - xs[lo]) / ((xs[hi] - xs[lo]) || 1);
+}
+function predict(x, pr) {
+  const raw = rawPredict(x);
+  const p = sigmoid(raw);
+  const pm = interp(p, MODEL.kalibrasi.x, MODEL.kalibrasi.y);
+  const z = Math.max(-9.21, Math.min(9.21, raw));
+  const pg = sigmoid(MODEL.stack.ml * z + MODEL.stack.aturan * pr + MODEL.stack.c);
+  return { raw, pm, pg };
+}
+
+const t0 = performance.now();
+// badan usaha yang sudah diperiksa (label training) memakai prediksi out-of-fold dari Python, bukan in-sample
+for (const d of DATA) { const o = predict(d.x, d.pr); d.pg0 = o.pg; d.pm = d.insp ? d.pmo : o.pm; d.pg = d.insp ? d.pgo : o.pg; d.ev2 = d.pg * d.md; }
+const tModel = performance.now() - t0;
+const byId = Object.fromEntries(DATA.map((d) => [d.id, d]));
+const parityGap = Math.max(...META.parity.map((p) => Math.abs(rawPredict(byId[p.id].x) - p.raw)));
+
+// antrean: rules menandai (risiko & keyakinan >= sedang) ATAU peluang gabungan >= 50%
+const inRules = (d) => d.kat !== "Rendah" && d.yakin !== "rendah";
+const inQueue = (d) => inRules(d) || d.pg >= 0.5;
+const agree = (d) => inRules(d) && d.pm >= 0.5 ? "y" : (inRules(d) || d.pm >= 0.5) ? "n" : "";
+const queue = DATA.filter(inQueue);
 
 let fb = {};
 try { fb = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { fb = {}; }
 const saveFb = () => { try { localStorage.setItem(KEY, JSON.stringify(fb)); } catch (e) {} };
-
-const queue = DATA.filter(inQueue);
-const byId = Object.fromEntries(DATA.map((d) => [d.id, d]));
 let view = [], page = 0, openId = null;
 
 function fill(id, vals) {
-  const el = document.getElementById(id);
+  const el = $(id);
   [...new Set(vals)].sort().forEach((v) => { const o = document.createElement("option"); o.value = v; o.textContent = cap(v); el.appendChild(o); });
 }
 fill("f-sektor", DATA.map((d) => d.sektor));
 fill("f-wil", DATA.map((d) => d.wilayah));
-document.getElementById("f-skala").innerHTML = '<option value="">Semua skala</option>' + ["mikro", "kecil", "menengah", "besar"].map((s) => `<option value="${s}">${cap(s)}</option>`).join("");
+$("f-skala").innerHTML = '<option value="">Semua skala</option>' + ["mikro", "kecil", "menengah", "besar"].map((s) => `<option value="${s}">${cap(s)}</option>`).join("");
+
+const sortKey = () => $("f-sort").value;
+const sorter = (k) => k === "ev" ? (a, b) => b.ev2 - a.ev2 : k === "prio" ? (a, b) => b.prio - a.prio : (a, b) => b.pg - a.pg;
 
 function kpis() {
-  document.getElementById("periode").textContent = "Periode scan " + META.periode;
-  document.getElementById("k-n").textContent = nf.format(DATA.length);
-  document.getElementById("k-q").textContent = nf.format(queue.length);
-  document.getElementById("k-rp").textContent = rp(queue.reduce((a, d) => a + d.est, 0));
+  $("periode").textContent = "Periode scan " + META.periode;
+  $("k-n").textContent = nf.format(DATA.length);
+  $("k-n2").textContent = `${nf.format(queue.length)} masuk antrean · ${nf.format(DATA.filter((d) => agree(d) === "y").length)} ditandai dua metode`;
+  const n = +$("cap").value;
+  $("k-cap").textContent = nf.format(n) + " BU";
+  const top = [...queue].sort(sorter(sortKey())).slice(0, n);
+  const hit = top.reduce((a, d) => a + d.pg, 0);
+  const val = top.reduce((a, d) => a + d.pg * d.md, 0);
+  $("k-hit").textContent = "± " + nf.format(Math.round(hit));
+  $("k-hit2").textContent = `precision harapan ${pct(hit / Math.max(1, top.length), 0)} (dari peluang terkalibrasi)`;
+  $("k-rp").textContent = rp(val);
+  const rnd = DATA.reduce((a, d) => a + d.pg * d.md, 0) / DATA.length * n;
+  $("k-rp2").textContent = `per tahun · pemeriksaan acak ≈ ${rp(rnd)}`;
   const vals = Object.values(fb);
-  document.getElementById("k-fb").textContent = nf.format(vals.filter((v) => v !== "jadwal").length) + " label";
-  document.getElementById("k-fb2").textContent = `${vals.filter((v) => v === "terbukti").length} terbukti · ${vals.filter((v) => v === "wajar").length} wajar · ${vals.filter((v) => v === "jadwal").length} dijadwalkan`;
+  $("k-fb").textContent = `Label tersimpan: ${vals.filter((v) => v !== "jadwal").length} (${vals.filter((v) => v === "terbukti").length} terbukti, ${vals.filter((v) => v === "wajar").length} wajar).`;
 }
 
 function hbars(el, items, total) {
-  document.getElementById(el).innerHTML = items.map(([lab, n]) =>
+  $(el).innerHTML = items.map(([lab, n]) =>
     `<div class="hrow"><span>${lab}</span><div class="bar"><i style="width:${(100 * n / Math.max(1, total)).toFixed(1)}%"></i></div><span>${nf.format(n)}</span></div>`).join("");
 }
 function side() {
   hbars("h-mod", [["Upah", queue.filter((d) => d.mu >= 30).length], ["Headcount", queue.filter((d) => d.mh >= 30).length], ["Status", queue.filter((d) => d.ms >= 30).length]], queue.length);
   hbars("h-skala", ["mikro", "kecil", "menengah", "besar"].map((s) => [cap(s), queue.filter((d) => d.skala === s).length]), queue.length);
+  $("engine-note").innerHTML = `${nf.format(MODEL.trees.length)} pohon gradient boosting dievaluasi langsung di browser untuk ${nf.format(DATA.length)} badan usaha dalam <strong>${Math.round(tModel)} ms</strong>. Parity check terhadap Python: selisih log-odds <strong>${parityGap.toExponential(1)}</strong> ${parityGap < 1e-4 ? "✓" : "⚠"}.`;
 }
 
 function applyFilters() {
-  const q = document.getElementById("q").value.trim().toLowerCase();
-  const sk = document.getElementById("f-skala").value, se = document.getElementById("f-sektor").value;
-  const wi = document.getElementById("f-wil").value, mo = document.getElementById("f-modul").value;
-  const all = document.getElementById("f-all").checked;
-  view = (all ? DATA : queue).filter((d) =>
+  const q = $("q").value.trim().toLowerCase();
+  const sk = $("f-skala").value, se = $("f-sektor").value, wi = $("f-wil").value, mo = $("f-modul").value;
+  view = ($("f-all").checked ? DATA : queue).filter((d) =>
     (!q || d.nama.toLowerCase().includes(q) || d.id.toLowerCase().includes(q)) &&
-    (!sk || d.skala === sk) && (!se || d.sektor === se) && (!wi || d.wilayah === wi) && (!mo || d[mo] >= 30));
-  page = 0; render();
+    (!sk || d.skala === sk) && (!se || d.sektor === se) && (!wi || d.wilayah === wi) && (!mo || d[mo] >= 30)).sort(sorter(sortKey()));
+  page = 0; render(); kpis();
 }
 
-function modChips(d) {
-  return `<div class="mods"><span class="mod ${d.mu >= 30 ? "on" : ""}">U</span><span class="mod ${d.mh >= 30 ? "on" : ""}">H</span><span class="mod ${d.ms >= 30 ? "on" : ""}">S</span></div>`;
-}
+const modChips = (d) => `<div class="mods"><span class="mod ${d.mu >= 30 ? "on" : ""}">U</span><span class="mod ${d.mh >= 30 ? "on" : ""}">H</span><span class="mod ${d.ms >= 30 ? "on" : ""}">S</span></div>`;
+const agBadge = (d) => { const a = agree(d); return a === "y" ? '<span class="badge ag-y">Sepakat</span>' : a === "n" ? '<span class="badge ag-n">Satu metode</span>' : '<span class="meta">–</span>'; };
 function render() {
   const start = page * PAGE, rows = view.slice(start, start + PAGE);
-  document.getElementById("rows").innerHTML = rows.map((d, i) => {
+  $("rows").innerHTML = rows.map((d, i) => {
     const st = fb[d.id];
     return `<tr data-id="${d.id}" class="${d.id === openId ? "sel" : ""}">
       <td class="rank">${start + i + 1}</td>
       <td><div class="nm">${esc(d.nama)}</div><div class="meta">${esc(d.sektor)} · ${cap(d.skala)} · ${esc(d.wilayah)} · ${nf.format(d.pekerja)} pekerja</div></td>
       <td><div class="score"><div class="bar"><i style="width:${d.skor}%"></i></div><b>${Math.round(d.skor)}</b></div></td>
-      <td><span class="badge b-${d.yakin}">${cap(d.yakin)}</span></td>
-      <td>${modChips(d)}</td>
-      <td class="rp">${d.est > 0 ? rp(d.est) : "–"}</td>
-      <td class="st st-${st || "none"}">${st ? STATUS[st] : "Belum diperiksa"}</td></tr>`;
-  }).join("") || `<tr><td colspan="7" style="color:var(--muted);padding:24px">Tidak ada badan usaha yang cocok dengan filter.</td></tr>`;
+      <td><div class="score"><div class="bar blue"><i style="width:${(d.pg * 100).toFixed(1)}%"></i></div><b>${pct(d.pg, 0)}</b></div></td>
+      <td class="hide-s">${agBadge(d)}</td>
+      <td class="hide-s">${modChips(d)}</td>
+      <td class="rp">${d.est > 0 || d.md > 0 ? rp(Math.max(d.est, 0)) : "–"}<span class="rng">${rp(d.lo)}–${rp(d.hi)}</span></td>
+      <td class="st st-${st || "none"} hide-s">${st ? STATUS[st] : "Belum diperiksa"}</td></tr>`;
+  }).join("") || `<tr><td colspan="8" style="color:var(--muted);padding:24px">Tidak ada badan usaha yang cocok dengan filter.</td></tr>`;
   const pages = Math.max(1, Math.ceil(view.length / PAGE));
-  document.getElementById("pg").textContent = `Halaman ${page + 1} dari ${pages}`;
-  document.getElementById("prev").disabled = page === 0;
-  document.getElementById("next").disabled = page >= pages - 1;
-  document.getElementById("count").textContent = `${nf.format(view.length)} badan usaha`;
+  $("pg").textContent = `Halaman ${page + 1} dari ${pages}`;
+  $("prev").disabled = page === 0;
+  $("next").disabled = page >= pages - 1;
+  $("count").textContent = `${nf.format(view.length)} badan usaha`;
 }
 
-function mbar(lab, v) {
-  return `<div class="mbar"><span>${lab}</span><div class="bar"><i style="width:${v}%"></i></div><span>${v}</span></div>`;
+/* ================================================================ grafik SVG kecil (tanpa library) */
+const C = { green: "#1B7F57", blue: "#2F6690", rust: "#9A3B12", amber: "#C08A1E", grey: "#A3A9A6", lime: "#A6CE39", ink: "#172A30", line: "#DEDCD4" };
+function lineChart({ xs, series, w = 270, h = 150, yfmt = (v) => v, ymin = null, ymax = null, xfmt = (v) => v, diag = false }) {
+  const L = 44, R = 18, T = 8, B = 22;
+  const all = series.flatMap((s) => s.ys.filter((v) => v != null));
+  let lo = ymin ?? Math.min(...all), hi = ymax ?? Math.max(...all);
+  if (lo === hi) { lo -= 1; hi += 1; }
+  if (ymin == null) lo -= (hi - lo) * 0.08;
+  if (ymax == null) hi += (hi - lo) * 0.08;
+  const X = (i) => L + (w - L - R) * (xs.length === 1 ? 0.5 : (xs[i] - xs[0]) / (xs[xs.length - 1] - xs[0]));
+  const Y = (v) => T + (h - T - B) * (1 - (v - lo) / (hi - lo));
+  let g = "";
+  for (let k = 0; k <= 3; k++) { const v = lo + (hi - lo) * k / 3, y = Y(v); g += `<line x1="${L}" x2="${w - R}" y1="${y}" y2="${y}" stroke="#ECEAE4"/><text x="${L - 6}" y="${y + 4}" font-size="10.5" text-anchor="end" fill="#5B6B70">${yfmt(v)}</text>`; }
+  const step = Math.ceil(xs.length / 6);
+  xs.forEach((x, i) => { if (i % step === 0 || i === xs.length - 1) g += `<text x="${X(i)}" y="${h - 6}" font-size="10.5" text-anchor="middle" fill="#5B6B70">${xfmt(x)}</text>`; });
+  if (diag) g += `<line x1="${X(0)}" y1="${Y(xs[0])}" x2="${X(xs.length - 1)}" y2="${Y(xs[xs.length - 1])}" stroke="${C.grey}" stroke-dasharray="4 3"/>`;
+  for (const s of series) {
+    const pts = s.ys.map((v, i) => v == null ? null : [s.xs ? L + (w - L - R) * (s.xs[i] - xs[0]) / (xs[xs.length - 1] - xs[0]) : X(i), Y(v)]).filter(Boolean);
+    if (!s.dotsOnly) g += `<polyline fill="none" stroke="${s.color}" stroke-width="${s.width || 2.2}" ${s.dash ? `stroke-dasharray="${s.dash}"` : ""} points="${pts.map((p) => p.join(",")).join(" ")}"/>`;
+    if (s.dots || s.dotsOnly) g += pts.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="3.2" fill="${s.color}"/>`).join("");
+  }
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" role="img">${g}</svg>`;
 }
+function barChart({ labels, values, colors, w = 270, h = 150, yfmt = (v) => v, hl = -1 }) {
+  const L = 34, R = 6, T = 14, B = 26, n = values.length;
+  const hi = Math.max(1, ...values), bw = (w - L - R) / n;
+  let g = `<line x1="${L}" x2="${w - R}" y1="${h - B}" y2="${h - B}" stroke="${C.line}"/>`;
+  values.forEach((v, i) => {
+    const bh = (h - T - B) * v / hi, x = L + i * bw + bw * 0.15, y = h - B - bh;
+    g += `<rect x="${x}" y="${y}" width="${bw * 0.7}" height="${bh}" rx="2" fill="${colors ? colors[i] : i === hl ? C.rust : C.green}"/>`;
+    if (v) g += `<text x="${x + bw * 0.35}" y="${y - 3}" font-size="10" text-anchor="middle" fill="#5B6B70">${yfmt(v)}</text>`;
+    g += `<text x="${x + bw * 0.35}" y="${h - 9}" font-size="9.5" text-anchor="middle" fill="#5B6B70">${labels[i]}</text>`;
+  });
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" role="img">${g}</svg>`;
+}
+const legend = (items) => `<div class="legend">${items.map(([c, t]) => `<span><i style="background:${c}"></i>${t}</span>`).join("")}</div>`;
+const jt = (v) => (v / 1e6).toLocaleString("id-ID", { maximumFractionDigits: 1 });
+
+function evidenceCharts(d) {
+  const e = d.ev, yrs = META.tahun;
+  const upah = lineChart({ xs: yrs, yfmt: jt, series: [
+    { ys: e.u, color: C.grey, dash: "5 3" }, { ys: e.b, color: C.blue, width: 1.8 }, { ys: e.m, color: C.rust, dots: true }] });
+  const hc = lineChart({ xs: yrs, yfmt: (v) => nf.format(Math.round(v)), ymin: 0, series: [
+    { ys: yrs.map(() => e.o), color: C.grey, dash: "5 3" }, { ys: e.h, color: C.green, dots: true }] });
+  const lain = e.k.map((k, i) => k - e.p[i]);
+  const pbpu = barChart({ labels: yrs.map((y) => "'" + String(y).slice(2)), values: e.p, colors: e.p.map(() => C.rust), yfmt: nf.format });
+  const tot = e.d.reduce((a, b) => a + b, 0) || 1;
+  const hist = barChart({ labels: META.hist, values: e.d, hl: 1, yfmt: (v) => Math.round(100 * v / tot) + "%" });
+  return `<div class="charts">
+    <div class="chart"><div class="ct">Median upah dilaporkan (Rp jt)</div>${upah}${legend([[C.rust, "Badan usaha"], [C.blue, "Benchmark sektor"], [C.grey, "UMK"]])}</div>
+    <div class="chart"><div class="ct">Distribusi upah ${yrs[yrs.length - 1]} (× UMK)</div>${hist}<div class="cl">Merah = tepat di UMK (0,95–1,05×)</div></div>
+    <div class="chart"><div class="ct">Pekerja terdaftar (rata-rata/thn)</div>${hc}${legend([[C.green, "Terdaftar JKN"], [C.grey, "Rencana OSS"]])}</div>
+    <div class="chart"><div class="ct">Keluar PPU → terdaftar PBPU</div>${pbpu}<div class="cl">Total keluar PPU: ${e.k.map(nf.format).join(" · ")} (${lain.reduce((a, b) => a + b, 0)} ke segmen lain)</div></div>
+  </div>`;
+}
+
+/* ================================================================ lembar hasil scan */
+const mbar = (lab, v) => `<div class="mbar"><span>${lab}</span><div class="bar"><i style="width:${v}%"></i></div><span>${v}</span></div>`;
+let wiX = null;
+function fmtFeat(i, v) {
+  if (v == null) return "–";
+  const c = MODEL.fitur[i];
+  if (c.startsWith("porsi") || c === "klaster_pbpu_porsi") return pct(v, 0);
+  if (c.includes("rasio")) return dec(v, 2) + "×";
+  if (c === "padat_karya") return v >= 0.5 ? "ya" : "tidak";
+  if (c === "skala") return ["mikro", "kecil", "menengah", "besar"][Math.round(v)] || v;
+  return nf.format(Math.round(v));
+}
+function contribHtml(x, pr) {
+  const phi = new Array(MODEL.fitur.length).fill(0);
+  rawPredict(x, phi);
+  const top = phi.map((v, i) => [i, v]).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 6);
+  const mx = Math.max(0.5, ...top.map((t) => Math.abs(t[1])));
+  return { top, html: top.map(([i, v]) => {
+    const w = 50 * Math.abs(v) / mx;
+    return `<div class="contrib"><span>${esc(MODEL.label[i])} <span class="meta">(${fmtFeat(i, x[i])})</span></span>
+      <div class="cbar"><i style="left:${v >= 0 ? 50 : 50 - w}%;width:${w}%;background:${v >= 0 ? C.rust : C.green}"></i></div><span>${v >= 0 ? "+" : "−"}${dec(Math.abs(v), 2)}</span></div>`;
+  }).join("") };
+}
+function sliderRange(i) {
+  const c = MODEL.fitur[i], r = MODEL.rentang[c];
+  if (c.startsWith("porsi") || c === "klaster_pbpu_porsi") return [0, 1, 0.01];
+  if (c === "padat_karya") return [0, 1, 1];
+  if (c === "skala") return [0, 3, 1];
+  const lo = Math.min(0, r[0]), hi = Math.max(r[2], 1);
+  return [lo, hi, hi - lo > 20 ? 1 : 0.01];
+}
+function whatIf(d) {
+  const o = predict(wiX, d.pr);
+  $("wi-pg").textContent = pct(o.pg, 0);
+  $("wi-pm").textContent = pct(o.pm, 0);
+  const delta = o.pg - d.pg0;
+  $("wi-delta").textContent = Math.abs(delta) < 0.005 ? "sama dengan kondisi sekarang" : (delta > 0 ? "naik " : "turun ") + pct(Math.abs(delta), 0) + " poin";
+  $("wi-contrib").innerHTML = contribHtml(wiX, d.pr).html;
+}
+
 function openSheet(id) {
   const d = byId[id]; if (!d) return;
-  openId = id;
+  openId = id; wiX = d.x.slice();
   const idx = view.findIndex((x) => x.id === id);
   const st = fb[id];
-  document.getElementById("sheet-body").innerHTML = `
+  const c = contribHtml(d.x, d.pr);
+  const ag = agree(d);
+  const sliders = c.top.slice(0, 5).map(([i]) => {
+    const [lo, hi, step] = sliderRange(i), v = d.x[i] ?? 0;
+    return `<div class="wi"><span>${esc(MODEL.label[i])}</span><input type="range" min="${lo}" max="${hi}" step="${step}" value="${v}" data-fi="${i}"><b id="wv-${i}">${fmtFeat(i, v)}</b></div>`;
+  }).join("");
+  $("sheet-body").innerHTML = `
     <div class="sc">
       <div class="row"><h2>${esc(d.nama)}</h2><span class="spacer"></span><span class="badge r-${d.kat}">Risiko ${d.kat}</span></div>
-      <div class="meta" style="margin-top:6px">${d.id} · ${esc(d.sektor)} · skala ${d.skala} · ${esc(d.wilayah)} · ${nf.format(d.pekerja)} pekerja dilaporkan</div>
-      <div class="row" style="margin-top:12px"><span class="big">${Math.round(d.skor)}<small>/100</small></span><span class="badge b-${d.yakin}" style="font-size:14px;margin-left:8px">Keyakinan: ${d.yakin}</span></div>
+      <div class="meta" style="margin-top:6px">${d.id} · ${esc(d.sektor)} · skala ${d.skala} · ${esc(d.wilayah)} · ${nf.format(d.pekerja)} pekerja dilaporkan${d.insp ? " · <b>sudah diperiksa periode lalu (label training)</b>" : ""}</div>
+      <div class="duo" style="margin-top:14px">
+        <div class="stat"><div class="k">Skor rules</div><div class="v">${Math.round(d.skor)}<small style="font-size:16px;color:var(--muted)">/100</small></div><div class="s">Keyakinan: ${d.yakin} · tanpa label</div></div>
+        <div class="stat"><div class="k">Peluang terbukti</div><div class="v" style="color:var(--blue)">${pct(d.pg, 0)}</div><div class="s">ML saja ${pct(d.pm, 0)}${d.insp ? " (out-of-fold)" : ""} · ${ag === "y" ? "<b style='color:var(--green)'>dua metode sepakat</b>" : ag === "n" ? "<b style='color:var(--amber)'>hanya satu metode menandai</b>" : "tidak ditandai"}</div></div>
+      </div>
+      <div class="lbl">Alasan utama (rules)</div>
+      ${d.alasan.length ? `<ol class="why">${d.alasan.map((a) => `<li>${esc(a)}</li>`).join("")}</ol>` : `<p class="meta">Tidak ada rule yang menyala kuat.</p>`}
       <div class="lbl">Modul scan</div>
       ${mbar("Upah", d.mu)}${mbar("Headcount", d.mh)}${mbar("Status", d.ms)}${mbar("Anomali", d.an)}
-      <div class="lbl">Alasan utama</div>
-      ${d.alasan.length ? `<ol class="why">${d.alasan.map((a) => `<li>${esc(a)}</li>`).join("")}</ol>` : `<p class="meta">Tidak ada aturan yang menyala kuat.</p>`}
-      <div class="est"><span class="meta" style="font-size:15px">Estimasi potensi iuran tak tertagih</span><span class="rp">± ${rp(d.est)}/thn</span></div>
+    </div>
+    <div class="sc">
+      <h4>Bukti data 2021–2025</h4>
+      ${evidenceCharts(d)}
+    </div>
+    <div class="sc">
+      <h4>Kenapa model ML menilai begini</h4>
+      <p class="meta" style="margin:0 0 8px">Kontribusi tiap fitur ke log-odds (merah menaikkan, hijau menurunkan peluang). Dihitung langsung di browser dari 250 pohon.</p>
+      ${c.html}
+    </div>
+    <div class="sc">
+      <div class="est"><span class="meta" style="font-size:15px">Estimasi potensi iuran tak tertagih (kalkulator)</span><span class="rp">± ${rp(d.est)}/thn</span></div>
       <div class="brk"><span>Selisih upah dilaporkan</span><b>${rp(d.eu)}</b><span>Pekerja tak terdaftar</span><b>${rp(d.eh)}</b><span>Pekerja dipindah ke PBPU</span><b>${rp(d.es)}</b><span>Upah wajar acuan</span><b>Rp${nf.format(d.wajar)}</b></div>
+      <div class="est" style="border-top:1px solid var(--line);margin-top:12px;padding-top:12px"><span class="meta" style="font-size:15px">Rentang 80% jika terbukti (CQR)</span><span class="rp" style="font-size:18px">${rp(d.lo)} – ${rp(d.hi)}</span></div>
+      <div class="meta">Median ${rp(d.md)} · coverage di holdout ${pct(VAL.rupiah.coverage_holdout, 0)}</div>
+    </div>
+    <div class="sc whatif">
+      <h4>What-if: bagaimana jika datanya berbeda?</h4>
+      <p class="meta" style="margin:0 0 6px">Geser fitur yang paling berpengaruh; model menghitung ulang seketika${d.insp ? " (titik awal memakai model penuh, karena badan usaha ini termasuk data training)" : ""}. Berguna untuk menguji apakah satu klarifikasi dari badan usaha akan mengubah prioritas.</p>
+      ${sliders}
+      <div class="duo" style="margin-top:10px">
+        <div class="stat"><div class="k">Peluang gabungan</div><div class="v" id="wi-pg" style="color:var(--blue)"></div><div class="s" id="wi-delta"></div></div>
+        <div class="stat"><div class="k">ML saja</div><div class="v" id="wi-pm"></div><div class="s"><button class="btn small ghost" id="wi-reset">Reset</button></div></div>
+      </div>
+      <div style="margin-top:10px" id="wi-contrib"></div>
+    </div>
+    <div class="sc">
       <div class="actions">
         <button class="btn" data-act="jadwal">${st === "jadwal" ? "✓ Dijadwalkan" : "Jadwalkan pemeriksaan"}</button>
         <button class="btn ghost" data-act="wajar">${st === "wajar" ? "✓ Ditandai wajar" : "Tandai wajar"}</button>
         <button class="btn warn" data-act="terbukti">${st === "terbukti" ? "✓ Temuan terbukti" : "Temuan terbukti"}</button>
       </div>
-      <div class="note">PayRay mengurutkan prioritas. Keputusan pemeriksaan tetap di petugas.</div>
+      <div class="note" style="margin-top:10px">PayRay mengurutkan prioritas. Keputusan pemeriksaan tetap di petugas.</div>
     </div>
     <div class="nav"><button class="btn small ghost" data-nav="-1" ${idx <= 0 ? "disabled" : ""}>‹ Sebelumnya</button><button class="btn small ghost" data-nav="1" ${idx < 0 || idx >= view.length - 1 ? "disabled" : ""}>Berikutnya ›</button></div>`;
-  document.getElementById("sheet").classList.add("on");
-  document.getElementById("scrim").classList.add("on");
+  whatIf(d);
+  $("sheet").classList.add("on");
+  $("scrim").classList.add("on");
   render();
 }
-function closeSheet() {
-  openId = null;
-  document.getElementById("sheet").classList.remove("on");
-  document.getElementById("scrim").classList.remove("on");
-  render();
+function closeSheet() { openId = null; $("sheet").classList.remove("on"); $("scrim").classList.remove("on"); render(); }
+
+/* ================================================================ tab validasi */
+function validasi() {
+  const V = VAL, D = V.desain, comp = V.perbandingan;
+  const names = Object.keys(comp), G = comp["PayRay gabungan (stacking)"], R = comp["Aturan + Isolation Forest"];
+  const both = V.kesepakatan["Keduanya menandai"];
+  $("v-lead").innerHTML = `Model dilatih <b>hanya</b> dari ${nf.format(D.label_dari_pemeriksaan)} hasil pemeriksaan (${D.top_prioritas} prioritas teratas + ${D.audit_acak} audit acak, bobot IPW ${dec(D.bobot_audit_ipw, 1)} untuk mengoreksi bias seleksi), lalu diuji di world holdout ${nf.format(D.holdout_n)} badan usaha dengan seed generator dan seed injeksi berbeda. Tidak ada label holdout yang dipakai untuk training maupun tuning.`;
+  $("v-kpis").innerHTML = [
+    ["Precision@10%", pct(G.precision_top), `CI 95% ${pct(G.precision_ci95[0], 0)}–${pct(G.precision_ci95[1], 0)} · rules saja ${pct(R.precision_top)}`],
+    ["Jika dua metode sepakat", pct(both.precision), `${nf.format(both.n)} badan usaha · acak ${pct(D.holdout_prevalensi, 0)}`],
+    ["Kalibrasi (ECE)", dec(V.kalibrasi.ece, 3), `Brier ${dec(V.kalibrasi.brier, 3)} vs baseline ${dec(V.kalibrasi.brier_acak, 3)}`],
+    ["Coverage rentang Rp", pct(V.rupiah.coverage_holdout, 0), `target ${pct(V.rupiah.target_coverage, 0)} · n = ${V.rupiah.n_holdout}`],
+  ].map(([l, v, s]) => `<div class="kpi"><div class="lab">${l}</div><div class="val">${v}</div><div class="sub">${s}</div></div>`).join("");
+
+  $("v-comp").innerHTML = `<thead><tr><th>Metode</th><th style="text-align:right">P@10%</th><th style="text-align:right">PR-AUC</th><th style="text-align:right">ROC-AUC</th><th style="text-align:right">Salah tandai UMKM</th><th style="text-align:right">Iuran/100 periksa</th></tr></thead><tbody>` +
+    names.map((k) => { const s = comp[k]; return `<tr class="${k.startsWith("PayRay") ? "hl" : ""}"><td>${esc(k)}</td><td class="n">${pct(s.precision_top)}<div class="meta">${pct(s.precision_ci95[0], 0)}–${pct(s.precision_ci95[1], 0)}</div></td><td class="n">${dec(s.pr_auc, 3)}</td><td class="n">${dec(s.roc_auc, 3)}</td><td class="n">${pct(s.salah_tandai_umkm)}</td><td class="n">${rp(s.iuran_per100)}</td></tr>`; }).join("") + "</tbody>";
+
+  const cols = [C.grey, C.green, C.amber, C.blue, C.rust];
+  const ks = Array.from({ length: 30 }, (_, i) => i + 1);
+  $("v-curve").innerHTML = lineChart({ xs: ks, w: 520, h: 230, ymin: 0, ymax: 1, yfmt: (v) => Math.round(v * 100) + "%", xfmt: (v) => v + "%",
+    series: names.map((k, i) => ({ ys: comp[k].kurva_precision, color: cols[i], width: k.startsWith("PayRay") ? 3 : 1.8 })) }) +
+    legend(names.map((k, i) => [cols[i], k]));
+
+  const rel = V.kalibrasi.reliability, relm = V.kalibrasi.reliability_ml;
+  const grid = [0, 0.25, 0.5, 0.75, 1];
+  $("v-rel").innerHTML = lineChart({ xs: grid, ymin: 0, ymax: 1, diag: true, yfmt: (v) => Math.round(v * 100) + "%", xfmt: (v) => Math.round(v * 100) + "%",
+    series: [{ ys: rel.map((r) => r.obs), xs: rel.map((r) => r.pred), color: C.blue, dots: true }, { ys: relm.map((r) => r.obs), xs: relm.map((r) => r.pred), color: C.amber, dotsOnly: true }] }) +
+    legend([[C.blue, `Gabungan · ECE ${dec(V.kalibrasi.ece, 3)}`], [C.amber, `ML saja · ECE ${dec(V.kalibrasi.ece_ml, 3)}`], [C.grey, "Sempurna"]]) +
+    `<div class="cl meta">Sumbu x: peluang yang diprediksi · sumbu y: proporsi yang benar-benar terbukti</div>`;
+
+  const q = V.kesepakatan;
+  $("v-agree").innerHTML = barChart({ w: 300, h: 170, labels: ["Keduanya", "Hanya rules", "Hanya ML", "Acak"], values: [q["Keduanya menandai"].precision, q["Hanya aturan"].precision, q["Hanya ML"].precision, D.holdout_prevalensi].map((v) => Math.round(v * 1000) / 10),
+    colors: [C.green, C.amber, C.blue, C.grey], yfmt: (v) => dec(v, 1) + "%" }) +
+    `<div class="meta">Precision per kelompok di top-10% masing-masing metode. n = ${q["Keduanya menandai"].n} · ${q["Hanya aturan"].n} · ${q["Hanya ML"].n}. Kelompok "satu metode" diberi tanda di antrean supaya petugas meminta bukti tambahan dulu.</div>`;
+
+  const lc = V.learning_curve;
+  $("v-lc").innerHTML = lineChart({ xs: lc.map((r) => r.n_label), ymin: 0.4, ymax: 0.9, yfmt: (v) => Math.round(v * 100) + "%", xfmt: nf.format,
+    series: [{ ys: lc.map((r) => r.precision_top), color: C.green, dots: true }, { ys: lc.map((r) => r.pr_auc), color: C.blue, dots: true, dash: "4 3" }] }) +
+    legend([[C.green, "Precision@10%"], [C.blue, "PR-AUC"]]) + `<div class="cl meta">Sumbu x: jumlah hasil pemeriksaan yang menjadi label</div>`;
+
+  const imp = V.importance.slice(0, 8), mi = Math.max(...imp.map((x) => x.permutation));
+  $("v-imp").innerHTML = imp.map((x) => `<div class="hrow" style="grid-template-columns: 1fr 90px 44px"><span>${esc(x.fitur)}</span><div class="bar"><i style="width:${(100 * Math.max(0, x.permutation) / mi).toFixed(1)}%"></i></div><span>${dec(x.permutation, 3)}</span></div>`).join("");
+
+  $("v-fair").innerHTML = `<thead><tr><th>Skala</th><th style="text-align:right">Precision</th><th style="text-align:right">Recall</th><th style="text-align:right">Salah tandai patuh</th></tr></thead><tbody>` +
+    V.fairness.map((r) => `<tr><td>${cap(r.skala)}</td><td class="n">${pct(r.precision, 0)}</td><td class="n">${pct(r.recall, 0)}</td><td class="n ${r.salah_tandai > 0.05 ? "bad" : "ok"}">${pct(r.salah_tandai)}</td></tr>`).join("") + "</tbody>";
+
+  const r = V.rupiah;
+  $("v-rp").innerHTML = `<div class="duo"><div class="stat"><div class="k">Coverage</div><div class="v">${pct(r.coverage_holdout, 0)}</div><div class="s">target ${pct(r.target_coverage, 0)}</div></div>
+    <div class="stat"><div class="k">Galat median</div><div class="v">${pct(r.mape_median_ml, 0)}</div><div class="s">kalkulator saja ${pct(r.mape_median_kalkulator, 0)}</div></div></div>
+    <p class="meta" style="margin:10px 0 0">Korelasi log terhadap kerugian sebenarnya naik dari ${dec(r.korelasi_log_kalkulator, 2)} (kalkulator) ke ${dec(r.korelasi_log_ml, 2)} (model). Dilatih dari ${r.n_train} pelanggar terbukti, dikalibrasi di ${r.n_kalibrasi}, diuji pada ${r.n_holdout} pelanggar yang tertangkap di holdout. Kalkulator tetap ditampilkan karena mudah dijelaskan ke badan usaha.</p>`;
+
+  const s = V.stabilitas;
+  $("v-stab").innerHTML = `<div class="duo"><div class="stat"><div class="k">Bootstrap 10× training</div><div class="v">${pct(s.precision_mean, 1)}</div><div class="s">± ${pct(s.precision_sd, 1)} · overlap top-10% (Jaccard) ${dec(s.jaccard_mean, 2)}</div></div>
+    <div class="stat"><div class="k">Drift terbesar (PSI)</div><div class="v">${dec(V.drift[0].psi, 3)}</div><div class="s">${esc(V.drift[0].fitur)} · < 0,1 = stabil</div></div></div>
+    <p class="meta" style="margin:10px 0 0">Parity check browser vs Python: selisih log-odds ${parityGap.toExponential(1)} pada ${META.parity.length} badan usaha acuan; saat ekspor diuji ke 300 badan usaha (selisih ${D.selisih_ekspor.toExponential(1)}).</p>`;
+
+  const E = comp["Gabungan × estimasi Rp (nilai harapan)"];
+  $("v-lim").innerHTML = [
+    `Kasus sulit (pemotongan upah selektif, pendaftaran 75–90% pekerja) baru tertangkap ${pct(G.recall_sulit, 0)}. Butuh data tambahan, misalnya pajak penghasilan pekerja atau data BPJS Ketenagakerjaan.`,
+    `Antrean nilai harapan menangkap ${rp(E.iuran_per100)} per 100 pemeriksaan (${dec(E.iuran_per100 / R.iuran_per100, 1)}× rules), tetapi precision-nya ${pct(E.precision_top, 0)}. Pilihan urutan diserahkan ke kantor cabang.`,
+    `Semua angka berasal dari data simulasi yang dikalibrasi ke statistik publik (BPS Sakernas, Portal Data BPJS Kesehatan). Angka di lapangan perlu pilot di satu kantor cabang.`,
+    `Label hanya dari badan usaha yang diperiksa. Audit acak ${D.audit_acak} per periode wajib dipertahankan supaya model tidak hanya belajar dari yang sudah dicurigai.`,
+  ].map((t) => `<li>${t}</li>`).join("");
+
+  $("m-guard").innerHTML = `<b>Guardrail anti label leakage.</b> Generator membuat dunia jujur dulu, lalu menyisipkan pelanggaran dengan seed rahasia. Mesin scan hanya membaca <code>publik/</code> dan <code>referensi/</code>. Model ML hanya melihat label dari ${nf.format(D.label_dari_pemeriksaan)} badan usaha yang diperiksa, dan prediksi untuk badan usaha itu di world dev memakai out-of-fold. Semua metrik di tab Validasi berasal dari world holdout terpisah.`;
 }
 
-document.getElementById("rows").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) openSheet(tr.dataset.id); });
-document.getElementById("sheet-body").addEventListener("click", (e) => {
+function kualitas() {
+  const Q = VAL.kualitas_data, ok = Q.filter((x) => x.status === "lulus").length;
+  const rows = Q.reduce((a, x) => Math.max(a, x.total), 0);
+  $("q-kpis").innerHTML = [["Pemeriksaan", nf.format(Q.length), "skema, integritas, rentang, kelengkapan"], ["Lulus", `${ok}/${Q.length}`, "siap scan"],
+    ["Peringatan", nf.format(Q.filter((x) => x.status === "peringatan").length), "diteruskan ke petugas data"], ["Baris diperiksa", nf.format(rows), "tabel terbesar (riwayat upah)"]]
+    .map(([l, v, s]) => `<div class="kpi"><div class="lab">${l}</div><div class="val">${v}</div><div class="sub">${s}</div></div>`).join("");
+  $("q-tab").innerHTML = `<thead><tr><th>Pemeriksaan</th><th>Status</th><th>Temuan</th></tr></thead><tbody>` +
+    Q.map((x) => `<tr><td>${esc(x.nama)}</td><td class="${x.status === "lulus" ? "ok" : x.status === "peringatan" ? "warnc" : "bad"}">${x.status === "lulus" ? "✓ lulus" : x.status}</td><td>${esc(x.temuan)}</td></tr>`).join("") + "</tbody>";
+}
+
+/* ================================================================ events */
+function showTab(t) {
+  document.querySelectorAll("nav.tabs button").forEach((b) => b.classList.toggle("on", b.dataset.tab === t));
+  document.querySelectorAll(".tab").forEach((s) => s.classList.toggle("on", s.id === "tab-" + t));
+  try { history.replaceState(null, "", t === "antrean" ? location.pathname + location.search : "#" + t); } catch (e) {}
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll("nav.tabs button").forEach((b) => b.onclick = () => showTab(b.dataset.tab));
+document.querySelectorAll("[data-goto]").forEach((b) => b.onclick = () => showTab(b.dataset.goto));
+$("rows").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) openSheet(tr.dataset.id); });
+$("sheet-body").addEventListener("click", (e) => {
   const act = e.target.closest("[data-act]"), nav = e.target.closest("[data-nav]");
+  if (e.target.id === "wi-reset") { const d = byId[openId]; wiX = d.x.slice(); document.querySelectorAll("[data-fi]").forEach((s) => { const i = +s.dataset.fi; s.value = d.x[i] ?? 0; $("wv-" + i).textContent = fmtFeat(i, d.x[i]); }); whatIf(d); return; }
   if (act) { fb[openId] = fb[openId] === act.dataset.act ? undefined : act.dataset.act; if (!fb[openId]) delete fb[openId]; saveFb(); kpis(); openSheet(openId); }
   if (nav && !nav.disabled) { const i = view.findIndex((x) => x.id === openId) + Number(nav.dataset.nav); if (view[i]) { page = Math.floor(i / PAGE); openSheet(view[i].id); } }
 });
-document.getElementById("close").onclick = closeSheet;
-document.getElementById("scrim").onclick = closeSheet;
+$("sheet-body").addEventListener("input", (e) => {
+  const s = e.target.closest("[data-fi]"); if (!s) return;
+  const i = +s.dataset.fi; wiX[i] = +s.value; $("wv-" + i).textContent = fmtFeat(i, wiX[i]); whatIf(byId[openId]);
+});
+$("close").onclick = closeSheet;
+$("scrim").onclick = closeSheet;
+$("print").onclick = () => window.print();
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
-document.getElementById("prev").onclick = () => { page--; render(); };
-document.getElementById("next").onclick = () => { page++; render(); };
-["q", "f-skala", "f-sektor", "f-wil", "f-modul", "f-all"].forEach((id) => document.getElementById(id).addEventListener("input", applyFilters));
-document.getElementById("export").onclick = () => {
-  const lines = ["employer_id,nama,skor,keyakinan,keputusan_petugas"].concat(
-    Object.entries(fb).map(([id, v]) => { const d = byId[id]; return [id, `"${d.nama}"`, d.skor, d.yakin, v].join(","); }));
+$("prev").onclick = () => { page--; render(); };
+$("next").onclick = () => { page++; render(); };
+["q", "f-skala", "f-sektor", "f-wil", "f-modul", "f-all", "f-sort"].forEach((id) => $(id).addEventListener("input", applyFilters));
+$("cap").addEventListener("input", kpis);
+$("export").onclick = () => {
+  const lines = ["employer_id,nama,skor_rules,peluang_gabungan,keyakinan,keputusan_petugas"].concat(
+    Object.entries(fb).map(([id, v]) => { const d = byId[id]; return [id, `"${d.nama}"`, d.skor, d.pg.toFixed(4), d.yakin, v].join(","); }));
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
   a.download = "payray_label_feedback.csv"; a.click();
 };
 
-kpis(); side(); applyFilters();
+side(); applyFilters(); validasi(); kualitas();
+const hash = location.hash.slice(1);
+if (["validasi", "kualitas", "metode"].includes(hash)) showTab(hash);
 // ?buka=BU00001 membuka lembar hasil scan langsung (untuk demo / screenshot)
 const want = new URLSearchParams(location.search).get("buka");
 if (want) openSheet(want);

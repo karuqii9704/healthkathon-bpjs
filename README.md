@@ -33,6 +33,32 @@ Generator dikalibrasi ke upah BPS Sakernas Agustus 2025 (urutan sektor ρ = 0,90
 
 Siklus umpan balik (belajar dari 500 hasil pemeriksaan + 250 audit acak) menaikkan precision putaran berikutnya dari ±22% menjadi 25–27%, dan iuran yang tertangkap ikut naik.
 
+## Lapisan machine learning (`ml/`)
+
+```bash
+python -m engine --data data_holdout --out hasil_holdout   # world holdout
+python -m ml                                                # training + validasi -> ml/artefak/, hasil/ml_prediksi.csv
+python dashboard/build_dashboard.py                         # dashboard/index.html (model berjalan di browser)
+```
+
+- **Model peluang pelanggaran:** HistGradientBoosting (250 pohon, 17 fitur mentah) dengan monotonic constraint sesuai logika domain. Sengaja tidak memakai skor rules, sehingga menjadi second opinion yang independen.
+- **Label hanya dari hasil pemeriksaan:** 500 prioritas teratas + 250 audit acak di world dev. Bias seleksi dikoreksi dengan inverse propensity weighting.
+- **Kalibrasi:** isotonic pada prediksi out-of-fold. Stacking logistic menggabungkan ML dan persentil rules menjadi peluang terbukti.
+- **Rentang Rp:** conformalized quantile regression yang dilatih dari pelanggar terbukti.
+- **Di browser:** model diekspor ke [ml/artefak/model_payray.json](ml/artefak/model_payray.json) dan dievaluasi oleh JavaScript, termasuk atribusi fitur (Saabas) dan what-if. Ada parity check terhadap Python.
+- **Data quality:** 17 pemeriksaan input ([ml/quality.py](ml/quality.py)). Laporan lengkap ada di [ml/artefak/laporan_ml.md](ml/artefak/laporan_ml.md).
+
+| Holdout (top-10%) | Rules + IF | Model ML | **Gabungan** |
+|---|---|---|---|
+| Precision (CI 95%) | 68,4% (63–73) | 80,2% (75–86) | **82,2% (77–87)** |
+| PR-AUC / ROC-AUC | 0,598 / 0,783 | 0,640 / 0,824 | **0,716 / 0,837** |
+| Salah tandai UMKM patuh | 2,7% | 3,1% | **2,7%** |
+
+Jika rules dan ML sama-sama menandai, precision mencapai 95,1% (n = 327). Hasil lain:
+- Kalibrasi: ECE 0,035.
+- Rentang Rp 80%: coverage 84% di holdout. Galat median turun dari 78% (kalkulator) ke 40%.
+- Antrean nilai harapan (peluang × Rp) menangkap Rp17,9 M per 100 pemeriksaan (2,3× rules), dengan precision 52%.
+
 ## Generator data sintetis
 
 ```bash
