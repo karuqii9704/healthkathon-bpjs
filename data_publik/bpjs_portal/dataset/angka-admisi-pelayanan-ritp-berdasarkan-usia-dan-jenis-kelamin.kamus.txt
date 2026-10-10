@@ -1,0 +1,7 @@
+Angka Admisi  Pelayanan RITP berdasarkan Usia dan Jenis Kelamin
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-10-26 17:40:06.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=155112fe-3649-11ec-9ed0-a3ab0e565b21
+Unduh: https://drive.google.com/uc?export=download&id=1afm774SLGQHeQlsQFmRCwlGJSh61z1mn
+
+Kolom:
+

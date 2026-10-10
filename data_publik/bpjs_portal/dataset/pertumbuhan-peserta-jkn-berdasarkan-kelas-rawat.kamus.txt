@@ -1,0 +1,12 @@
+Pertumbuhan Peserta JKN berdasarkan Kelas Rawat
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:50:58.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=01b84634-95cd-11eb-af47-277c4373c51f
+Unduh: https://drive.google.com/uc?export=download&id=1Wbjhm5L1N4B3vuCIJACoYIILqv--IPRw
+
+Kolom:
+- 2018: Jumlah Peserta JKN berdasarkan Hak Kelas Perawatan Tahun 2018
+- 2017: Jumlah Peserta JKN berdasarkan Hak Kelas Perawatan Tahun 2017
+- 2016: Jumlah Peserta JKN berdasarkan Hak Kelas Perawatan Tahun 2016
+- 2015: Jumlah Peserta JKN berdasarkan Hak Kelas Perawatan Tahun 2015
+- 2014: Jumlah Peserta JKN berdasarkan Hak Kelas Perawatan Tahun 2014
+- Hak Kelas: Pertumbuhan Peserta JKN berdasarkan Hak Kelas Perawatan

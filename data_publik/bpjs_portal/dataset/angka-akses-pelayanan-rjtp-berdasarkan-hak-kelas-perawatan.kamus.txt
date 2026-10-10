@@ -1,0 +1,7 @@
+Angka Akses Pelayanan RJTP berdasarkan Hak Kelas Perawatan
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-30 17:04:59.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=617ae152-a99b-11eb-9a34-5149a9b9f852
+Unduh: https://drive.google.com/uc?export=download&id=1zyuz6WRgvGISQSpDhufzYfgLccWqzsZZ
+
+Kolom:
+

@@ -1,0 +1,103 @@
+100 Penyakit Terbanyak pada RITL Tahun 2017,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Admisi,Jumlah Peserta
+1,A010,Typhoid fever,362884,349796
+2,P034,Fetus and newborn affected by caesarean delivery,280505,280388
+3,A099,Gastroenteritis and colitis of unspecified origin,240469,232578
+4,K30,Dyspepsia,207016,194414
+5,Z511,Chemotherapy session for neoplasm,183324,46526
+6,I500,Congestive heart failure,120295,101520
+7,O342,Maternal care due to uterine scar from previous surgery,118380,118111
+8,A91,Dengue haemorrhagic fever,118276,116867
+9,J180,"Bronchopneumonia, unspecified",107083,100931
+10,I10,Essential (primary) hypertension,89515,86015
+11,J189,"Pneumonia, unspecified",85460,81779
+12,I639,"Cerebral infarction, unspecified",85444,81753
+13,K297,"Gastritis, unspecified",78351,74842
+14,A090,Other and unspecified gastroenteritis and colitis of infectious origin,76864,75310
+15,O800,Spontaneous vertex delivery,76801,76769
+16,O420,"Premature rupture of membranes, onset of labour within 24 hours",76314,76119
+17,N390,"Urinary tract infection, site not specified",72934,71471
+18,E119,Non-insulin-dependent diabetes mellitus without complications,71306,65701
+19,D649,"Anaemia, unspecified",69641,59737
+20,O809,"Single spontaneous delivery, unspecified",69589,69562
+21,A09,Diarrhoea and gastroenteritis of presumed infectious origin,69447,68336
+22,D24,Benign neoplasm of breast,65264,63226
+23,K409,"Unilateral or unspecified inguinal hernia, without obstruction or gangrene",63274,62112
+24,A162,"Tuberculosis of lung, without mention of bacteriological or histological confirmation",62483,57742
+25,I64,"Stroke, not specified as haemorrhage or infarction",62033,59599
+26,A90,Dengue fever [classical dengue],61553,61168
+27,R509,"Fever, unspecified",59177,58334
+28,N185,"Chronic kidney disease, stage 5",57575,34805
+29,J459,"Asthma, unspecified",56974,50199
+30,J069,"Acute upper respiratory infection, unspecified",55814,54557
+31,I251,Atherosclerotic heart disease,55386,47585
+32,I110,Hypertensive heart disease with (congestive) heart failure,53242,49487
+33,O210,Mild hyperemesis gravidarum,52881,42197
+34,O429,"Premature rupture of membranes, unspecified",52277,51947
+35,A499,"Bacterial infection, unspecified",49946,48546
+36,O48,Prolonged pregnancy,49924,49884
+37,K291,Other acute gastritis,49921,47780
+38,E115,Non-insulin-dependent diabetes mellitus with peripheral circulatory complications,49500,42348
+39,I120,Hypertensive renal disease with renal failure,48385,32318
+40,O410,Olihydramnios,47344,47167
+41,N189,"Chronic renal failure, unspecified",46949,33386
+42,D561,Beta thalassaemia,44157,7037
+43,B349,"Viral infection, unspecified",43737,43242
+44,R104,Other and unspecified abdominal pain,43729,42808
+45,N40,Hyperplasia of prostate,43570,40579
+46,O141,Severe pre-eclampsia,43157,41283
+47,K358,"Acute appendicitis, other and unspecified",41576,41165
+48,O020,Blighted ovum and nonhydatidiform mole,40251,39886
+49,P599,"Neonatal jaundice, unspecified",38516,37703
+50,J449,"Chronic obstructive pulmonary disease, unspecified",38454,34261
+51,P071,Other low birth weight,38306,37783
+52,R560,Febrile convulsions,37928,35105
+53,N200,Calculus of kidney,36739,31964
+54,O630,Prolonged first stage (of labour),35707,35682
+55,I200,Unstable angina,34330,31564
+56,J40,"Bronchitis, not specified as acute or chronic",34295,33645
+57,P211,Mild and moderate birth asphyxia,33264,33247
+58,O829,"Delivery by caesarean section, unspecified",33191,33190
+59,O339,"Maternal care for disproportion, unspecified",32027,32018
+60,Z470,Follow-up care involving removal of fracture plate and other internal fixation device,31534,31090
+61,O821,Delivery by emergency caesarean section,31176,31168
+62,K746,Other and unspecified cirrhosis of liver,31124,22373
+63,O808,Other single spontaneous delivery,30210,30188
+64,O820,Delivery by elective caesarean section,30075,30064
+65,O322,Maternal care for transverse and oblique lie,29913,29886
+66,O321,Maternal care for breech presentation,29577,29524
+67,O631,Prolonged second stage (of labour),29096,29043
+68,J029,"Acute pharyngitis, unspecified",28649,28115
+69,H110,Pterygium,28620,26394
+70,J441,"Chronic obstructive pulmonary disease with acute exacerbation, unspecified",27971,24503
+71,J068,Other acute upper respiratory infections of multiple sites,27605,27078
+72,I619,"Intracerebral haemorrhage, unspecified",26856,26021
+73,I119,Hypertensive heart disease without (congestive) heart failure,26708,25734
+74,J180,Bronchopneumonia unspecified,26160,25743
+75,H813,Other peripheral verti,26003,25173
+76,A419,"Septicaemia, unspecified",25290,24926
+77,J350,Chronic tonsillitis,24843,24623
+78,O064,"Unspecified abortion, incomplete, without complication",24722,24500
+79,F200,Paranoid schizophrenia,24705,19687
+80,O441,Placenta praevia with haemorrhage,24240,21587
+81,D259,"Leiomyoma of uterus, unspecified",23853,22011
+82,K921,Melaena,23783,22507
+83,R42,Dizziness and giddiness,23370,22672
+84,O034,"Spontaneous abortion, incomplete, without complication",22825,22620
+85,J209,"Acute bronchitis, unspecified",22510,22100
+86,Z038,Observation for other suspected diseases and conditions,22084,21653
+87,N132,Hydronephrosis with renal and ureteral calculous obstruction,22051,20278
+88,K219,Gastro-oesophageal reflux disease without oesophagitis,21989,21130
+89,C509,"Malignant neoplasm of breast, unspecified",21600,17928
+90,J189,Pneumonia unspecified,21535,21200
+91,N832,Other and unspecified ovarian cysts,21506,20839
+92,I209,"Angina pectoris, unspecified",21423,19894
+93,N201,Calculus of ureter,21419,19514
+94,K352,Acute appendicitis with generalized peritonitis,21334,21238
+95,D210,"Other benign neoplasm of connective and other soft tissue of head, face and neck",21206,21030
+96,O421,"Premature rupture of membranes, onset of labour after 24 hours",21019,20937
+97,O200,Threatened abortion,20884,19893
+98,R101,Pain localized to upper abdomen,20503,19773
+99,E149,Unspecified diabetes mellitus without complications,20476,19199
+100,J440,Chronic obstructive pulmonary disease with acute lower respiratory infection,20297,18688
+TOTAL,,,5473478,5027598

@@ -1,0 +1,103 @@
+100 Penyakit Terbanyak pada RJTL Tahun 2014,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Kunjungan,Jumlah Peserta
+1,Z098,Follow-up examination after other treatment for other conditions,6240640,1862581
+2,,,3000393,1261085
+3,Z501,Other physical therapy,750964,103966
+4,Z491,Extracorporeal dialysis,732338,21366
+5,I10,Essential (primary) hypertension,449119,287021
+6,Z099,Follow-up examination after unspecified treatment for other conditions,405046,146346
+7,Z090,Follow-up examination after surgery for other conditions,377594,221544
+8,K30,Dyspepsia,285447,225514
+9,Z480,Attention to surgical dressings and sutures,272103,156545
+10,Z760,Issue of repeat prescription,251788,80352
+11,N180,End-stage renal disease,213443,14388
+12,Z488,Other specified surgical follow-up care,203093,119653
+13,Z961,Presence of intraocular lens,189764,75383
+14,Z088,Follow-up examination after other treatment for malignant neoplasm,189118,54227
+15,E119,Non-insulin-dependent diabetes mellitus without complications,185073,101200
+16,Z867,Personal history of diseases of the circulatory system,184970,71685
+17,Z038,Observation for other suspected diseases and conditions,181547,129270
+18,N189,"Chronic renal failure, unspecified",180345,22119
+19,J459,"Asthma, unspecified",175997,104038
+20,Z349,"Supervision of normal pregnancy, unspecified",175407,109502
+21,K041,Necrosis of pulp,164254,103079
+22,Z509,"Care involving use of rehabilitation procedure, unspecified",163553,22310
+23,I500,Congestive heart failure,160355,82814
+24,Z489,"Surgical follow-up care, unspecified",156870,97773
+25,H521,Myopia,155320,150163
+26,H524,Presbyopia,151584,148664
+27,Z510,Radiotherapy session,150693,9469
+28,E149,Unspecified diabetes mellitus without complications,150472,83661
+29,Z992,Dependence on renal dialysis,150421,5168
+30,Z490,Preparatory care for dialysis,142442,4655
+31,I119,Hypertensive heart disease without (congestive) heart failure,135796,75408
+32,Z865,Personal history of other mental and behavioural disorders,130686,26992
+33,Z348,Supervision of other normal pregnancy,127149,81638
+34,Z097,Follow-up examination after combined treatment for other conditions,123881,51800
+35,A162,"Tuberculosis of lung, without mention of bacteriological or histological confirmation",122189,63501
+36,M545,Low back pain,121225,60782
+37,J069,"Acute upper respiratory infection, unspecified",121037,105050
+38,Z866,Personal history of diseases of the nervous system and sense organs,119491,48794
+39,Z094,Follow-up examination after treatment of fracture,119212,52886
+40,Z719,"Counselling, unspecified",117852,52830
+41,H269,"Cataract, unspecified",117038,78303
+42,Z863,"Personal history of endocrine, nutritional and metabolic diseases",114610,39637
+43,R509,"Fever, unspecified",112280,104393
+44,Z093,Follow-up examination after psychotherapy,106489,23527
+45,K040,Pulpitis,103546,65641
+46,A09,Diarrhoea and gastroenteritis of presumed infectious origin,99754,92886
+47,I251,Atherosclerotic heart disease,98114,54809
+48,N40,Hyperplasia of prostate,84624,40789
+49,Z492,Other dialysis,84347,3500
+50,Z870,Personal history of diseases of the respiratory system,81259,39398
+51,Z089,Follow-up examination after unspecified treatment for malignant neoplasm,80473,30055
+52,G409,"Epilepsy, unspecified",80434,28329
+53,J40,"Bronchitis, not specified as acute or chronic",79840,66512
+54,Z873,Personal history of diseases of the musculoskeletal system and connective tissue,78108,28487
+55,J449,"Chronic obstructive pulmonary disease, unspecified",77441,40973
+56,K297,"Gastritis, unspecified",76150,66633
+57,H612,Impacted cerumen,74165,62679
+58,Z392,Routine postpartum follow-up,73264,56080
+59,I64,"Stroke, not specified as haemorrhage or infarction",71671,37316
+60,M5459,"Low back pain, site unspecified",70850,37238
+61,H520,Hypermetropia,69280,67867
+62,R51,Headache,68849,56364
+63,Z010,Examination of eyes and vision,68018,36398
+64,R104,Other and unspecified abdominal pain,64516,59504
+65,H522,Astigmatism,63618,62048
+66,I110,Hypertensive heart disease with (congestive) heart failure,63004,37886
+67,Z861,Personal history of infectious and parasitic diseases,62949,28134
+68,N390,"Urinary tract infection, site not specified",62907,54639
+69,Z988,Other specified postsurgical states,61925,39958
+70,Z012,Dental examination,61855,29650
+71,M199,"Arthrosis, unspecified",59960,36963
+72,T141,Open wound of unspecified body region,58977,52866
+73,Z508,Care involving use of other rehabilitation procedures,57277,10442
+74,A010,Typhoid fever,53549,49289
+75,Z030,Observation for suspected tuberculosis,50724,33340
+76,I694,"Sequelae of stroke, not specified as haemorrhage or infarction",50558,20373
+77,Z479,"Orthopaedic follow-up care, unspecified",50221,20854
+78,H259,"Senile cataract, unspecified",50123,37647
+79,R42,Dizziness and giddiness,50027,40074
+80,Z871,Personal history of diseases of the digestive system,48742,29068
+81,Z549,Convalescence following unspecified treatment,46924,15670
+82,Z874,Personal history of diseases of the genitourinary system,46075,21191
+83,F200,Paranoid schizophrenia,45712,17160
+84,Z131,Special screening examination for diabetes mellitus,45458,17369
+85,C509,"Malignant neoplasm of breast, unspecified",45199,19942
+86,H110,Pterygium,44632,34029
+87,Z340,Supervision of normal first pregnancy,44395,32299
+88,E118,Non-insulin-dependent diabetes mellitus with unspecified complications,43557,25488
+89,Z478,Other specified orthopaedic follow-up care,43425,21259
+90,D24,Benign neoplasm of breast,43173,31143
+91,K409,"Unilateral or unspecified inguinal hernia, without obstruction or gangrene",42909,31086
+92,Z390,Care and examination immediately after delivery,42728,34094
+93,H109,"Conjunctivitis, unspecified",42558,38935
+94,J029,"Acute pharyngitis, unspecified",42394,38910
+95,I259,"Chronic ischaemic heart disease, unspecified",41565,25488
+96,Z511,Chemotherapy session for neoplasm,41312,10833
+97,N200,Calculus of kidney,40673,27820
+98,Z136,Special screening examination for cardiovascular disorders,40443,16695
+99,Z138,Special screening examination for other specified diseases and disorders,40103,22137
+100,Z470,Follow-up care involving removal of fracture plate and other internal fixation device,39669,19577
+TOTAL,,,21233111,8796896

@@ -1,0 +1,12 @@
+Pertumbuhan Peserta JKN berdasarkan Segmen Peserta
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:47:21.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=b84c98f4-96b0-11eb-af47-8914121ac8a5
+Unduh: https://drive.google.com/uc?export=download&id=1tJUzJkaLtc7UWXVtMr9CKWNz24blv6Ln
+
+Kolom:
+- 2018: Pertumbuhan Peserta JKN berdasarkan Segmen Peserta pada Tahun 2018
+- 2017: Pertumbuhan Peserta JKN berdasarkan Segmen Peserta pada Tahun 2017
+- 2016: Pertumbuhan Peserta JKN berdasarkan Segmen Peserta pada Tahun 2016
+- 2015: Pertumbuhan Peserta JKN berdasarkan Segmen Peserta pada Tahun 2015
+- 2014: Pertumbuhan Peserta JKN berdasarkan Segmen Peserta pada Tahun 2014
+- Segmen Peserta: Pertumbuhan Peserta JKN berdasarkan Segmen Peserta

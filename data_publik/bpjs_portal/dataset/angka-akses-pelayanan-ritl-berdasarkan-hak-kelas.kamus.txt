@@ -1,0 +1,7 @@
+Angka Akses Pelayanan RITL berdasarkan Hak Kelas
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-10-26 17:19:16.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=3c47e261-3645-11ec-9ed0-99d16a9ca94f
+Unduh: https://drive.google.com/uc?export=download&id=1o6B16Ge5BvzP8oJvGoJcPUCvgZs5DlWP
+
+Kolom:
+

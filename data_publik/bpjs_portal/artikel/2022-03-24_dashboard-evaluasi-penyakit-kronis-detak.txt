@@ -1,0 +1,38 @@
+Judul   : DASHBOARD EVALUASI PENYAKIT KRONIS (DETAK)
+Tanggal : 2022-03-24
+Sumber  : https://data.bpjs-kesehatan.go.id/bpjs-portal/action/blog-detail.cbi?id=bc1997bc-ab5b-11ec-a98c-e12c7bba08a5
+Tautan  : https://data.bpjs-kesehatan.go.id/, https://dataviz.bpjs-kesehatan.go.id/
+
+DASHBOARD EVALUASI PENYAKIT KRONIS (DETAK)
+approval
+2022-03-24
+4,448
+Dalam rangka mendukung program pemerintah melalui Standard Pelayanan Minimal (SPM) yang secara langsung dan berdampak pada keberlangsungan program JKN terutama pada penurunan penyakit kronis, maka dibutuhkan informasi yang akurat untuk menggambarkan profile kondisi kesehatan pada wilayah setempat.
+Terkait dengan hal tersebut kedeputian MDI membuat
+Dashboard
+Evaluasi Penyakit Kronis (Detak)
+.
+Dashboard
+tersebut merupakan
+analytics dashboard
+yang disiapkan kepada Pemerintah Daerah bertujuan sebagai alat bantu untuk mengetahui tingkat prevalensi dan insiden terhadap 2 (dua) penyakit kronis utama
+(mother of diseases)
+yaitu Diabetes Melitus dan Hipertensi. Berbagai fitur pada
+dashboard
+ini dapat diakses seperti tingkat prevalensi dan insiden terhadap kasus, klasifikasi jenis penyakit DM Tipe 1, Tipe 2 dan komplikasi, hipotesis signifkansi terhadap dampak melalui uji T-test dan berbagai fitur lainnya yang dapat diakses secara interaktif pada
+dashboard
+.
+Pemanfaatan
+Big Data Analytics
+akan sangat membantu pemenuhan kebutuhan monitoring dan evaluasi tren dan distribusi riwayat pelayanan kesehatan yang terutama fokus pada utilisasi penyakit Diabetes Meilitus dan Hipertensi pada Peserta Program JKN.
+Tujuan dari
+dashboard
+tersebut agar dapat membantu Pemerintah Daerah dalam memahami kondisi sesuai karakteristik wilayah kerjanya, meningkatkan peran dalam penyusunan kebijakan strategis bidang Kesehatan serta membantu akses terhadap data dan informasi dalam penerapan
+evidence-based policy
+Dashboard Detak dapat diakses melalui :
+Portal Data JKN :
+https://data.bpjs-kesehatan.go.id/
+Aplikasi Dataviz :
+https://dataviz.bpjs-kesehatan.go.id/
+dan telah dilakukan pengamanan sesuai dengan hak akses masing-masing Pemerintah Daerah.
+PROGRAM JKN-KIS

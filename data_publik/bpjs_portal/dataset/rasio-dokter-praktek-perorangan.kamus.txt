@@ -1,0 +1,12 @@
+Rasio Dokter Praktek Perorangan
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:39:10.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=0ed7f85c-9e7c-11eb-9a34-9556cdb02e77
+Unduh: https://drive.google.com/uc?export=download&id=1a3AsK39WBP0MvXyXrJZlf9q9e19n32P_
+
+Kolom:
+- 2018: Rasio Dokter Prakter Perorangan pada tahun 2018
+- 2017: Rasio Dokter Prakter Perorangan pada tahun 2017
+- 2016: Rasio Dokter Prakter Perorangan pada tahun 2016
+- 2015: Rasio Dokter Prakter Perorangan pada tahun 2015
+- 2014: Rasio Dokter Prakter Perorangan pada tahun 2014
+- Provinsi: Rasio Dokter Prakter Perorangan per Provinsi

@@ -1,0 +1,12 @@
+Rasio FKRTL
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:44:28.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=0c9d061a-9e7d-11eb-9a34-cdf2f078b3b6
+Unduh: https://drive.google.com/uc?export=download&id=1mP4olz70qmeYF9FHGAfpNiO_tEKlpily
+
+Kolom:
+- 2018: Rasio FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2018
+- 2017: Rasio FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2017
+- 2016: Rasio FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2016
+- 2015: Rasio FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2015
+- 2014: Rasio FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2014
+- Provinsi: Rasio FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan berdasarkan Provinsi

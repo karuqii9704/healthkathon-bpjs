@@ -1,0 +1,104 @@
+100 Penyakit Terbanyak pada RITP Tahun 2014,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Admisi,Jumlah Peserta
+1,O809,"Single spontaneous delivery, unspecified",197101,184227
+2,O800,Spontaneous vertex delivery,162075,152142
+3,A010,Typhoid fever,75182,71181
+4,O808,Other single spontaneous delivery,64708,60321
+5,A09,Diarrhoea and gastroenteritis of presumed infectious origin,40846,39368
+6,K297,"Gastritis, unspecified",32077,30290
+7,K30,Dyspepsia,31402,29544
+8,A090,Other and unspecified gastroenteritis and colitis of infectious origin,19513,18931
+9,R509,"Fever, unspecified",18636,17978
+10,O801,Spontaneous breech delivery,18501,17582
+11,I10,Essential (primary) hypertension,17458,16308
+12,O000,Abdominal pregnancy,12032,11322
+13,Z392,Routine postpartum follow-up,11821,5834
+14,Z370,Single live birth,10161,9485
+15,K291,Other acute gastritis,8852,8448
+16,K309,Functional dyspepsia,6942,6632
+17,Z369,"Antenatal screening, unspecified",6841,4246
+18,K290,Acute haemorrhagic gastritis,6801,6445
+19,I100,Essential (primary) hypertension,6796,6450
+20,R500,Fever with chills,6620,6424
+21,A91,Dengue haemorrhagic fever,6413,6112
+22,J459,"Asthma, unspecified",6410,5724
+23,A90,Dengue fever [classical dengue],5963,5708
+24,Z349,"Supervision of normal pregnancy, unspecified",5439,4468
+25,O429,"Premature rupture of membranes, unspecified",5438,5147
+26,K296,Other gastritis,5399,5181
+27,Z348,Supervision of other normal pregnancy,5358,4515
+28,B509,"Plasmodium falciparum malaria, unspecified",5138,4871
+29,R11,Nausea and vomiting,4908,4719
+30,J4599,"Asthma, unspecified",4712,4209
+31,I101,Essential (primary) hypertension,4693,4427
+32,J069,"Acute upper respiratory infection, unspecified",4616,4513
+33,I109,Essential (primary) hypertension,4485,4221
+34,O210,Mild hyperemesis gravidarum,3921,3508
+35,I64,"Stroke, not specified as haemorrhage or infarction",3770,3464
+36,O60,Preterm labour and delivery,3767,3565
+37,Z390,Care and examination immediately after delivery,3731,2267
+38,O994,"Diseases of the circulatory system complicating pregnancy, childbirth and the puerperium",3640,3348
+39,Z340,Supervision of normal first pregnancy,3482,2870
+40,O630,Prolonged first stage (of labour),3437,3283
+41,R104,Other and unspecified abdominal pain,3409,3251
+42,J450,Predominantly allergic asthma,3394,2981
+43,N390,"Urinary tract infection, site not specified",3135,2998
+44,J00,Acute nasopharyngitis [common cold],3119,3043
+45,K295,"Chronic gastritis, unspecified",3089,2968
+46,R560,Febrile convulsions,3055,2902
+47,H814,Verti of central origin,3046,2938
+48,Z33,"Pregnant state, incidental",3000,2638
+49,R51,Headache,2903,2818
+50,J4590,"Asthma, unspecified",2806,2546
+51,K529,"Noninfective gastroenteritis and colitis, unspecified",2706,2637
+52,A014,"Paratyphoid fever, unspecified",2605,2507
+53,R100,Acute abdomen,2581,2480
+54,Z309,"Contraceptive management, unspecified",2544,2052
+55,O838,Other specified assisted single delivery,2382,2289
+56,A060,Acute amoebic dysentery,2337,2294
+57,E119,Non-insulin-dependent diabetes mellitus without complications,2319,2092
+58,J209,"Acute bronchitis, unspecified",2319,2230
+59,I500,Congestive heart failure,2266,2000
+60,O420,"Premature rupture of membranes, onset of labour within 24 hours",2207,2102
+61,A759,"Typhus fever, unspecified",2156,2090
+62,A150,"Tuberculosis of lung, confirmed by sputum microscopy with or without culture",2122,1905
+63,E110,Non-insulin-dependent diabetes mellitus with coma,2091,1903
+64,B519,Plasmodium vivax malaria without complication,2075,1966
+65,O839,"Assisted single delivery, unspecified",2069,2024
+66,O471,False labour at or after 37 completed weeks of gestation,2053,1955
+67,B54,Unspecified malaria,2032,1956
+68,J40,"Bronchitis, not specified as acute or chronic",2001,1936
+69,O679,"Intrapartum haemorrhage, unspecified",1998,1881
+70,O211,Hyperemesis gravidarum with metabolic disturbance,1900,1693
+71,N23,Unspecified renal colic,1876,1787
+72,A881,Epidemic verti,1824,1762
+73,Z379,"Outcome of delivery, unspecified",1782,1764
+74,H813,Other peripheral verti,1776,1707
+75,K520,Gastroenteritis and colitis due to radiation,1767,1726
+76,O268,Other specified pregnancy-related conditions,1766,1711
+77,K299,"Gastroduodenitis, unspecified",1748,1693
+78,J449,"Chronic obstructive pulmonary disease, unspecified",1679,1543
+79,Z875,"Personal history of complications of pregnancy, childbirth and the puerperium",1606,1513
+80,O639,"Long labour, unspecified",1594,1488
+81,R060,Dyspnoea,1559,1450
+82,J180,"Bronchopneumonia, unspecified",1520,1441
+83,K250,"Gastric ulcer, acute with haemorrhage",1510,1471
+84,A910,"Dengue haemorrhagic fever
+",1487,1437
+85,O48,Prolonged pregnancy,1487,1428
+86,J029,"Acute pharyngitis, unspecified",1460,1426
+87,O080,Genital tract and pelvic infection following abortion and ectopic and molar pregnancy,1450,1273
+88,Z321,Pregnancy confirmed,1371,1001
+89,K259,"Gastric ulcer, unspecified as acute or chronic, without haemorrhage or perforation",1361,1305
+90,O141,Severe pre-eclampsia,1334,1249
+91,M791,Myalgia,1318,1293
+92,O631,Prolonged second stage (of labour),1297,1240
+93,B500,Plasmodium falciparum malaria with cerebral complications,1256,1222
+94,A78,Q fever,1236,1159
+95,I509,"Heart failure, unspecified",1143,1037
+96,Z353,Supervision of pregnancy with history of insufficient antenatal care,1143,726
+97,A011,Paratyphoid fever A,1115,1076
+98,E149,Unspecified diabetes mellitus without complications,1103,1025
+99,J060,Acute larynpharyngitis,1060,1040
+100,A160,"Tuberculosis of lung, bacteriologically and histologically negative",1048,976
+TOTAL,,,968480,901322

@@ -1,0 +1,12 @@
+Puskesmas yang Bekerjasama
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:46:59.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=51a87542-9c16-11eb-9a34-313fb8a4763d
+Unduh: https://drive.google.com/uc?export=download&id=1E4IbKR9hZ_Qx1Y4eaFlYN71Otx9V6Iyv
+
+Kolom:
+- 2018: Puskesmas yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2018
+- 2017: Puskesmas yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2017
+- 2016: Puskesmas yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2016
+- 2015: Puskesmas yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2015
+- 2014: Puskesmas yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2014
+- Provinsi: Puskesmas yang Bekerjasama dengan BPJS Kesehatan berdasarkan Provinsi

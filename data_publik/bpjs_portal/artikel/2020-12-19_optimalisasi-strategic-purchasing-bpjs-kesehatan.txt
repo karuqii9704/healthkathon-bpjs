@@ -1,0 +1,37 @@
+Judul   : Optimalisasi Strategic Purchasing BPJS KESEHATAN
+Tanggal : 2020-12-19
+Sumber  : https://data.bpjs-kesehatan.go.id/bpjs-portal/action/blog-detail.cbi?id=b3dc8451-41a3-11eb-a5e7-61fcf63f837d
+Tautan  : -
+
+Optimalisasi Strategic Purchasing BPJS KESEHATAN
+admin
+2020-12-19
+2,689
+Pendahuluan
+Fungsi pembelian dalam sistem pendanaan kesehatan memegang peranan krusial. Fungsi ini mengkaitkan sumber daya yang telah dimobilisasi dengan pemenuhan tujuan untuk mencapai cakupan universal pada aspek pemberian layanan kesehatan yang berkualitas dan secara empiris terbukti efektif. Fungsi pembelian juga berpotensi memainkan peran kunci kinerja sistem kesehatan  jika penerapannya disesuaikan dengan kebutuhan serta  keinginan penduduk. Mengingat tidak ada satu model organisasional pembelian standar, regulasi yang mengatur fungsi pembelian harus ditentukan terutama oleh bentuk pendanaan dan penyediaan layanan kesehatan di masing-masing negara.
+Praktik pembelian dalam sistem pendanaan kesehatan telah melahirkan dua label fungsi: pasif dan aktif. Fungsi pembelian pasif berarti pihak pembeli hanya mengikuti alokasi anggaran yang sudah ditentukan. Sementara fungsi pembelian aktif (atau belanja strategis) melibatkan upaya pencarian terus-menerus untuk menggali cara terbaik dalam memaksimalkan kinerja sistem kesehatan.
+Fungsi belanja strategis bertujuan meningkatkan kinerja sistem kesehatan melalui alokasi sumber dana efektif ke penyedia jasa layanan. Pemenuhan tujuan tersebut melibatkan tiga jenis keputusan: (i) intervensi atau layanan apa yang harus dibeli dan disediakan untuk merespon kebutuhan dan keinginan penduduk dengan mempertimbangkan prioritas kesehatan nasional dan bukti efektifitas biaya;  (ii) bagaimana layanan itu harus dibeli, termasuk mekanisme kontrak dan sistem pembayaran, serta; (iii) dari siapa layanan itu dibeli dengan memperhatikan kualitas dan efisiensi sisi penyedia jasa layanan. Dengan demikian, pemenuhan fungsi belanja strategis  harus mengarah pada serangkaian upaya untuk memaksimalkan keuntungan agregat dari sumber  daya (efisiensi alokatif). Hal ini menggiring pada masalah  klasik yang dihadapi perencana  kesehatan  untuk menjembatani kesenjangan rencana dan alokasi sumber daya.
+A
+r
+a
+h
+Kebijakan
+Studi “Optimalisasi Belanja Strategis BPJS Kesehatan (BPJS Kesehatan) tahun 2016” berhasil mengidentikasi serangkaian agenda yang harus ditindaklanjuti. Serangkaian agenda yang dimaksud, diringkas dalam poin-poin sebagai berikut:
+1)  Memperbaiki tata kelola dan hubungan BPJS Kesehatan dengan aktor kunci program JKN-KIS (yakni hubungan BPJS Kesehatan dengan pemerintah, penyedia jasa layanan kesehatan atau providers, dan warga negara) untuk mengoptimalkan fungsi belanja strategis (tata hubungan payer dengan aktor lain disajikan dalam kotak 3).
+2)  Menyepakati dan menterjemahkan hubungan payer dengan tiga aktor kunci (pemerintah, providers dan populasi) dalam
+tataran regulasi tingkat Peraturan Presiden. Substansi yang dibahas dalam regulasi harus mengatur tata hubungan BPJS Kesehatan dengan tiga aktor kunci sebagaimana disajikan dalam Kotak 1.
+3)  Substansi yang dibahas dalam Peraturan Presiden juga harus membahas hal-hal sbb:
+[a] memberikan mandat BPJS Kesehatan untuk menjalankan fungsi belanja strategis, khususnya dalam pengembangan inovasi pembayaran yang menjamin adanya kualitas dan kesinambungan pendanaan;
+[b] memberikan peran konkrit bagi BPJS Kesehatan untuk melakukan sejumlah fungsi belanja strategis;  seperti:  (i) mekanisme penetapan harga layanan program JKN-KIS untuk Kapitasi, INA-CBGs, non Kapitasi dan non INA-CBGs; (ii) berkolaborasi dengan komite teknologi kesehatan dalam menilai formularium yang masuk manfaat JKN dengan mengadopsi luaran dari kajian teknologi kesehatan; dan (iii) menerapkan audit medis sebagai bagian program telaah utilisasi untuk mencegah kecurangan dalam implementasi skema pembayaran Kapitasi danIN A-CBGs;
+4)  Menyusun naskah akademik sebagai basis formulasi Peraturan  Presiden tersebut  di atas. Isi naskah akademik ini bisa disintesis dari hasil kajian ini.
+5)  Menyusun rencana aksi dan menjalankannya untuk merealisasikan  agenda reformasi dalam rangka mengoptimalkan fungsi belanja strategis .
+6)  Tetap melanjutkan  reformasi  untuk mewujudkan perbaikan  dalam  pelaksanaan  JKN dan menjaga  kesinambungan pendanaan, namun tidak bertentangan dengan amanat UU SJSN dan UU BPJS.
+Reformasi yang dimaksud bisa dalam bentuk:
+[a] Mengkombinasikan skema pembayaran DRG dengan global budget demi terjaganya budget neutrality;
+[b] Mengoptimalkan luaran credentialing untuk memprediksi volume layanan rumah sakit dan CBG yang dapat dilayani oleh
+Faskes;
+[c] Menetapkan volume maksimal yang dilayani oleh rumah sakit dan mencantumkannya dalam kontrak kerja;
+[d] Mengembangkan aturan pembayaran pada kasus readmisi yang dilandasi dari kajian empiris terkait simulasi dan dampaknya terhadap rumah sakit serta BPJS Kesehatan.
+[e] Mengembangkan aturan pembayaran pada kasus rujukan. Pilihan pembayaran bagi kasus rujukan adalah: (1) Kasus rujukan dapat dibuat kelompok DRG terpisah seperti Thai DRG; (2) Menetapkan cost weight khusus tanpa membuat kelompok baru seperti G-DRGs, dan (3) Memasukkannya ke dalam pengaturan pembayaran kasus outlier. Bila kasus dirawat di antara batas bawah dan batas atas lama hari rawat maka kasus tersebut dibayar penuh tapi bila dirawat kurang dari bawah batas lama hari rawat maka akan dibayar sesuai pengaturan kasus outlier.
+[f] Mengembangkan aturan pembayaran pada kasus outlier. Perlu dibuat pengaturan terkait pembayaran untuk kasus outlier. Pembayaran ini akan mengurangi risiko baik bagi BPJS Kesehatan maupun rumah sakit, serta mencegah adanya kasus bloody discharge. Untuk maksud ini, diperlukan analisis lebih dalam terkait simulasi dan dampaknya terhadap rumah sakit serta BPJS Kesehatan.
+Fasilitas Kesehatan

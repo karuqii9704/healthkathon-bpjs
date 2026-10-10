@@ -1,0 +1,19 @@
+Judul   : PELUNCURAN DATA SAMPEL BPJS KESEHATAN 2024 (2015-2023)
+Tanggal : 2024-12-18
+Sumber  : https://data.bpjs-kesehatan.go.id/bpjs-portal/action/blog-detail.cbi?id=779e0f02-bd13-11ef-a976-9b1ff87869bd
+Tautan  : https://data.bpjs-kesehatan.go.id/bpjs-portal/action/register.cbi
+
+PELUNCURAN DATA SAMPEL BPJS KESEHATAN 2024 (2015-2023)
+approval
+2024-12-18
+21,448
+Program Jaminan Kesehatan Nasional-Kartu Indonesia Sehat (JKN-KIS) merupakan wujud komitmen Indonesia terhadap tujuan pembangunan berkelanjutan yaitu memastikan setiap individu memiliki akses terhadap pelayanan kesehatan yang adil, komprehensif dan bermutu tanpa hambatan finansial. Program ini diselenggarakan oleh Badan Penyelenggara Jaminan Sosial Kesehatan (BPJS Kesehatan) sesuai amanat Undang-Undang Nomor 40 Tahun 2004 tentang Sistem Jaminan Sosial Nasional (SJSN) dan Undang-Undang Nomor 24 Tahun 2011 tentang Badan Penyelenggara Jaminan Sosial (BPJS).
+Hingga 30 Juni 2024, cakupan kepesertaan JKN telah mencapai 273,5 juta jiwa atau 96,8% dari total penduduk Indonesia. Capaian ini menunjukkan kemajuan signifikan, namun masih dalam proses untuk memenuhi target Rencana Pembangunan Jangka Menengah Nasional (RPJMN) 2020–2024, yaitu sedikitnya 98% dari total populasi.
+Selama 10 tahun implementasinya, program JKN-KIS yang melayani seluruh penduduk Indonesia telah menghasilkan data dalam jumlah besar yang dikelola oleh BPJS Kesehatan. Sebagai upaya mendukung pengembangan pendidikan dan riset, BPJS Kesehatan menyediakan data sampel sebagai representasi dari keseluruhan data kepesertaan dan pelayanan kesehatan, yang telah melalui proses standarisasi dan ekstraksi.(1) Data ini mencakup data kepesertaan dan klaim, yang merekam pemanfaatan layanan JKN-KIS oleh peserta di fasilitas kesehatan yang bekerja sama dengan BPJS Kesehatan. Data klaim mencatat aktivitas pelayanan yang kemudian diklaim oleh fasilitas kesehatan kepada BPJS Kesehatan. Ketersediaan data klaim individu membuka peluang besar untuk mempelajari berbagai aspek dari kumpulan data administratif kesehatan yang luas, seperti utilisasi layanan kesehatan, pola penyakit penduduk, prediksi risiko, angka readmisi pasien, jenis pengobatan, efisiensi biaya klaim, dan lainnya. Harapannya, data sampel ini dapat dimanfaatkan oleh peneliti, akademisi serta pembuat kebijakan untuk menganalisis, pendokumentasikan dan menyempurnakan program di masa mendatang.
+Pada tahun keenam sejak pertama kali dirilis pada 2019, data sampel BPJS Kesehatan terus menyediakan data sampel general dan data sampel kontekstual meliputi Diabetes Mellitus (DM), Tuberkulosis (TB), dan Kesehatan Ibu dan Anak (KIA). Tahun ini ada penambahan satu jenis data kontekstual baru, yaitu kesehatan mental. Baik data sampel general maupun kontekstual memuat jenis variabel yang sama, namun perbedaannya terletak pada basis data yang digunakan dalam metodologi pemilihan sampel. Salah satu keunggulan data sampel BPJS Kesehatan adalah tersedianya data kohort (longitudinal) yang mencakup informasi peserta dan layanan dari tahun 2015 hingga 2023.
+Harapan kami adalah agar data sampel ini dapat diakses secara lebih luas oleh berbagai kalangan dalam masyarakat. Untuk pihak yang berminat mengunduh data sampel dari tahun 2015 hingga 2023, silakan klik tombol '
+Unduh
+'. Dengan ketersediaan data sampel yang terus diperbarui sesuai dengan periode waktu, diharapkan dapat meningkatkan minat dalam penelitian terkait program JKN, sekaligus memperkuat kesesuaian dan relevansi rekomendasi kebijakan.
+PROGRAM JKN-KIS
+Statistik JKN
+Data Sampel

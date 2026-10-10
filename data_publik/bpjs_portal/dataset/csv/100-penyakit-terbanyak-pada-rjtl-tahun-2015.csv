@@ -1,0 +1,103 @@
+100 Penyakit Terbanyak pada RJTL Tahun 2015,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Kunjungan,Jumlah Peserta
+1,Z098,Follow-up examination after other treatment for other conditions,15174191,3632872
+2,Z501,Other physical therapy,1736431,196834
+3,Z491,Extracorporeal dialysis,1453409,31201
+4,Z099,Follow-up examination after unspecified treatment for other conditions,938173,245207
+5,Z090,Follow-up examination after surgery for other conditions,696558,384445
+6,Z760,Issue of repeat prescription,517230,152254
+7,Z480,Attention to surgical dressings and sutures,442526,249924
+8,I10,Essential (primary) hypertension,423919,302614
+9,Z961,Presence of intraocular lens,387858,142376
+10,K30,Dyspepsia,355316,291215
+11,Z088,Follow-up examination after other treatment for malignant neoplasm,346933,82853
+12,Z509,"Care involving use of rehabilitation procedure, unspecified",339085,38310
+13,Z488,Other specified surgical follow-up care,330910,191397
+14,Z992,Dependence on renal dialysis,309994,8770
+15,Z867,Personal history of diseases of the circulatory system,305984,101454
+16,Z510,Radiotherapy session,290862,14591
+17,H521,Myopia,289113,280871
+18,Z490,Preparatory care for dialysis,260240,6761
+19,Z349,"Supervision of normal pregnancy, unspecified",259128,154208
+20,Z093,Follow-up examination after psychotherapy,253701,41662
+21,J459,"Asthma, unspecified",250922,153398
+22,H524,Presbyopia,249839,245196
+23,Z489,"Surgical follow-up care, unspecified",244505,148799
+24,K041,Necrosis of pulp,244087,152099
+25,Z097,Follow-up examination after combined treatment for other conditions,238384,81559
+26,Z038,Observation for other suspected diseases and conditions,231591,171154
+27,N180,End-stage renal disease,224798,15616
+28,Z348,Supervision of other normal pregnancy,208507,123606
+29,N189,"Chronic renal failure, unspecified",208242,23049
+30,E119,Non-insulin-dependent diabetes mellitus without complications,201068,121610
+31,Z866,Personal history of diseases of the nervous system and sense organs,197232,68988
+32,Z719,"Counselling, unspecified",194436,101357
+33,R509,"Fever, unspecified",193050,177288
+34,H269,"Cataract, unspecified",186553,123433
+35,Z865,Personal history of other mental and behavioural disorders,186375,31631
+36,Z863,"Personal history of endocrine, nutritional and metabolic diseases",185716,53782
+37,Z094,Follow-up examination after treatment of fracture,178446,73404
+38,M545,Low back pain,175223,92570
+39,K040,Pulpitis,164225,104460
+40,J069,"Acute upper respiratory infection, unspecified",159961,139980
+41,A09,Diarrhoea and gastroenteritis of presumed infectious origin,150933,140753
+42,Z012,Dental examination,143979,59552
+43,Z089,Follow-up examination after unspecified treatment for malignant neoplasm,138702,43443
+44,Z492,Other dialysis,137958,4072
+45,Z010,Examination of eyes and vision,135200,71975
+46,Z873,Personal history of diseases of the musculoskeletal system and connective tissue,134314,38226
+47,Z870,Personal history of diseases of the respiratory system,132308,57111
+48,Z508,Care involving use of other rehabilitation procedures,131740,19727
+49,H522,Astigmatism,129573,126488
+50,I119,Hypertensive heart disease without (congestive) heart failure,122948,82729
+51,Z392,Routine postpartum follow-up,116756,89689
+52,E149,Unspecified diabetes mellitus without complications,113091,70543
+53,A162,"Tuberculosis of lung, without mention of bacteriological or histological confirmation",113084,70712
+54,R104,Other and unspecified abdominal pain,111346,102266
+55,Z511,Chemotherapy session for neoplasm,107019,22411
+56,Z861,Personal history of infectious and parasitic diseases,106466,40061
+57,I500,Congestive heart failure,103235,77624
+58,H612,Impacted cerumen,102224,89455
+59,H520,Hypermetropia,102206,100627
+60,J40,"Bronchitis, not specified as acute or chronic",97793,84928
+61,N40,Hyperplasia of prostate,91789,50675
+62,J449,"Chronic obstructive pulmonary disease, unspecified",89936,52413
+63,R51,Headache,86736,73054
+64,M5459,"Low back pain, site unspecified",86534,45527
+65,K297,"Gastritis, unspecified",86202,77213
+66,Z478,Other specified orthopaedic follow-up care,85765,35972
+67,Z874,Personal history of diseases of the genitourinary system,84304,30775
+68,Z479,"Orthopaedic follow-up care, unspecified",83899,35102
+69,Z988,Other specified postsurgical states,83643,51513
+70,Z548,Convalescence following other treatment,83603,27381
+71,G409,"Epilepsy, unspecified",82487,35169
+72,N390,"Urinary tract infection, site not specified",81936,73115
+73,Z359,"Supervision of high-risk pregnancy, unspecified",78986,47692
+74,T141,Open wound of unspecified body region,78257,71263
+75,Z871,Personal history of diseases of the digestive system,77590,41641
+76,H259,"Senile cataract, unspecified",77531,59043
+77,A010,Typhoid fever,73758,68980
+78,Z358,Supervision of other high-risk pregnancies,72648,44457
+79,I251,Atherosclerotic heart disease,71925,53094
+80,M199,"Arthrosis, unspecified",71425,43382
+81,I64,"Stroke, not specified as haemorrhage or infarction",70351,42023
+82,Z390,Care and examination immediately after delivery,69049,54149
+83,Z505,Speech therapy,68605,7236
+84,Z030,Observation for suspected tuberculosis,67569,45519
+85,Z549,Convalescence following unspecified treatment,66840,19732
+86,H250,Senile incipient cataract,65750,46029
+87,H110,Pterygium,65723,49983
+88,K011,Impacted teeth,64940,48492
+89,I694,"Sequelae of stroke, not specified as haemorrhage or infarction",64744,25633
+90,R42,Dizziness and giddiness,60502,51079
+91,Z470,Follow-up care involving removal of fracture plate and other internal fixation device,58264,27273
+92,Z136,Special screening examination for cardiovascular disorders,56806,19847
+93,J029,"Acute pharyngitis, unspecified",56508,52462
+94,H251,Senile nuclear cataract,56463,36310
+95,D24,Benign neoplasm of breast,56023,44244
+96,N200,Calculus of kidney,55282,40041
+97,M179,"narthrosis, unspecified",54653,28221
+98,Z131,Special screening examination for diabetes mellitus,53645,17741
+99,H109,"Conjunctivitis, unspecified",53464,49177
+100,Z518,Other specified medical care,53232,17637
+TOTAL,,,34512963,11885479

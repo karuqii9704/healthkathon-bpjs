@@ -1,0 +1,103 @@
+100 Penyakit Terbanyak pada RJTL Tahun 2018,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Kunjungan,Jumlah Peserta
+1,Z098,Follow-up examination after other treatment for other conditions,29115874,6661148
+2,Z098,Followup examination after other treatment for other conditions,9962920,3426031
+3,Z501,Other physical therapy,4245536,399440
+4,Z491,Extracorporeal dialysis,2793201,54069
+5,Z099,Follow-up examination after unspecified treatment for other conditions,1062577,288915
+6,Z961,Presence of intraocular lens,856668,301103
+7,Z760,Issue of repeat prescription,852447,197878
+8,Z090,Follow-up examination after surgery for other conditions,823941,492443
+9,Z480,Attention to surgical dressings and sutures,716246,417363
+10,Z992,Dependence on renal dialysis,680147,16147
+11,K30,Dyspepsia,586562,509545
+12,Z867,Personal history of diseases of the circulatory system,563698,145863
+13,Z509,"Care involving use of rehabilitation procedure, unspecified",536737,56379
+14,Z010,Examination of eyes and vision,503226,217733
+15,Z093,Follow-up examination after psychotherapy,502585,85398
+16,Z719,"Counselling, unspecified",482392,286234
+17,Z490,Preparatory care for dialysis,481370,10774
+18,Z488,Other specified surgical follow-up care,430455,266802
+19,Z088,Follow-up examination after other treatment for malignant neoplasm,429361,109702
+20,Z510,Radiotherapy session,418459,22133
+21,H521,Myopia,406724,396882
+22,Z012,Dental examination,392555,134366
+23,Z866,Personal history of diseases of the nervous system and sense organs,365895,116390
+24,Z348,Supervision of other normal pregnancy,365266,215957
+25,Z508,Care involving use of other rehabilitation procedures,361949,39909
+26,R509,"Fever, unspecified",348776,316284
+27,K041,Necrosis of pulp,345281,229310
+28,Z038,Observation for other suspected diseases and conditions,344291,267981
+29,R104,Other and unspecified abdominal pain,342170,305857
+30,J459,"Asthma, unspecified",316405,209572
+31,Z873,Personal history of diseases of the musculoskeletal system and connective tissue,314060,66973
+32,Z099,Followup examination after unspecified treatment for other conditions,302127,123983
+33,Z097,Follow-up examination after combined treatment for other conditions,297839,108957
+34,Z090,Followup examination after surgery for other conditions,289783,179050
+35,Z489,"Surgical follow-up care, unspecified",278100,179132
+36,Z865,Personal history of other mental and behavioural disorders,272167,41123
+37,Z349,"Supervision of normal pregnancy, unspecified",270862,172244
+38,I10,Essential (primary) hypertension,268140,229469
+39,H524,Presbyopia,267120,263399
+40,Z511,Chemotherapy session for neoplasm,246816,47534
+41,Z492,Other dialysis,244877,6160
+42,A099,Gastroenteritis and colitis of unspecified origin,240236,226448
+43,H522,Astigmatism,239899,235462
+44,Z509,Care involving use of rehabilitation procedure unspecified,233459,31254
+45,K040,Pulpitis,229812,168353
+46,Z870,Personal history of diseases of the respiratory system,229183,87754
+47,Z359,"Supervision of high-risk pregnancy, unspecified",209972,116687
+48,Z863,"Personal history of endocrine, nutritional and metabolic diseases",208077,61762
+49,M545,Low back pain,203761,131414
+50,E119,Non-insulin-dependent diabetes mellitus without complications,197709,155306
+51,Z871,Personal history of diseases of the digestive system,194784,87704
+52,J069,"Acute upper respiratory infection, unspecified",191950,171988
+53,Z094,Follow-up examination after treatment of fracture,191754,78676
+54,N189,"Chronic renal failure, unspecified",181348,28041
+55,Z478,Other specified orthopaedic follow-up care,181347,65661
+56,Z874,Personal history of diseases of the genitourinary system,180422,56115
+57,Z358,Supervision of other high-risk pregnancies,179040,91986
+58,H269,"Cataract, unspecified",176811,131673
+59,Z089,Follow-up examination after unspecified treatment for malignant neoplasm,176058,61292
+60,Z549,Convalescence following unspecified treatment,175222,44733
+61,Z505,Speech therapy,174257,16698
+62,Z719,Counselling unspecified,171631,110870
+63,Z861,Personal history of infectious and parasitic diseases,163571,62459
+64,Z392,Routine postpartum follow-up,155268,129159
+65,I500,Congestive heart failure,147232,119981
+66,Z093,Followup examination after psychotherapy,146182,48286
+67,Z488,Other specified surgical followup care,138917,88585
+68,Z390,Care and examination immediately after delivery,137200,112106
+69,R51,Headache,133140,120167
+70,H520,Hypermetropia,132418,130688
+71,R509,Fever unspecified,132167,124298
+72,Z988,Other specified postsurgical states,129428,83284
+73,Z518,Other specified medical care,122661,28618
+74,H612,Impacted cerumen,122417,112990
+75,Z479,"Orthopaedic follow-up care, unspecified",121198,50100
+76,N185,"Chronic kidney disease, stage 5",120119,20343
+77,Z507,"Occupational therapy and vocational rehabilitation, not elsewhere classified",111878,12221
+78,H250,Senile incipient cataract,110357,77921
+79,K011,Impacted teeth,109415,87462
+80,I251,Atherosclerotic heart disease,107541,87383
+81,Z088,Followup examination after other treatment for malignant neoplasm,107374,49080
+82,H259,"Senile cataract, unspecified",107298,84101
+83,H251,Senile nuclear cataract,105779,73539
+84,Z097,Followup examination after combined treatment for other conditions,104998,48526
+85,N40,Hyperplasia of prostate,104091,72000
+86,I119,Hypertensive heart disease without (congestive) heart failure,104038,86639
+87,R11,Nausea and vomiting,100671,97040
+88,Z548,Convalescence following other treatment,95968,43131
+89,H110,Pterygium,93377,75203
+90,J459,Asthma unspecified,92942,73974
+91,R42,Dizziness and giddiness,92041,83159
+92,E149,Unspecified diabetes mellitus without complications,90044,65736
+93,Z489,Surgical followup care unspecified,89897,59700
+94,T141,Open wound of unspecified body region,89050,84504
+95,Z349,Supervision of normal pregnancy unspecified,88425,62511
+96,Z340,Supervision of normal first pregnancy,87750,61954
+97,A162,"Tuberculosis of lung, without mention of bacteriological or histological confirmation",87112,69905
+98,J449,"Chronic obstructive pulmonary disease, unspecified",85494,63091
+99,N390,"Urinary tract infection, site not specified",80254,75385
+100,Z011,Examination of ears and hearing,80238,43175
+TOTAL,,,71080287,22643913

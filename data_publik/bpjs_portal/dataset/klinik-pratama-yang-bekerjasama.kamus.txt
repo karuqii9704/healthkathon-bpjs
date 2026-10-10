@@ -1,0 +1,12 @@
+Klinik Pratama yang Bekerjasama
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:49:57.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=dd0a5fb7-9e7c-11eb-9a34-454f8ed19496
+Unduh: https://drive.google.com/uc?export=download&id=15k9ZOyp4iw_wECVE1S886qxIALgg2GqB
+
+Kolom:
+- 2018: Jumlah Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2018
+- 2017: Jumlah Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2017
+- 2016: Jumlah Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2016
+- 2015: Jumlah Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2015
+- 2014: Jumlah Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2014
+- Provinsi: Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan per Provinsi

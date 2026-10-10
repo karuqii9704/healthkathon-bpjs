@@ -1,0 +1,103 @@
+100 Penyakit Terbanyak pada RITL Tahun 2016,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Admisi,Jumlah Peserta
+1,A010,Typhoid fever,364952,352674
+2,A09,Diarrhoea and gastroenteritis of presumed infectious origin,334347,320433
+3,A91,Dengue haemorrhagic fever,332876,329492
+4,Z511,Chemotherapy session for neoplasm,170505,43381
+5,K30,Dyspepsia,160177,150849
+6,P034,Fetus and newborn affected by caesarean delivery,155426,155317
+7,A90,Dengue fever [classical dengue],146355,145549
+8,I10,Essential (primary) hypertension,111120,105614
+9,I500,Congestive heart failure,110370,92966
+10,O821,Delivery by emergency caesarean section,109603,109593
+11,O809,"Single spontaneous delivery, unspecified",106547,106508
+12,O800,Spontaneous vertex delivery,102422,102378
+13,J180,"Bronchopneumonia, unspecified",91299,85709
+14,O829,"Delivery by caesarean section, unspecified",89490,89467
+15,I639,"Cerebral infarction, unspecified",79503,75976
+16,J189,"Pneumonia, unspecified",77706,74217
+17,O342,Maternal care due to uterine scar from previous surgery,70941,70764
+18,N390,"Urinary tract infection, site not specified",70139,68816
+19,K409,"Unilateral or unspecified inguinal hernia, without obstruction or gangrene",68086,66855
+20,K297,"Gastritis, unspecified",66406,63924
+21,I64,"Stroke, not specified as haemorrhage or infarction",65315,62443
+22,D649,"Anaemia, unspecified",63866,53560
+23,R509,"Fever, unspecified",62546,61795
+24,A162,"Tuberculosis of lung, without mention of bacteriological or histological confirmation",60537,56187
+25,J459,"Asthma, unspecified",58589,50600
+26,I110,Hypertensive heart disease with (congestive) heart failure,57819,52937
+27,O820,Delivery by elective caesarean section,57383,57369
+28,D561,Beta thalassaemia,56764,9101
+29,E119,Non-insulin-dependent diabetes mellitus without complications,56156,52269
+30,B349,"Viral infection, unspecified",52709,52133
+31,D24,Benign neoplasm of breast,50381,48836
+32,R101,Pain localized to upper abdomen,48281,46102
+33,J069,"Acute upper respiratory infection, unspecified",47693,46695
+34,I251,Atherosclerotic heart disease,44958,38908
+35,N189,"Chronic renal failure, unspecified",43726,33014
+36,E115,Non-insulin-dependent diabetes mellitus with peripheral circulatory complications,43210,37100
+37,N40,Hyperplasia of prostate,42849,39695
+38,J449,"Chronic obstructive pulmonary disease, unspecified",40241,35699
+39,R104,Other and unspecified abdominal pain,40135,39137
+40,O808,Other single spontaneous delivery,39486,39464
+41,O210,Mild hyperemesis gravidarum,39396,32004
+42,K359,"Acute appendicitis, unspecified",39369,38974
+43,O48,Prolonged pregnancy,39204,39174
+44,O141,Severe pre-eclampsia,35717,34119
+45,K291,Other acute gastritis,35680,34579
+46,A499,"Bacterial infection, unspecified",35569,34329
+47,I120,Hypertensive renal disease with renal failure,35404,25428
+48,N180,End-stage renal disease,34561,23313
+49,I119,Hypertensive heart disease without (congestive) heart failure,33181,31718
+50,N200,Calculus of kidney,32144,27759
+51,O020,Blighted ovum and nonhydatidiform mole,31895,31626
+52,Z470,Follow-up care involving removal of fracture plate and other internal fixation device,31188,30574
+53,A419,"Septicaemia, unspecified",29224,28792
+54,J40,"Bronchitis, not specified as acute or chronic",28835,28389
+55,K746,Other and unspecified cirrhosis of liver,27858,20453
+56,P599,"Neonatal jaundice, unspecified",27347,26765
+57,O339,"Maternal care for disproportion, unspecified",27343,27331
+58,R560,Febrile convulsions,26614,24824
+59,P071,Other low birth weight,26446,26013
+60,I619,"Intracerebral haemorrhage, unspecified",26213,25471
+61,K921,Melaena,25703,24077
+62,B059,Measles without complication,25589,25502
+63,J441,"Chronic obstructive pulmonary disease with acute exacerbation, unspecified",25573,22192
+64,J029,"Acute pharyngitis, unspecified",25499,25021
+65,D259,"Leiomyoma of uterus, unspecified",25457,23333
+66,O828,Other single delivery by caesarean section,24517,24516
+67,I200,Unstable angina,23570,21731
+68,O410,Olihydramnios,23144,23071
+69,O034,"Spontaneous abortion, incomplete, without complication",22705,22504
+70,O064,"Unspecified abortion, incomplete, without complication",22641,22409
+71,H110,Pterygium,22452,20849
+72,P211,Mild and moderate birth asphyxia,22314,22295
+73,F200,Paranoid schizophrenia,22040,17655
+74,O321,Maternal care for breech presentation,21495,21453
+75,C509,"Malignant neoplasm of breast, unspecified",20805,17726
+76,K350,Acute appendicitis with generalized peritonitis,20651,20535
+77,O630,Prolonged first stage (of labour),20401,20393
+78,Z515,Palliative care,20146,15934
+79,A150,"Tuberculosis of lung, confirmed by sputum microscopy with or without culture",19978,18968
+80,I219,"Acute myocardial infarction, unspecified",19811,19016
+81,J90,"Pleural effusion, not elsewhere classified",19707,17132
+82,J068,Other acute upper respiratory infections of multiple sites,19506,19180
+83,N132,Hydronephrosis with renal and ureteral calculous obstruction,19328,17590
+84,H813,Other peripheral verti,19189,18602
+85,J350,Chronic tonsillitis,19092,18938
+86,O322,Maternal care for transverse and oblique lie,19087,19069
+87,D210,"Other benign neoplasm of connective and other soft tissue of head, face and neck",18796,18660
+88,R42,Dizziness and giddiness,18595,18123
+89,N832,Other and unspecified ovarian cysts,18285,17731
+90,N201,Calculus of ureter,18273,16760
+91,O429,"Premature rupture of membranes, unspecified",18036,17882
+92,I509,"Heart failure, unspecified",17840,16196
+93,J209,"Acute bronchitis, unspecified",17698,17370
+94,O441,Placenta praevia with haemorrhage,17550,15766
+95,I209,"Angina pectoris, unspecified",17451,16306
+96,O631,Prolonged second stage (of labour),17094,17075
+97,I132,Hypertensive heart and renal disease with both (congestive) heart failure and renal failure,17089,14202
+98,Z038,Observation for other suspected diseases and conditions,16975,16616
+99,H814,Verti of central origin,16707,16240
+100,D367,Benign neoplasm of other specified sites,16581,16350
+TOTAL,,,5311472,4890129

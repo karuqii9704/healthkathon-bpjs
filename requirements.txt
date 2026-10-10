@@ -1,0 +1,8 @@
+numpy>=2.0
+pandas>=2.2
+scikit-learn>=1.5
+# opsional
+psycopg[binary]>=3.2   # scripts/load_postgres.py
+pytest>=8              # tes
+tableauscraper>=0.1.29  # scripts/scrape_bpjs_portal.py
+beautifulsoup4>=4.12

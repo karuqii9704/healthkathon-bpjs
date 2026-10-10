@@ -1,0 +1,103 @@
+100 Penyakit Terbanyak pada RITL Tahun 2018,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Admisi,Jumlah Peserta
+1,A010,Typhoid fever,373615,360587
+2,A099,Gastroenteritis and colitis of unspecified origin,346960,333597
+3,K30,Dyspepsia,312846,292255
+4,P034,Fetus and newborn affected by caesarean delivery,216238,216167
+5,Z511,Chemotherapy session for neoplasm,181081,47058
+6,O342,Maternal care due to uterine scar from previous surgery,155489,155141
+7,A91,Dengue haemorrhagic fever,142052,140281
+8,I500,Congestive heart failure,130275,110166
+9,A090,Other and unspecified gastroenteritis and colitis of infectious origin,111930,109005
+10,J180,"Bronchopneumonia, unspecified",106814,100802
+11,J189,"Pneumonia, unspecified",95263,90830
+12,I639,"Cerebral infarction, unspecified",94650,90844
+13,E119,Non-insulin-dependent diabetes mellitus without complications,87772,80663
+14,O420,"Premature rupture of membranes, onset of labour within 24 hours",87324,87033
+15,O800,Spontaneous vertex delivery,84457,84410
+16,I10,Essential (primary) hypertension,82045,79279
+17,D649,"Anaemia, unspecified",81965,70913
+18,N185,"Chronic kidney disease, stage 5",79808,47234
+19,N390,"Urinary tract infection, site not specified",74630,73061
+20,O809,"Single spontaneous delivery, unspecified",74021,73993
+21,A499,"Bacterial infection, unspecified",73797,71963
+22,I64,"Stroke, not specified as haemorrhage or infarction",67611,65171
+23,A162,"Tuberculosis of lung, without mention of bacteriological or histological confirmation",66929,61619
+24,A90,Dengue fever [classical dengue],66486,66201
+25,K409,"Unilateral or unspecified inguinal hernia, without obstruction or gangrene",64351,63161
+26,O210,Mild hyperemesis gravidarum,63863,50526
+27,D24,Benign neoplasm of breast,62388,60361
+28,O410,Olihydramnios,61504,61310
+29,E115,Non-insulin-dependent diabetes mellitus with peripheral circulatory complications,59661,50608
+30,I251,Atherosclerotic heart disease,58579,51422
+31,I120,Hypertensive renal disease with renal failure,57878,36833
+32,R104,Other and unspecified abdominal pain,57410,55988
+33,J459,"Asthma, unspecified",56801,50335
+34,I110,Hypertensive heart disease with (congestive) heart failure,52540,48912
+35,O630,Prolonged first stage (of labour),52236,52209
+36,J069,"Acute upper respiratory infection, unspecified",51056,49992
+37,B349,"Viral infection, unspecified",48878,48343
+38,O429,"Premature rupture of membranes, unspecified",48781,48442
+39,N40,Hyperplasia of prostate,48580,45365
+40,P599,"Neonatal jaundice, unspecified",48134,47010
+41,O020,Blighted ovum and nonhydatidiform mole,47093,46689
+42,R509,"Fever, unspecified",46266,45710
+43,O141,Severe pre-eclampsia,46100,43951
+44,P071,Other low birth weight,45400,44715
+45,R560,Febrile convulsions,44614,41303
+46,K358,"Acute appendicitis, other and unspecified",43288,42853
+47,I200,Unstable angina,43010,39438
+48,J180,Bronchopneumonia unspecified,41263,40173
+49,N189,"Chronic renal failure, unspecified",40645,29654
+50,O322,Maternal care for transverse and oblique lie,40593,40561
+51,N200,Calculus of kidney,39476,35023
+52,O48,Prolonged pregnancy,39431,39401
+53,P211,Mild and moderate birth asphyxia,37364,37310
+54,O339,"Maternal care for disproportion, unspecified",35734,35712
+55,O321,Maternal care for breech presentation,35409,35338
+56,O631,Prolonged second stage (of labour),35250,35202
+57,O808,Other single spontaneous delivery,34557,34527
+58,J449,"Chronic obstructive pulmonary disease, unspecified",34518,30967
+59,J441,"Chronic obstructive pulmonary disease with acute exacerbation, unspecified",33681,29178
+60,Z470,Follow-up care involving removal of fracture plate and other internal fixation device,33540,33097
+61,K219,Gastro-oesophageal reflux disease without oesophagitis,33356,31856
+62,K746,Other and unspecified cirrhosis of liver,32877,23321
+63,H110,Pterygium,32046,29483
+64,D561,Beta thalassaemia,30022,5682
+65,J350,Chronic tonsillitis,29494,29248
+66,I619,"Intracerebral haemorrhage, unspecified",28968,28029
+67,H813,Other peripheral verti,28944,27981
+68,J40,"Bronchitis, not specified as acute or chronic",28615,28116
+69,J189,Pneumonia unspecified,28156,27513
+70,O064,"Unspecified abortion, incomplete, without complication",28054,27839
+71,K921,Melaena,27423,25709
+72,N132,Hydronephrosis with renal and ureteral calculous obstruction,27371,24972
+73,O441,Placenta praevia with haemorrhage,27250,24035
+74,I639,Cerebral infarction unspecified,26958,26373
+75,F200,Paranoid schizophrenia,26882,21252
+76,J068,Other acute upper respiratory infections of multiple sites,26686,26137
+77,J029,"Acute pharyngitis, unspecified",26583,26069
+78,J209,"Acute bronchitis, unspecified",26107,25483
+79,O200,Threatened abortion,25967,24568
+80,I10,Essential primary hypertension,25895,25480
+81,O034,"Spontaneous abortion, incomplete, without complication",25217,25015
+82,R42,Dizziness and giddiness,25210,24540
+83,I214,Acute subendocardial myocardial infarction,25175,23651
+84,N201,Calculus of ureter,24938,22749
+85,O420,Premature rupture of membranes onset of labour within 24 hours,24932,24881
+86,I119,Hypertensive heart disease without (congestive) heart failure,24815,24087
+87,E119,Noninsulindependent diabetes mellitus without complications,24448,23572
+88,P399,"Infection specific to the perinatal period, unspecified",24317,24261
+89,K011,Impacted teeth,24140,23720
+90,O421,"Premature rupture of membranes, onset of labour after 24 hours",23897,23779
+91,Z038,Observation for other suspected diseases and conditions,23437,23017
+92,A419,"Septicaemia, unspecified",23117,22778
+93,R11,Nausea and vomiting,23069,22573
+94,N390,Urinary tract infection site not specified,23051,22816
+95,O364,Maternal care for intrauterine death,22965,22834
+96,N832,Other and unspecified ovarian cysts,22847,22053
+97,J440,Chronic obstructive pulmonary disease with acute lower respiratory infection,22845,21017
+98,E149,Unspecified diabetes mellitus without complications,22722,21206
+99,K352,Acute appendicitis with generalized peritonitis,22632,22538
+100,I638,Other cerebral infarction,22558,21890
+TOTAL,,,5927916,5462015

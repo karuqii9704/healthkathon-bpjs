@@ -1,0 +1,103 @@
+100 Penyakit Terbanyak pada RJTP Tahun 2018,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Kunjungan,Jumlah Peserta
+1,J069,"Acute upper respiratory infection, unspecified",12446568,8004884
+2,J00,Acute nasopharyngitis [common cold],9825478,6655987
+3,I10,Essential (primary) hypertension,8659856,3491990
+4,K30,Dyspepsia,5683350,4153210
+5,M791,Myalgia,5361519,3751058
+6,R51,Headache,3921237,3062500
+7,R509,"Fever, unspecified",3687576,2902848
+8,K297,"Gastritis, unspecified",3450327,2588453
+9,A09,Diarrhoea and gastroenteritis of presumed infectious origin,3185549,2696140
+10,J029,"Acute pharyngitis, unspecified",2617159,2125904
+11,R05,Cough,2215352,1676845
+12,K040,Pulpitis,1925137,1331121
+13,E119,Non-insulin-dependent diabetes mellitus without complications,1741109,604728
+14,K041,Necrosis of pulp,1539614,1001005
+15,J06,Acute upper respiratory infections of multiple and unspecified sites,1245518,988089
+16,M545,Low back pain,1177143,845657
+17,L309,"Dermatitis, unspecified",1150023,933823
+18,E11,Non-insulin-dependent diabetes mellitus,1020666,466934
+19,J02,Acute pharyngitis,1010906,860109
+20,Z309,"Contraceptive management, unspecified",867855,483591
+21,M069,"Rheumatoid arthritis, unspecified",842942,562791
+22,J111,"Influenza with other respiratory manifestations, virus not identified",837949,594715
+23,K021,Caries of dentine,814452,596708
+24,Z349,"Supervision of normal pregnancy, unspecified",719539,382939
+25,J11,"Influenza, virus not identified",717292,549601
+26,Z000,General medical examination,705553,510274
+27,R50,Fever of other and unknown origin,701066,600553
+28,L239,"Allergic contact dermatitis, unspecified cause",678412,550355
+29,Z369,"Antenatal screening, unspecified",673111,338131
+30,I500,Congestive heart failure,650148,325230
+31,H527,"Disorder of refraction, unspecified",612571,569733
+32,A010,Typhoid fever,589421,491326
+33,K29,Gastritis and duodenitis,579871,473821
+34,K006,Disturbances in tooth eruption,567950,418996
+35,L23,Allergic contact dermatitis,553896,464127
+36,H109,"Conjunctivitis, unspecified",551557,500470
+37,L209,"Atopic dermatitis, unspecified",529610,438566
+38,J459,"Asthma, unspecified",519216,319737
+39,J039,"Acute tonsillitis, unspecified",510352,440448
+40,J45,Asthma,505285,320491
+41,Z392,Routine postpartum follow-up,501831,260450
+42,E118,Non-insulin-dependent diabetes mellitus with unspecified complications,495495,233004
+43,Z348,Supervision of other normal pregnancy,490082,248044
+44,H10,Conjunctivitis,488237,449418
+45,L029,"Cutaneous abscess, furuncle and carbuncle, unspecified",463206,384509
+46,J068,Other acute upper respiratory infections of multiple sites,453796,325487
+47,K029,"Dental caries, unspecified",444788,357695
+48,L30,Other dermatitis,442867,381446
+49,J060,Acute larynpharyngitis,437381,331435
+50,H521,Myopia,429058,401004
+51,I159,"Secondary hypertension, unspecified",424096,219119
+52,J118,"Influenza with other manifestations, virus not identified",423626,298727
+53,K047,Periapical abscess without sinus,420005,343802
+54,K291,Other acute gastritis,416708,333894
+55,M139,"Arthritis, unspecified",415409,288763
+56,I119,Hypertensive heart disease without (congestive) heart failure,407523,210305
+57,I110,Hypertensive heart disease with (congestive) heart failure,402588,216308
+58,I64,"Stroke, not specified as haemorrhage or infarction",402085,208286
+59,Z34,Supervision of normal pregnancy,397816,240262
+60,B86,Scabies,394680,317592
+61,R11,Nausea and vomiting,372681,344305
+62,K02,Dental caries,363064,303727
+63,Z719,"Counselling, unspecified",362973,283967
+64,M13,Other arthritis,361139,266160
+65,I11,Hypertensive heart disease,350413,228137
+66,E780,Pure hypercholesterolaemia,345138,262967
+67,L20,Atopic dermatitis,342639,298077
+68,O000,Abdominal pregnancy,337926,169439
+69,H814,Verti of central origin,331278,276427
+70,N390,"Urinary tract infection, site not specified",331038,285676
+71,G442,Tension-type headache,322705,273255
+72,Z304,Surveillance of contraceptive drugs,322447,170621
+73,R500,Fever with chills,307688,252097
+74,A150,"Tuberculosis of lung, confirmed by sputum microscopy with or without culture",307388,115851
+75,E149,Unspecified diabetes mellitus without complications,304511,124035
+76,K052,Acute periodontitis,304092,248841
+77,K053,Chronic periodontitis,303718,243811
+78,T784,"Allergy, unspecified",297517,240467
+79,K050,Acute gingivitis,297308,258293
+80,L308,Other specified dermatitis,296475,242363
+81,Z308,Other contraceptive management,293961,166890
+82,M792,"Neuralgia and neuritis, unspecified",291637,225300
+83,M790,"Rheumatism, unspecified",291264,219444
+84,M199,"Arthrosis, unspecified",289274,201958
+85,J40,"Bronchitis, not specified as acute or chronic",289133,228275
+86,K296,Other gastritis,285060,228237
+87,J209,"Acute bronchitis, unspecified",284015,227218
+88,Z00,General examination and investigation of persons without complaint and reported diagnosis,281840,232867
+89,Z340,Supervision of normal first pregnancy,281531,175219
+90,J03,Acute tonsillitis,281217,251675
+91,I15,Secondary hypertension,279683,176427
+92,Z300,General counselling and advice on contraception,275801,178412
+93,K121,Other forms of stomatitis,273620,247280
+94,H269,"Cataract, unspecified",268897,201469
+95,R104,Other and unspecified abdominal pain,264958,238067
+96,J020,Streptococcal pharyngitis,255111,198897
+97,Z30,Contraceptive management,250212,172746
+98,M150,Primary generalized (osteo)arthrosis,248021,166972
+99,F20,Schizophrenia,248001,98258
+100,R53,Malaise and fatigue,245522,202755
+TOTAL,,,106384308,73050320

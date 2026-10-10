@@ -1,0 +1,7 @@
+Angka Akses Pelayanan RJTL berdasarkan Usia dan Jenis Kelamin
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-30 17:15:39.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=02fa2729-a99d-11eb-9a34-fd005871b1d8
+Unduh: https://drive.google.com/uc?export=download&id=1p7zhp7D-aE5Ado2HVtyxa_G5_dq4wKve
+
+Kolom:
+

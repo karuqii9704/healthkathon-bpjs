@@ -1,0 +1,12 @@
+FKRTL yang Bekerjasama
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:45:13.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=3b417bef-9e7d-11eb-9a34-6f9e296bb18d
+Unduh: https://drive.google.com/uc?export=download&id=1qaxN_H_NF9gcrHbUx0g3aG6cGaHX09pr
+
+Kolom:
+- 2018: Jumlah FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2018
+- 2017: Jumlah FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2017
+- 2016: Jumlah FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2016
+- 2015: Jumlah FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2015
+- 2014: Jumlah FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2014
+- Provinsi: Jumlah FKRTL (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan berdasarkan Provinsi

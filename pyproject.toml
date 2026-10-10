@@ -1,0 +1,9 @@
+[project]
+name = "payray"
+version = "0.1.0"
+description = "PayRay — rontgen kepatuhan pemberi kerja untuk JKN (Healthkathon 2026)"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

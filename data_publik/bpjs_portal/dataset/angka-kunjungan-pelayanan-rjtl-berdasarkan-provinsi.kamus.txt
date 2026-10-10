@@ -1,0 +1,7 @@
+Angka Kunjungan  Pelayanan RJTL berdasarkan Provinsi
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-10-27 12:37:49.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=05007013-36e8-11ec-9ed0-1bf459cff121
+Unduh: https://drive.google.com/uc?export=download&id=13u4KBoOgIl27xhwxgfCqHbg0vhAlKZwX
+
+Kolom:
+

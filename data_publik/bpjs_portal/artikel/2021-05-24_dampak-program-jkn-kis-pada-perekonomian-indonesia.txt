@@ -1,0 +1,117 @@
+Judul   : DAMPAK PROGRAM JKN-KIS PADA PEREKONOMIAN INDONESIA
+Tanggal : 2021-05-24
+Sumber  : https://data.bpjs-kesehatan.go.id/bpjs-portal/action/blog-detail.cbi?id=c71c2e57-bc6a-11eb-9a34-ed670e2e8ae2
+Tautan  : -
+
+DAMPAK PROGRAM JKN-KIS PADA PEREKONOMIAN INDONESIA
+admin
+2021-05-24
+5,094
+Pentingnya
+Universal Health Coverage
+Mutu modal manusia merupakan suatu faktor penting yang turut memengaruhi pertumbuhan ekonomi suatu negara. Salah satu faktor yang memengaruhi kualitas modal manusia adalah kesehatan (Goldin, 2014). Menurut Bloom & Canning (2003), kesehatan merupakan barang investasi yang dapat meningkatkan produktivitas penduduk dan ekonomi. Beberapa studi terdahulu menunjukkan adanya dampak positif antara keberadaan jaminan kesehatan dengan perekonomian. Alasan utamanya
+adalah karena keberadaan
+universal health coverage
+(UHC) meningkatkan pertumbuhan tenaga kerja, pertumbuhan gaji, dan
+produktivitas tenaga kerja (Ahoobim et.al, 2012). UHC juga menurunkan tingkat kemiskinan melalui proteksi keuangan saat adanya shock akibat masalah kesehatan (World Health Organization, 2015). Selain itu, UHC merupakan bagian dari komitmen
+pembangunan global terkait dengan
+Sustainable Development Goals
+(SDG). Pada studi ini, terdapat dua kerangka pikir yang
+melandasi pengaruh keberadaan program jaminan kesehatan terhadap pertumbuhan ekonomi, yaitu 1) dalam jangka panjang melalui peningkatan kesehatan masyarakat dan 2) dalam jangka pendek melalui pengaruh terhadap kinerja sektor ekonomi lainnya. Pada kerangka pikir pertama, program jaminan kesehatan akan meningkatkan akses masyarakat terhadap fasilitas kesehatan, sehingga kualitas kesehatan masyarakat meningkat. Dalam jangka panjang, peningkatan kualitas kesehatan masyarakat akan meningkatkan kualitas modal manusia Indonesia, sehingga berujung pada peningkatan produktivitas tenaga
+kerja Indonesia. Alhasil, produktivitas yang tinggi akan menghasilkan peningkatan
+output
+, sehingga kesejahteraan masyarakat
+dapat meningkat.
+Pada kerangka pikir kedua, yaitu dalam jangka pendek, keberadaan program jaminan kesehatan dipandang sebagai kegiatan
+ekonomi yang memengaruhi sektor ekonomi lainnya. Sejumlah
+input
+yang digunakan oleh jaminan kesehatan akan menghasilkan
+output
+tertentu yang terdistribusi ke sektor-sektor ekonomi.
+Output
+dari jaminan kesehatan merupakan
+input
+baru bagi sektor
+lainnya, sehingga akan meningkatkan
+output
+sektor lainnya. Pada akhirnya, peningkatan
+output
+dari sektor-sektor ekonomi
+akan meningkatkan
+output
+(produksi) nasional. Peningkatan ini diharapkan dapat meningkatkan kesejahteraan masyarakat
+Indonesia sebagai tujuan akhir pembangunan nasional. Studi ini memiliki tujuan utama mengetahui pengaruh keberadaan sistem Jaminan Kesehatan Nasional (JKN) terhadap pertumbuhan ekonomi Indonesia. Beberapa tujuan lain yang menyertainya antara lain adalah mengetahui pengaruh JKN terhadap tenaga kerja, produktivitas, serta industri kesehatan lain.
+Metode Penelitian
+Analisis pada studi ini menggunakan beberapa sumber data, antara lain data Survei Sosial Ekonomi Nasional (Susenas) sejak
+tahun 2000 hingga tahun 2015, data sosial dan ekonomi dari Indonesia
+Database for Policy and Economic Research
+, dan data
+InputOutput
+dari Badan Pusat Statistik (BPS) tahun 2010.
+Dalam menganalisis dampak program JKN terhadap perekonomian melalui pengaruhnya terhadap kesehatan, studi ini menggunakan tiga tahap penelitian, yaitu 1) mengetahui pengaruh kepemilikan asuransi BPJS Kesehatan dengan pemanfaatan fasilitas kesehatan, 2) mengetahui pengaruh pemanfaatan fasilitas kesehatan terhadap angka harapan hidup, dan terakhir 3) mengetahui pengaruh angka harapan hidup terhadap PDRB per kapita. Ketiga analisis tersebut dilakukan dengan menggunakan
+analisis regresi
+cross-section
+(untuk poin ke-1 dan ke-2) dan data panel (untuk poin ke-3).
+Pada kerangka pikir kedua, studi ini menganalisis pengaruh program JKN terhadap aktivitas ekonomi dengan metode analisis
+Input-Output
+. Studi ini melakukan
+updating
+data
+Input-Output
+2010 dengan memasukkan sektor Jaminan Kesehatan Nasional
+(BPJS Kesehatan). Adapun analisis yang dilakukan meliputi 1) analisis pengganda (
+multiplier
+) dari sektor-sektor ekonomi,
+termasuk pengganda dari JKN, 2) proyeksi pengeluaran dan kepesertaan jaminan kesehatan dengan dan tanpa program JKN, 3) dampak program JKN terhadap kinerja sektor ekonomi lainnya, dan 4) dampak program JKN terhadap pertumbuhan ekonomi dan tenaga kerja Indonesia
+Analisis Sosial Ekonomi Program Jaminan Kesehatan Nasional
+Analisis pertama dilakukan dengan mengetahui hubungan antara kepesertaan dalam program JKN terhadap akses ke fasilitas kesehatan berupa probabilitas rawat jalan dan rawat inap serta lamanya rawat inap. Studi ini menemukan bahwa kepemilikan asuransi BPJS meningkatkan pemanfaatan fasilitas kesehatan rawat jalan dan rawat inap, serta meningkatkan lamanya pemanfaatan rawat inap selama 0.87 hari. Hasil perhitungan analisis pertama ini dapat dilihat pada tabel 1 di bawah ini.
+Selanjutnya, adanya peningkatan pemanfaatan fasilitas kesehatan dapat meningkatkan kualitas kesehatan masyarakat yang tergambar melalui angka harapan hidup. Analisis dalam studi ini menunjukkan bahwa 1% pemanfaatan fasilitas kesehatan
+rawat inap akan meningkatkan angka harapan hidup sebesar 0.309 tahun. Selain itu, pencapaian
+universal health coverage
+di
+Indonesia mampu meningkatkan angka harapan hidup penduduk sebanyak 2.9 tahun. Hasil perhitungan analisis kedua ini dapat terlihat pada tabel 2 berikut
+Analisis ketiga didasarkan pada berbagai studi yang menemukan hubungan antara kualitas kesehatan masyarakat dengan pertumbuhan ekonomi. Studi ini menemukan bahwa mutu modal manusia yang diukur melalui angka harapan hidup dan angka partisipasi sekolah berkontribusi positif terhadap pertumbuhan ekonomi. Hasil perhitungan dari analisis ketiga ini dapat terlihat pada fungsi matematis berikut.
+Analisis Ekonomi
+Input-Output
+Program Jaminan Kesehatan Nasional
+Salah satu analisis yang paling umum dibahas pada metode analisis
+input-output
+adalah angka pengganda. Pengganda yang dibahas dalam studi ini adalah pengganda
+output
+dan pengganda tenaga kerja. Berdasarkan hasil perhitungan, program Jaminan Kesehatan Nasional (JKN) memiliki angka pengganda yang tidak terlalu besar jika dibandingkan dengan sektor lainnya, yaitu 1.29 untuk pengganda
+output
+dan 0.009 untuk pengganda tenaga kerja. Hal ini berarti bahwa kenaikan permintaan akhir dari JKN sebanyak satu satuan akan meningkatkan
+output
+perekonomian sebanyak 1.29 kali dan tenaga kerja sebanyak 0.009 kali. Meskipun JKN memiliki nilai pengganda yang tidak terlalu besar, JKN memiliki keterkaitan yang erat dengan beberapa sektor kesehatan dengan nilai pengganda yang cukup tinggi, seperti sektor Jasa Kesehatan Pemerintah dan Industri Alat Kedokteran. Maka, secara tidak langsung JKN memiliki dampak yang besar di perekonomian melalui pengaruhnya terhadap sektor kesehatan lainnya.
+Studi ini juga memproyeksikan kondisi jaminan kesehatan di Indonesia dengan dan tanpa JKN. Jaminan kesehatan di Indonesia tanpa JKN adalah kondisi jaminan kesehatan sebelum tahun 2014 yang meliputi ASKES (Asuransi Kesehatan), ASABRI (Asuransi Sosial Angkatan Bersenjata Republik Indonesia), JPK (Jaminan Pemeliharaan Kesehatan) Jamsostek, dan JAMKESMAS (Jaminan Kesehatan Masyarakat). Pada tahun 2014, penerapan program JKN telah mengubah sistem jaminan kesehatan di Indonesia. Figur 2 menunjukkan proyeksi kondisi jaminan kesehatan di Indonesia dengan dan tanpa program JKN pada tahun 2014 sampai 2025. Terlihat bahwa pengeluaran dan peserta jaminan kesehatan dengan program JKN lebih tinggi daripada pengeluaran maupun peserta jaminan kesehatan tanpa program JKN. Proyeksi jaminan kesehatan dengan JKN ini memberikan indikasi positif pada proyeksi perekonomian Indonesia. Keberadaan program JKN juga memengaruhi
+output
+dan tenaga kerja sektor ekonomi lainnya. Figur 3 di bawah ini menggambarkan pengaruh program JKN pada sektor lainnya, baik kesehatan maupun non-kesehatan, pada tahun 2016 dan 2021 (masa kepemimpinan direksi BPJS Kesehatan saat ini). Program JKN memiliki dampak terhadap perekonomian melalui pencipataan
+output
+dan penciptaan lapangan kerja. Dalam kurun waktu 2016-2021, Program JKN mendorong peningkatan aktivitas ekonomi (
+output
+) di sektor Jasa Kesehatan Pemerintah sebesar Rp. 52.1 Triliun dan di sektor Industri Makanan dan Minuman sebesar Rp. 15.5 Triliun. Selain itu, Program JKN mendorong penciptaan lapangan kerja sebesar 1.45 juta orang (2016) menjadi 2.56 juta orang (2021).
+Adanya peningkatan
+output
+dan penyerapan tenaga kerja dari sektor-sektor ekonomi yang disebabkan oleh keberadaan JKN pada akhirnya akan meningkatkan
+output
+dan penyerapan tenaga kerja Indonesia secara keseluruhan. Pada figur 4 terlihat bahwa proyeksi
+output
+dengan program JKN lebih besar daripada
+output
+tanpa program JKN. Tren yang serupa juga berlaku bagi penyerapan tenaga kerja. Pencapaian
+universal health coverage
+(UHC) di tahun 2019 diproyeksikan akan menghasilkan
+output
+sebesar 269 triliun rupiah dan kesempatan kerja untuk 2.3 juta orang
+Kesimpulan & Rekomendasi
+Berdasarkan hasil kajian dalam studi ini, program JKN memiliki dampak terhadap pertumbuhan ekonomi Indonesia, baik dalam jangka panjang maupun jangka pendek. Dalam jangka panjang, JKN akan meningkatkan pertumbuhan ekonomi melalui peningkatan kesehatan. Sedangkan dalam jangka pendek, JKN akan meningkatkan pertumbuhan ekonomi melalui peningkatan kinerja sektor lainnya. Dalam jangka panjang, kepesertaan dalam program JKN meningkatkan pemanfaatan fasilitas kesehatan rawat jalan dan rawat inap, serta meningkatkan lamanya pemanfaatan rawat inap selama 0.87 hari. Peningkatan pemanfaatan ini akan meningkatkan angka harapan hidup masyarakat, dimana 100% kepesertaan JKN mampu meningkatkan angka harapan
+hidup penduduk sebanyak 2.9 tahun. Selanjutnya, peningkatan mutu modal manusia yang diukur melalui angka harapan hidup dan angka partisipasi sekolah berkontribusi positif terhadap pertumbuhan ekonomi. Alhasil, setiap 1% peningkatan kepesertaan masyarakat dalam JKN dapat meningkatkan PDRB per kapita sekitar 1 juta rupiah. Dalam jangka pendek, program JKN dapat meningkatkan
+output
+dan tenaga kerja dari sektor ekonomi lain. Peningkatan tersebut berujung pada pertumbuhan ekonomi Indonesia. Studi ini memproyeksikan bahwa pencapaian UHC di tahun 2019 akan menghasilkan
+output
+sebesar 269 triliun rupiah dan kesempatan kerja untuk 2.3 juta orang. Studi ini merekomendasikan agar penerapan program JKN tidak dipandang sebagai biaya (
+cost
+), tetapi dipandang sebagai investasi jangka panjang yang mampu meningkatkan pertumbuhan ekonomi dan kesejahteraan masyarakat, serta sebagai wujud peran serta Indonesia dalam menyukseskan
+Sustainable Development Goals
+. Oleh karena itu, diperlukan peran serta seluruh pihak, baik pemerintah,dari berbagai kementrian, pihak swasta, maupun masyarakat, untuk bahu membahu dalam menyukseskan program JKN
+Peserta

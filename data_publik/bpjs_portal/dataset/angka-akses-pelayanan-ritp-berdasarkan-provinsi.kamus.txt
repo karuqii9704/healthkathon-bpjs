@@ -1,0 +1,7 @@
+Angka Akses Pelayanan RITP berdasarkan Provinsi
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-30 17:12:56.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=a21ddb93-a99c-11eb-9a34-55ac28ee7480
+Unduh: https://drive.google.com/uc?export=download&id=1oC33jLJs-lQ0TnxGxU-7bcptwUEhE-XX
+
+Kolom:
+

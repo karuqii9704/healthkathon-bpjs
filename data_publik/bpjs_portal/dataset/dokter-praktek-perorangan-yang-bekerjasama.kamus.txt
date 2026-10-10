@@ -1,0 +1,12 @@
+Dokter Praktek Perorangan yang Bekerjasama
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:39:32.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=5cbb3d7f-9e7c-11eb-9a34-ad7dd4fd6a2b
+Unduh: https://drive.google.com/uc?export=download&id=1K_z8-9cL-eY5HIFQzTnK4WtpzAE1crQl
+
+Kolom:
+- 2018: Jumlah Dokter Praktek Perorangan yang Bekerjasama dengan BPJS Kesehatan pada tahun 2018
+- 2017: Jumlah Dokter Praktek Perorangan yang Bekerjasama dengan BPJS Kesehatan pada tahun 2017
+- 2016: Jumlah Dokter Praktek Perorangan yang Bekerjasama dengan BPJS Kesehatan pada tahun 2016
+- 2015: Jumlah Dokter Praktek Perorangan yang Bekerjasama dengan BPJS Kesehatan pada tahun 2015
+- 2014: Jumlah Dokter Praktek Perorangan yang Bekerjasama dengan BPJS Kesehatan pada tahun 2014
+- Provinsi: Jumlah Dokter Praktek Perorangan yang Bekerjasama dengan BPJS Kesehatan berdasarkan Provinsi

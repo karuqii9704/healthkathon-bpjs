@@ -1,0 +1,12 @@
+Rasio Puskesmas
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:45:34.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=fff5636f-9c15-11eb-9a34-5113cfec78fb
+Unduh: https://drive.google.com/uc?export=download&id=14tWacxJHVHswtVGkogrXvkfKAn0jlTbo
+
+Kolom:
+- 2018: Rasio Puskesmas (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2018
+- 2017: Rasio Puskesmas (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2017
+- 2016: Rasio Puskesmas (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2016
+- 2015: Rasio Puskesmas (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2015
+- 2014: Rasio Puskesmas (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada Tahun 2014
+- Provinsi: Rasio Puskesmas (per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan berdasarkan Provinsi

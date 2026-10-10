@@ -1,0 +1,7 @@
+Distribusi Rerata Biaya Satuan Klaim per Admisi Pelayanan RITL berdasarkan Provinsi
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-10-27 13:06:39.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=0c9c3c3b-36ec-11ec-9ed0-25b33cbe2802
+Unduh: https://drive.google.com/uc?export=download&id=1XGy8ZEAGn0lAIi0gvk8eEIUNag81ND7_
+
+Kolom:
+

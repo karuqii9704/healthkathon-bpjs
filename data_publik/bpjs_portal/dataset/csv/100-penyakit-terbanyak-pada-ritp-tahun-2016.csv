@@ -1,0 +1,103 @@
+100 Penyakit Terbanyak pada RITP Tahun 2016,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Admisi,Jumlah Peserta
+1,O809,"Single spontaneous delivery, unspecified",350014,336247
+2,O800,Spontaneous vertex delivery,281922,271631
+3,A010,Typhoid fever,157322,151256
+4,A09,Diarrhoea and gastroenteritis of presumed infectious origin,111990,108522
+5,O808,Other single spontaneous delivery,88389,85283
+6,K30,Dyspepsia,87656,82329
+7,R509,"Fever, unspecified",70861,68520
+8,K297,"Gastritis, unspecified",68443,64710
+9,I10,Essential (primary) hypertension,45043,42083
+10,A91,Dengue haemorrhagic fever,42940,41102
+11,Z309,"Contraceptive management, unspecified",39426,33892
+12,O801,Spontaneous breech delivery,29505,28385
+13,Z392,Routine postpartum follow-up,29175,15475
+14,A90,Dengue fever [classical dengue],28201,27449
+15,Z370,Single live birth,22766,22040
+16,J459,"Asthma, unspecified",19854,17250
+17,R500,Fever with chills,19520,18938
+18,O000,Abdominal pregnancy,18232,16479
+19,Z308,Other contraceptive management,16594,14669
+20,K291,Other acute gastritis,15592,14999
+21,Z304,Surveillance of contraceptive drugs,15356,13075
+22,J069,"Acute upper respiratory infection, unspecified",13795,13497
+23,Z300,General counselling and advice on contraception,13741,12189
+24,R11,Nausea and vomiting,12564,12176
+25,Z349,"Supervision of normal pregnancy, unspecified",10821,8611
+26,R104,Other and unspecified abdominal pain,10416,9964
+27,K290,Acute haemorrhagic gastritis,10366,9904
+28,Z390,Care and examination immediately after delivery,9415,5523
+29,Z348,Supervision of other normal pregnancy,8239,7052
+30,Z369,"Antenatal screening, unspecified",8234,5884
+31,O210,Mild hyperemesis gravidarum,8119,7152
+32,H814,Verti of central origin,7829,7576
+33,N390,"Urinary tract infection, site not specified",7158,6980
+34,K529,"Noninfective gastroenteritis and colitis, unspecified",7085,6916
+35,R51,Headache,6991,6842
+36,I64,"Stroke, not specified as haemorrhage or infarction",6577,6041
+37,Z340,Supervision of normal first pregnancy,6271,4964
+38,R560,Febrile convulsions,6049,5747
+39,K296,Other gastritis,5955,5698
+40,J00,Acute nasopharyngitis [common cold],5947,5851
+41,O429,"Premature rupture of membranes, unspecified",5945,5602
+42,B509,"Plasmodium falciparum malaria, unspecified",5871,5522
+43,K295,"Chronic gastritis, unspecified",5860,5592
+44,O838,Other specified assisted single delivery,5809,5700
+45,E119,Non-insulin-dependent diabetes mellitus without complications,5784,5262
+46,O630,Prolonged first stage (of labour),5717,5325
+47,I500,Congestive heart failure,5277,4655
+48,J449,"Chronic obstructive pulmonary disease, unspecified",5170,4643
+49,A014,"Paratyphoid fever, unspecified",4885,4733
+50,A759,"Typhus fever, unspecified",4790,4651
+51,R100,Acute abdomen,4766,4594
+52,O211,Hyperemesis gravidarum with metabolic disturbance,4579,4123
+53,J209,"Acute bronchitis, unspecified",4564,4441
+54,A881,Epidemic verti,4525,4409
+55,A150,"Tuberculosis of lung, confirmed by sputum microscopy with or without culture",4442,4116
+56,A060,Acute amoebic dysentery,4435,4376
+57,J450,Predominantly allergic asthma,4424,3922
+58,Z33,"Pregnant state, incidental",4285,4019
+59,R060,Dyspnoea,4273,3916
+60,H813,Other peripheral verti,4007,3905
+61,O60,Preterm labour and delivery,3913,3753
+62,J029,"Acute pharyngitis, unspecified",3861,3801
+63,Z920,Personal history of contraception,3818,3415
+64,J40,"Bronchitis, not specified as acute or chronic",3595,3509
+65,N23,Unspecified renal colic,3384,3256
+66,O420,"Premature rupture of membranes, onset of labour within 24 hours",3190,2869
+67,B519,Plasmodium vivax malaria without complication,3157,3004
+68,I159,"Secondary hypertension, unspecified",3139,3008
+69,O679,"Intrapartum haemorrhage, unspecified",2914,2879
+70,J180,"Bronchopneumonia, unspecified",2828,2688
+71,K299,"Gastroduodenitis, unspecified",2659,2569
+72,R501,Persistent fever,2644,2561
+73,Z301,Insertion of (intrauterine) contraceptive device,2617,2492
+74,M791,Myalgia,2613,2573
+75,O470,False labour before 37 completed weeks of gestation,2572,2462
+76,H811,Benign paroxysmal verti,2564,2504
+77,D649,"Anaemia, unspecified",2548,2379
+78,E149,Unspecified diabetes mellitus without complications,2541,2273
+79,E110,Non-insulin-dependent diabetes mellitus with coma,2518,2339
+80,I509,"Heart failure, unspecified",2498,2239
+81,Z321,Pregnancy confirmed,2466,1930
+82,I110,Hypertensive heart disease with (congestive) heart failure,2361,2216
+83,R53,Malaise and fatigue,2347,2264
+84,R42,Dizziness and giddiness,2308,2249
+85,J060,Acute larynpharyngitis,2297,2225
+86,E118,Non-insulin-dependent diabetes mellitus with unspecified complications,2291,2129
+87,O471,False labour at or after 37 completed weeks of gestation,2279,2212
+88,Z353,Supervision of pregnancy with history of insufficient antenatal care,2266,1908
+89,O639,"Long labour, unspecified",2239,2164
+90,Z380,"Singleton, born in hospital",2202,1723
+91,D696,"Thrombocytopenia, unspecified",2194,2018
+92,K520,Gastroenteritis and colitis due to radiation,2081,2045
+93,A78,Q fever,2074,2015
+94,O631,Prolonged second stage (of labour),2060,1916
+95,K359,"Acute appendicitis, unspecified",1984,1858
+96,O85,Puerperal sepsis,1978,1926
+97,O141,Severe pre-eclampsia,1928,1747
+98,J46,Status asthmaticus,1858,1626
+99,B059,Measles without complication,1848,1826
+100,B54,Unspecified malaria,1836,1767
+TOTAL,,,1926251,1812744

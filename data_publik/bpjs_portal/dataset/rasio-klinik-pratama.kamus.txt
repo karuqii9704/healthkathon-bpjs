@@ -1,0 +1,12 @@
+Rasio Klinik Pratama
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:40:09.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=a46296f4-9e7c-11eb-9a34-73708cb01e3b
+Unduh: https://drive.google.com/uc?export=download&id=1jnRt0VwzmaHO_ERRuqBSLvDVO8JSKyOo
+
+Kolom:
+- 2018: Rasio Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2018
+- 2017: Rasio Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2017
+- 2016: Rasio Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2016
+- 2015: Rasio Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2015
+- 2014: Rasio Klinik Pratama (Termasuk TNI/POLRI) (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan pada tahun 2014
+- Provinsi: Rasio Klinik Pratama (Per 100.000 peserta) yang Bekerjasama dengan BPJS Kesehatan per Provinsi

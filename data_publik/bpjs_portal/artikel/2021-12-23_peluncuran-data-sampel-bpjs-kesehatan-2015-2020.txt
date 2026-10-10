@@ -1,0 +1,60 @@
+Judul   : PELUNCURAN DATA SAMPEL BPJS KESEHATAN 2015-2020
+Tanggal : 2021-12-23
+Sumber  : https://data.bpjs-kesehatan.go.id/bpjs-portal/action/blog-detail.cbi?id=79f03774-6397-11ec-bd5e-bb284b79c3ff
+Tautan  : https://drive.google.com/file/d/190ZsW3u4NcUGbu79Io-ayt9pnBrh0eD-/view
+
+PELUNCURAN DATA SAMPEL BPJS KESEHATAN 2015-2020
+approval
+2021-12-23
+8,073
+Puji dan syukur kami panjatkan kehadirat Allah SWT yang selalu memberikan nikmat kesehatan, sehingga kami dapat menyelesaikan Buku Data Sampel BPJS Kesehatan Tahun 2015 - 2020
+ditengah wabah Covid 19 yang
+masih melanda negeri kita dan sebagian besar negara di dunia.
+Perjalananan Program JKN telah memasuki tahun ke 8 dengan berbagai bentuk  tantangan yang menyertainya. Tantangan tersebut telah membuktikan pentingnya Data dan analisanya dalam penyusunan kebijakan yang bersifat strategis sekaligus mengatasi tantangan yang terjadi.
+Saat ini data yang dikelola BPJS Kesehatan telah mencapai
+lebih dari 50 milyar
+baris yang disimpan dalam platform
+Big Data BPJS Kesehatan
+.
+Data
+tersebut seyogianya
+dapat diolah
+dan dimanfaatkan oleh berbagai pihak yang terkait.
+Untuk mendorong partisipasi dan inisiatif pengolahan data peserta tersebut maka sejak tahun 2019, telah diluncurkan data sampel BPJS Kesehatan. Data sampel dimaksud dapat digunakan oleh semua pihak terkait yang ingin menelaah dan menggali informasi didalamnya. Untuk melengkapinya,  BPJS Kesehatan juga mengeluarkan Buku Panduan Data Sampel sehingga pengguna data sampel dapat memahami konten maupun kontekstual dari data sampel tersebut.
+Buku data sampel ini adalah buku
+ketiga
+yang
+di
+terbitkan setelah sebelumnya diterbitkan buku data sampel pertama di tahun 2019 untuk data tahun 2015 – 2016
+dan buku data sampel kedua di tahun 2020 untuk data tahun 2015 - 2018
+.
+Penyusunan data sampel dilakukan dengan melibatkan dukungan para ahli terutama dalam bidang
+statistika
+, untuk memastikan representasi data sesuai kaidah akademis. Data sampel diambil dari populasi
+database
+BPJS kesehatan dan dilakukan pengujian
+secara ketat
+untuk
+memastikan kualitasnya.
+Buku data sampel ini memuat secara rinci penjelasan terkait metodologi penyusunan, struktur data yang menggambarkan hirarki,  serta relasi dari berbagai dataset. Data tersebut bersifat cohort dimana dilakukan penelusuran terhadap seluruh riwayat pemanfaatan dari individu sampel. Pengembangan data sampel juga dilakukan dengan meluncurkan data sampel kontekstual yang fokus pada data penyakit Diabetes Mellitus sebagai “
+Mother of Disease
+”.
+Harapan kami, data sampel ini akan semakin banyak diakses oleh seluruh lapisan masyarakat. Bagi yang ingin mengakses buku data sampel 2015 - 2020  dapat klik
+download
+, Dengan adanya data sampel yang selalu diperbaharui periode waktunya akan meningkatkan minat penelitian terkait program JKN serta memperkuat kesesuaian dan relevansi rekomendasi kebijakan.
+Kami
+ucapkan terima kasih kepada seluruh
+t
+im
+pengembang
+, baik dari BPJS Kesehatan, akademisi maupun peneliti
+yang terlibat dalam penyusunan Buku Data Sampel BPJS Kesehatan tahun 2015 - 20
+20
+ini.
+T
+iada gading yang tak retak, oleh karenanya kami mohon maaf atas ketidaksempurnaan buku data sampel ini dan selalu dengan tangan terbuka menerima kritikan, saran dan masukan dari pihak manapun.
+Semoga
+data sampel ini dapat bermanfaat bagi seluruh pemangku kepentingan di Indonesia untuk meningkatkan pelaksanaan Program Jaminan Kesehatan Nasional (JKN) melalui
+evidence based policy making
+.
+Data Sampel

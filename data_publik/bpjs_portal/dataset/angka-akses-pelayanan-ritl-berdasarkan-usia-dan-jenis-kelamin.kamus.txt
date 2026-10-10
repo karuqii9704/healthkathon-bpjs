@@ -1,0 +1,7 @@
+Angka Akses Pelayanan RITL berdasarkan Usia dan Jenis Kelamin
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-30 17:27:46.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=8edb7ab1-a99d-11eb-9a34-23abed71d74c
+Unduh: https://drive.google.com/uc?export=download&id=1vkR25RbdWo-wtEK_T5RWy2DncR21nA4H
+
+Kolom:
+

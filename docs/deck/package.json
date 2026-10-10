@@ -1,0 +1,12 @@
+{
+  "name": "payray-deck",
+  "private": true,
+  "description": "Generator pitch deck PayRay (pptxgenjs). Jalankan: PPTX_SKILL_DIR=<path skill pptx> node build_deck.js",
+  "dependencies": {
+    "pptxgenjs": "^4.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
+    "sharp": "^0.34.0"
+  }
+}

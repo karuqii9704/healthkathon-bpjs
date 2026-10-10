@@ -1,0 +1,7 @@
+Angka Hari Rawat Pelayanan RITL berdasarkan Usia dan Jenis Kelamin
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-10-27 12:47:15.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=56c67841-36e9-11ec-9ed0-c7f2fd692e3b
+Unduh: https://drive.google.com/uc?export=download&id=1_0PSuew_duSFmqvaMuih9jh1EKUOobec
+
+Kolom:
+

@@ -1,0 +1,7 @@
+Angka Akses Pelayanan RITP berdasarkan Hak Kelas Perawatan Tahun
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-30 17:09:41.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=2d84010d-a99c-11eb-9a34-5743a21dbc2d
+Unduh: https://drive.google.com/uc?export=download&id=14wGzcKKVgZE9MFOQiD8dRLkIMhhyyXSq
+
+Kolom:
+

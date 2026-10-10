@@ -1,0 +1,12 @@
+Pertumbuhan Peserta JKN per Provinsi
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-16 14:49:09.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=09b55b59-96b1-11eb-af47-77f7369ea4b0
+Unduh: https://drive.google.com/uc?export=download&id=1R7rIp-90ZNTvaQ2w-v0i4D1i_RUuxtde
+
+Kolom:
+- 2018: Pertumbuhan Peserta JKN berdasarkan Provinsi pada Tahun 2018
+- 2017: Pertumbuhan Peserta JKN berdasarkan Provinsi pada Tahun 2017
+- 2016: Pertumbuhan Peserta JKN berdasarkan Provinsi pada Tahun 2016
+- 2015: Pertumbuhan Peserta JKN berdasarkan Provinsi pada Tahun 2015
+- 2014: Pertumbuhan Peserta JKN berdasarkan Provinsi pada Tahun 2014
+- Provinsi: Pertumbuhan Peserta JKN berdasarkan Provinsi

@@ -1,0 +1,7 @@
+100 Penyakit dengan Jumlah Admisi Tertinggi berdasarkan Diagnosis Primer di RITP
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-10-27 15:32:05.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=5db42fba-3700-11ec-9ed0-37db6dec2d87
+Unduh: https://drive.google.com/uc?export=download&id=123d12BLsEvkjVV4aEaTcvtQCtdR01lbK
+
+Kolom:
+

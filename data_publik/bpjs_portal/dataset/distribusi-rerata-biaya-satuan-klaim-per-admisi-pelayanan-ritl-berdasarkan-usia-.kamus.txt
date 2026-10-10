@@ -1,0 +1,7 @@
+Distribusi Rerata Biaya Satuan Klaim  per Admisi Pelayanan RITL berdasarkan Usia dan Jenis Kelamin
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-10-27 13:05:06.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=d4baa9a8-36eb-11ec-9ed0-a34785b70db9
+Unduh: https://drive.google.com/uc?export=download&id=1X7VRDPGCM6I1EkwjimRf_a2yzbrFUz8x
+
+Kolom:
+

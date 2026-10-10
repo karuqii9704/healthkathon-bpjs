@@ -1,0 +1,7 @@
+Angka Akses Pelayanan RITL berdasarkan Provinsi
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-04-30 17:20:52.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=bd442004-a99d-11eb-9a34-4b5084815941
+Unduh: https://drive.google.com/uc?export=download&id=13PxGBpIJWy0p9cSibUMs9_0eq40B5UAS
+
+Kolom:
+

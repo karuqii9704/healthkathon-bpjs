@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PayRay · Antrean Pemeriksaan</title>
+<style>
+  :root {
+    --night: #0E1C20; --panel: #17343A; --ink: #172A30; --paper: #F3F2EE; --card: #FFFFFF;
+    --green: #1B7F57; --green-2: #2A9D6F; --lime: #A6CE39; --mint: #E3EFE7; --line: #DEDCD4;
+    --muted: #5B6B70; --mist: #B9C7C9; --warm: #FBE3D6; --rust: #9A3B12; --amber-bg: #FFF1CC; --amber: #8A5A00;
+    --head: "Montserrat", "Segoe UI", system-ui, sans-serif;
+    --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15px; }
+  button { font: inherit; cursor: pointer; }
+  .wrap { max-width: 1480px; margin: 0 auto; padding: 0 28px; }
+
+  /* topbar */
+  header.top { background: var(--night); color: #fff; }
+  header.top .wrap { display: flex; align-items: center; gap: 18px; height: 64px; }
+  .logo { font-family: var(--head); font-weight: 800; font-size: 26px; letter-spacing: -.5px; }
+  .logo b { color: var(--lime); font-weight: 800; }
+  .crumb { color: var(--mist); font-size: 15px; }
+  .crumb strong { color: #fff; font-weight: 600; }
+  .spacer { flex: 1; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+  .chip.dark { background: var(--panel); color: var(--mist); }
+  .chip.lime { background: rgba(166,206,57,.16); color: var(--lime); }
+
+  /* kpi */
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 22px 0 18px; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .kpi .lab { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green); }
+  .kpi .val { font-family: var(--head); font-weight: 700; font-size: 30px; margin-top: 6px; }
+  .kpi .sub { color: var(--muted); font-size: 14px; margin-top: 2px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 300px; gap: 16px; align-items: start; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+
+  /* filter */
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--line); align-items: center; }
+  .filters input[type=search], .filters select { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
+  .filters input[type=search] { min-width: 220px; }
+  .toggle input { width: 16px; height: 16px; margin: 0; accent-color: var(--green); }
+  .toggle { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 14px; }
+  .count { color: var(--muted); font-size: 14px; margin-left: auto; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; padding: 10px 14px; border-bottom: 1px solid var(--line); background: #FAFAF7; }
+  td { padding: 11px 14px; border-bottom: 1px solid #EEECE6; vertical-align: middle; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: #F7FBF8; }
+  tbody tr.sel { background: var(--mint); }
+  .rank { color: var(--muted); font-variant-numeric: tabular-nums; width: 38px; }
+  .nm { font-weight: 700; }
+  .meta { color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+  .score { display: flex; align-items: center; gap: 8px; min-width: 120px; }
+  .bar { flex: 1; height: 7px; background: #ECEAE4; border-radius: 4px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--green); border-radius: 4px; }
+  .score b { font-family: var(--head); font-size: 15px; width: 30px; text-align: right; font-variant-numeric: tabular-nums; }
+  .badge { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 12.5px; font-weight: 700; white-space: nowrap; }
+  .b-tinggi { background: var(--mint); color: var(--green); }
+  .b-sedang { background: var(--amber-bg); color: var(--amber); }
+  .b-rendah { background: #EDEDED; color: var(--muted); }
+  .r-Tinggi { background: var(--warm); color: var(--rust); }
+  .r-Sedang { background: var(--amber-bg); color: var(--amber); }
+  .r-Rendah { background: #EDEDED; color: var(--muted); }
+  .mods { display: flex; gap: 4px; }
+  .mod { font-size: 12px; font-weight: 700; padding: 2px 7px; border-radius: 6px; background: #F1F0EC; color: #A3A9A6; }
+  .mod.on { background: var(--green); color: #fff; }
+  .rp { font-family: var(--head); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+  .st { font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .st-none { color: var(--muted); }
+  .st-jadwal { color: var(--amber); }
+  .st-wajar { color: var(--muted); }
+  .st-terbukti { color: var(--rust); }
+  .pager { display: flex; gap: 8px; align-items: center; justify-content: flex-end; padding: 12px 16px; color: var(--muted); font-size: 14px; }
+  .pager button { border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 5px 12px; color: var(--ink); }
+  .pager button:disabled { opacity: .4; cursor: default; }
+
+  /* side */
+  .side { display: flex; flex-direction: column; gap: 16px; }
+  .side .card { padding: 16px 18px; }
+  .side h3 { margin: 0 0 12px; font-family: var(--head); font-size: 16px; }
+  .hrow { display: grid; grid-template-columns: 92px 1fr 44px; gap: 8px; align-items: center; margin: 9px 0; font-size: 14px; }
+  .hrow .bar i { background: var(--green-2); }
+  .hrow span:last-child { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+  .fb { font-size: 14px; color: var(--muted); line-height: 1.45; }
+  .fb strong { color: var(--ink); }
+  .btn { border: 1px solid var(--green); background: var(--green); color: #fff; border-radius: 8px; padding: 9px 14px; font-weight: 700; }
+  .btn.ghost { background: #fff; color: var(--green); }
+  .btn.warn { background: #fff; color: var(--rust); border-color: #E6B9A3; }
+  .btn.small { padding: 6px 11px; font-size: 13.5px; }
+
+  /* drawer: lembar hasil scan */
+  .scrim { position: fixed; inset: 0; background: rgba(14,28,32,.35); opacity: 0; pointer-events: none; transition: opacity .15s; }
+  .scrim.on { opacity: 1; pointer-events: auto; }
+  aside.sheet { position: fixed; top: 0; right: 0; height: 100vh; width: 560px; max-width: 100vw; background: var(--paper); box-shadow: -10px 0 30px rgba(0,0,0,.12); transform: translateX(105%); transition: transform .18s ease-out; overflow-y: auto; }
+  aside.sheet.on { transform: none; }
+  .sheet .hd { background: var(--night); color: #fff; padding: 18px 24px; display: flex; align-items: center; gap: 12px; }
+  .sheet .hd .t { font-family: var(--head); font-weight: 700; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; color: var(--lime); }
+  .sheet .hd button { background: none; border: 0; color: var(--mist); font-size: 22px; line-height: 1; margin-left: auto; }
+  .sheet .bd { padding: 20px 24px 28px; }
+  .sc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+  .sc h2 { margin: 0; font-family: var(--head); font-size: 22px; }
+  .sc .row { display: flex; align-items: center; gap: 10px; }
+  .big { font-family: var(--head); font-weight: 800; font-size: 50px; letter-spacing: -1px; }
+  .big small { color: var(--muted); font-size: 24px; font-weight: 700; }
+  .lbl { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin: 18px 0 8px; }
+  .mbar { display: grid; grid-template-columns: 96px 1fr 34px; gap: 10px; align-items: center; margin: 7px 0; font-size: 14px; }
+  .mbar span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  ol.why { margin: 0; padding-left: 20px; }
+  ol.why li { margin: 7px 0; line-height: 1.4; }
+  .est { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); margin-top: 16px; padding-top: 14px; }
+  .est .rp { font-size: 26px; font-weight: 700; }
+  .brk { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 14px; color: var(--muted); margin-top: 8px; }
+  .brk b { color: var(--ink); font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+  .note { font-size: 13.5px; color: var(--muted); font-style: italic; margin-top: 14px; }
+  .nav { display: flex; justify-content: space-between; margin-top: 14px; }
+  footer { color: var(--muted); font-size: 13px; padding: 18px 0 30px; }
+  @media (max-width: 1100px) { .grid { grid-template-columns: 1fr; } .kpis { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="logo">Pay<b>Ray</b></div>
+    <div class="crumb"><strong>Antrean pemeriksaan</strong> · Kantor Cabang (simulasi)</div>
+    <div class="spacer"></div>
+    <span class="chip dark" id="periode"></span>
+    <span class="chip lime">Data sintetis</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="kpis">
+    <div class="kpi"><div class="lab">Badan usaha discan</div><div class="val" id="k-n"></div><div class="sub">semua pemberi kerja, periode ini</div></div>
+    <div class="kpi"><div class="lab">Masuk antrean</div><div class="val" id="k-q"></div><div class="sub">risiko ≥ sedang &amp; keyakinan ≥ sedang</div></div>
+    <div class="kpi"><div class="lab">Potensi iuran di antrean</div><div class="val" id="k-rp"></div><div class="sub">estimasi kalkulator PayRay per tahun</div></div>
+    <div class="kpi"><div class="lab">Umpan balik petugas</div><div class="val" id="k-fb"></div><div class="sub" id="k-fb2"></div></div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <div class="filters">
+        <input id="q" type="search" placeholder="Cari nama badan usaha…" aria-label="Cari">
+        <select id="f-skala" aria-label="Skala"><option value="">Semua skala</option></select>
+        <select id="f-sektor" aria-label="Sektor"><option value="">Semua sektor</option></select>
+        <select id="f-wil" aria-label="Wilayah"><option value="">Semua wilayah</option></select>
+        <select id="f-modul" aria-label="Modul">
+          <option value="">Semua modul</option><option value="mu">Upah</option><option value="mh">Headcount</option><option value="ms">Status</option>
+        </select>
+        <label class="toggle"><input type="checkbox" id="f-all"> Tampilkan semua</label>
+        <span class="count" id="count"></span>
+      </div>
+      <table>
+        <thead><tr><th>#</th><th>Badan usaha</th><th>Skor</th><th>Keyakinan</th><th>Modul</th><th style="text-align:right">Estimasi/thn</th><th>Status</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="pager"><span id="pg"></span><button id="prev">‹ Sebelumnya</button><button id="next">Berikutnya ›</button></div>
+    </div>
+
+    <div class="side">
+      <div class="card">
+        <h3>Modul yang menyala di antrean</h3>
+        <div id="h-mod"></div>
+      </div>
+      <div class="card">
+        <h3>Antrean per skala usaha</h3>
+        <div id="h-skala"></div>
+      </div>
+      <div class="card">
+        <h3>Siklus umpan balik</h3>
+        <p class="fb">Setiap keputusan petugas (<strong>Wajar</strong> atau <strong>Terbukti</strong>) tersimpan sebagai label. Label ini melatih ulang urutan prioritas periode berikutnya.</p>
+        <button class="btn small ghost" id="export">Unduh label umpan balik (CSV)</button>
+      </div>
+    </div>
+  </section>
+  <footer>PayRay mengurutkan prioritas; keputusan pemeriksaan dan sanksi tetap di petugas. Semua data pada prototype ini sintetis, NIK dipseudonimisasi.</footer>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" aria-label="Lembar hasil scan">
+  <div class="hd"><span class="t">Lembar hasil scan</span><button id="close" aria-label="Tutup">×</button></div>
+  <div class="bd" id="sheet-body"></div>
+</aside>
+
+<script>
+const DATA = __DATA__;
+const META = __META__;
+const PAGE = 12;
+const KEY = "payray_umpan_balik_v1";
+const nf = new Intl.NumberFormat("id-ID");
+const rp = (v) => v <= 0 ? "–" : v >= 1e9 ? "Rp" + (v / 1e9).toLocaleString("id-ID", { maximumFractionDigits: 1 }) + " M"
+  : v >= 1e6 ? "Rp" + Math.round(v / 1e6).toLocaleString("id-ID") + " jt" : "Rp" + nf.format(Math.round(v / 1e3)) + " rb";
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const inQueue = (d) => d.kat !== "Rendah" && d.yakin !== "rendah";
+const STATUS = { jadwal: "Dijadwalkan", wajar: "Wajar", terbukti: "Terbukti" };
+
+let fb = {};
+try { fb = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { fb = {}; }
+const saveFb = () => { try { localStorage.setItem(KEY, JSON.stringify(fb)); } catch (e) {} };
+
+const queue = DATA.filter(inQueue);
+const byId = Object.fromEntries(DATA.map((d) => [d.id, d]));
+let view = [], page = 0, openId = null;
+
+function fill(id, vals) {
+  const el = document.getElementById(id);
+  [...new Set(vals)].sort().forEach((v) => { const o = document.createElement("option"); o.value = v; o.textContent = cap(v); el.appendChild(o); });
+}
+fill("f-sektor", DATA.map((d) => d.sektor));
+fill("f-wil", DATA.map((d) => d.wilayah));
+document.getElementById("f-skala").innerHTML = '<option value="">Semua skala</option>' + ["mikro", "kecil", "menengah", "besar"].map((s) => `<option value="${s}">${cap(s)}</option>`).join("");
+
+function kpis() {
+  document.getElementById("periode").textContent = "Periode scan " + META.periode;
+  document.getElementById("k-n").textContent = nf.format(DATA.length);
+  document.getElementById("k-q").textContent = nf.format(queue.length);
+  document.getElementById("k-rp").textContent = rp(queue.reduce((a, d) => a + d.est, 0));
+  const vals = Object.values(fb);
+  document.getElementById("k-fb").textContent = nf.format(vals.filter((v) => v !== "jadwal").length) + " label";
+  document.getElementById("k-fb2").textContent = `${vals.filter((v) => v === "terbukti").length} terbukti · ${vals.filter((v) => v === "wajar").length} wajar · ${vals.filter((v) => v === "jadwal").length} dijadwalkan`;
+}
+
+function hbars(el, items, total) {
+  document.getElementById(el).innerHTML = items.map(([lab, n]) =>
+    `<div class="hrow"><span>${lab}</span><div class="bar"><i style="width:${(100 * n / Math.max(1, total)).toFixed(1)}%"></i></div><span>${nf.format(n)}</span></div>`).join("");
+}
+function side() {
+  hbars("h-mod", [["Upah", queue.filter((d) => d.mu >= 30).length], ["Headcount", queue.filter((d) => d.mh >= 30).length], ["Status", queue.filter((d) => d.ms >= 30).length]], queue.length);
+  hbars("h-skala", ["mikro", "kecil", "menengah", "besar"].map((s) => [cap(s), queue.filter((d) => d.skala === s).length]), queue.length);
+}
+
+function applyFilters() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const sk = document.getElementById("f-skala").value, se = document.getElementById("f-sektor").value;
+  const wi = document.getElementById("f-wil").value, mo = document.getElementById("f-modul").value;
+  const all = document.getElementById("f-all").checked;
+  view = (all ? DATA : queue).filter((d) =>
+    (!q || d.nama.toLowerCase().includes(q) || d.id.toLowerCase().includes(q)) &&
+    (!sk || d.skala === sk) && (!se || d.sektor === se) && (!wi || d.wilayah === wi) && (!mo || d[mo] >= 30));
+  page = 0; render();
+}
+
+function modChips(d) {
+  return `<div class="mods"><span class="mod ${d.mu >= 30 ? "on" : ""}">U</span><span class="mod ${d.mh >= 30 ? "on" : ""}">H</span><span class="mod ${d.ms >= 30 ? "on" : ""}">S</span></div>`;
+}
+function render() {
+  const start = page * PAGE, rows = view.slice(start, start + PAGE);
+  document.getElementById("rows").innerHTML = rows.map((d, i) => {
+    const st = fb[d.id];
+    return `<tr data-id="${d.id}" class="${d.id === openId ? "sel" : ""}">
+      <td class="rank">${start + i + 1}</td>
+      <td><div class="nm">${esc(d.nama)}</div><div class="meta">${esc(d.sektor)} · ${cap(d.skala)} · ${esc(d.wilayah)} · ${nf.format(d.pekerja)} pekerja</div></td>
+      <td><div class="score"><div class="bar"><i style="width:${d.skor}%"></i></div><b>${Math.round(d.skor)}</b></div></td>
+      <td><span class="badge b-${d.yakin}">${cap(d.yakin)}</span></td>
+      <td>${modChips(d)}</td>
+      <td class="rp">${d.est > 0 ? rp(d.est) : "–"}</td>
+      <td class="st st-${st || "none"}">${st ? STATUS[st] : "Belum diperiksa"}</td></tr>`;
+  }).join("") || `<tr><td colspan="7" style="color:var(--muted);padding:24px">Tidak ada badan usaha yang cocok dengan filter.</td></tr>`;
+  const pages = Math.max(1, Math.ceil(view.length / PAGE));
+  document.getElementById("pg").textContent = `Halaman ${page + 1} dari ${pages}`;
+  document.getElementById("prev").disabled = page === 0;
+  document.getElementById("next").disabled = page >= pages - 1;
+  document.getElementById("count").textContent = `${nf.format(view.length)} badan usaha`;
+}
+
+function mbar(lab, v) {
+  return `<div class="mbar"><span>${lab}</span><div class="bar"><i style="width:${v}%"></i></div><span>${v}</span></div>`;
+}
+function openSheet(id) {
+  const d = byId[id]; if (!d) return;
+  openId = id;
+  const idx = view.findIndex((x) => x.id === id);
+  const st = fb[id];
+  document.getElementById("sheet-body").innerHTML = `
+    <div class="sc">
+      <div class="row"><h2>${esc(d.nama)}</h2><span class="spacer"></span><span class="badge r-${d.kat}">Risiko ${d.kat}</span></div>
+      <div class="meta" style="margin-top:6px">${d.id} · ${esc(d.sektor)} · skala ${d.skala} · ${esc(d.wilayah)} · ${nf.format(d.pekerja)} pekerja dilaporkan</div>
+      <div class="row" style="margin-top:12px"><span class="big">${Math.round(d.skor)}<small>/100</small></span><span class="badge b-${d.yakin}" style="font-size:14px;margin-left:8px">Keyakinan: ${d.yakin}</span></div>
+      <div class="lbl">Modul scan</div>
+      ${mbar("Upah", d.mu)}${mbar("Headcount", d.mh)}${mbar("Status", d.ms)}${mbar("Anomali", d.an)}
+      <div class="lbl">Alasan utama</div>
+      ${d.alasan.length ? `<ol class="why">${d.alasan.map((a) => `<li>${esc(a)}</li>`).join("")}</ol>` : `<p class="meta">Tidak ada aturan yang menyala kuat.</p>`}
+      <div class="est"><span class="meta" style="font-size:15px">Estimasi potensi iuran tak tertagih</span><span class="rp">± ${rp(d.est)}/thn</span></div>
+      <div class="brk"><span>Selisih upah dilaporkan</span><b>${rp(d.eu)}</b><span>Pekerja tak terdaftar</span><b>${rp(d.eh)}</b><span>Pekerja dipindah ke PBPU</span><b>${rp(d.es)}</b><span>Upah wajar acuan</span><b>Rp${nf.format(d.wajar)}</b></div>
+      <div class="actions">
+        <button class="btn" data-act="jadwal">${st === "jadwal" ? "✓ Dijadwalkan" : "Jadwalkan pemeriksaan"}</button>
+        <button class="btn ghost" data-act="wajar">${st === "wajar" ? "✓ Ditandai wajar" : "Tandai wajar"}</button>
+        <button class="btn warn" data-act="terbukti">${st === "terbukti" ? "✓ Temuan terbukti" : "Temuan terbukti"}</button>
+      </div>
+      <div class="note">PayRay mengurutkan prioritas. Keputusan pemeriksaan tetap di petugas.</div>
+    </div>
+    <div class="nav"><button class="btn small ghost" data-nav="-1" ${idx <= 0 ? "disabled" : ""}>‹ Sebelumnya</button><button class="btn small ghost" data-nav="1" ${idx < 0 || idx >= view.length - 1 ? "disabled" : ""}>Berikutnya ›</button></div>`;
+  document.getElementById("sheet").classList.add("on");
+  document.getElementById("scrim").classList.add("on");
+  render();
+}
+function closeSheet() {
+  openId = null;
+  document.getElementById("sheet").classList.remove("on");
+  document.getElementById("scrim").classList.remove("on");
+  render();
+}
+
+document.getElementById("rows").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) openSheet(tr.dataset.id); });
+document.getElementById("sheet-body").addEventListener("click", (e) => {
+  const act = e.target.closest("[data-act]"), nav = e.target.closest("[data-nav]");
+  if (act) { fb[openId] = fb[openId] === act.dataset.act ? undefined : act.dataset.act; if (!fb[openId]) delete fb[openId]; saveFb(); kpis(); openSheet(openId); }
+  if (nav && !nav.disabled) { const i = view.findIndex((x) => x.id === openId) + Number(nav.dataset.nav); if (view[i]) { page = Math.floor(i / PAGE); openSheet(view[i].id); } }
+});
+document.getElementById("close").onclick = closeSheet;
+document.getElementById("scrim").onclick = closeSheet;
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
+document.getElementById("prev").onclick = () => { page--; render(); };
+document.getElementById("next").onclick = () => { page++; render(); };
+["q", "f-skala", "f-sektor", "f-wil", "f-modul", "f-all"].forEach((id) => document.getElementById(id).addEventListener("input", applyFilters));
+document.getElementById("export").onclick = () => {
+  const lines = ["employer_id,nama,skor,keyakinan,keputusan_petugas"].concat(
+    Object.entries(fb).map(([id, v]) => { const d = byId[id]; return [id, `"${d.nama}"`, d.skor, d.yakin, v].join(","); }));
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
+  a.download = "payray_label_umpan_balik.csv"; a.click();
+};
+
+kpis(); side(); applyFilters();
+// ?buka=BU00001 membuka lembar hasil scan langsung (untuk demo / tangkapan layar)
+const want = new URLSearchParams(location.search).get("buka");
+if (want) openSheet(want);
+</script>
+</body>
+</html>

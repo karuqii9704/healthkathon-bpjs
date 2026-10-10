@@ -1,0 +1,7 @@
+Angka Admisi Pelayanan RITP berdasarkan Hak Kelas Perawatan
+Walidata: DJSN · Kategori: Statistik JKN 2014-2018 · Diperbarui: 2021-10-26 17:31:06.0
+Sumber: https://data.bpjs-kesehatan.go.id/bpjs-portal/action/dataset-single.cbi?id=d343da6b-3647-11ec-9ed0-dd1d48f4996f
+Unduh: https://drive.google.com/uc?export=download&id=1HXmj-IUIJ_6O8G1SoZIccCz_5kzotNEg
+
+Kolom:
+

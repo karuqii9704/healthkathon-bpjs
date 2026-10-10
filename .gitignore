@@ -1,0 +1,14 @@
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+hasil/
+hasil_holdout/
+data_holdout/
+# respons mentah Tableau berisi session id
+data_publik/bpjs_portal/raw/
+node_modules/
+.DS_Store
+Thumbs.db
+~$*.pptx

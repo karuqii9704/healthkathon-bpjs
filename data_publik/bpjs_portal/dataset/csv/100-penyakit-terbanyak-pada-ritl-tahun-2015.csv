@@ -1,0 +1,103 @@
+100 Penyakit Terbanyak pada RITL Tahun 2015,,,,
+NO.,Kode ICD X,Diagnosis Primer,Jumlah Admisi,Jumlah Peserta
+1,A09,Diarrhoea and gastroenteritis of presumed infectious origin,281955,270091
+2,A010,Typhoid fever,252596,244338
+3,K30,Dyspepsia,193880,181020
+4,Z511,Chemotherapy session for neoplasm,161343,41545
+5,A91,Dengue haemorrhagic fever,158586,156667
+6,I10,Essential (primary) hypertension,108794,102649
+7,O821,Delivery by emergency caesarean section,104173,104153
+8,I500,Congestive heart failure,94626,79117
+9,O800,Spontaneous vertex delivery,91453,91393
+10,O809,"Single spontaneous delivery, unspecified",87882,87833
+11,P034,Fetus and newborn affected by caesarean delivery,83744,83693
+12,O829,"Delivery by caesarean section, unspecified",78731,78723
+13,A90,Dengue fever [classical dengue],69219,68781
+14,J180,"Bronchopneumonia, unspecified",69059,64837
+15,I639,"Cerebral infarction, unspecified",64980,61896
+16,J189,"Pneumonia, unspecified",61622,58668
+17,O820,Delivery by elective caesarean section,58108,58093
+18,K409,"Unilateral or unspecified inguinal hernia, without obstruction or gangrene",57528,56422
+19,D561,Beta thalassaemia,56179,8251
+20,N390,"Urinary tract infection, site not specified",53054,52110
+21,I64,"Stroke, not specified as haemorrhage or infarction",52854,50671
+22,J459,"Asthma, unspecified",51813,44443
+23,A162,"Tuberculosis of lung, without mention of bacteriological or histological confirmation",50070,46346
+24,K297,"Gastritis, unspecified",49053,47403
+25,D649,"Anaemia, unspecified",48114,40615
+26,I110,Hypertensive heart disease with (congestive) heart failure,47888,43793
+27,O342,Maternal care due to uterine scar from previous surgery,46962,46835
+28,E119,Non-insulin-dependent diabetes mellitus without complications,41718,38918
+29,K359,"Acute appendicitis, unspecified",40467,39999
+30,D24,Benign neoplasm of breast,39751,38603
+31,N189,"Chronic renal failure, unspecified",38781,28976
+32,N180,End-stage renal disease,38255,24513
+33,I251,Atherosclerotic heart disease,36046,31096
+34,N40,Hyperplasia of prostate,36042,33331
+35,J069,"Acute upper respiratory infection, unspecified",35203,34406
+36,J449,"Chronic obstructive pulmonary disease, unspecified",35177,31108
+37,O48,Prolonged pregnancy,34516,34484
+38,R509,"Fever, unspecified",33330,32991
+39,E115,Non-insulin-dependent diabetes mellitus with peripheral circulatory complications,32477,28062
+40,K291,Other acute gastritis,31879,30831
+41,O808,Other single spontaneous delivery,31550,31543
+42,N200,Calculus of kidney,30856,25278
+43,B349,"Viral infection, unspecified",30850,30540
+44,O210,Mild hyperemesis gravidarum,29653,24310
+45,O141,Severe pre-eclampsia,29347,28140
+46,I120,Hypertensive renal disease with renal failure,27605,20280
+47,I119,Hypertensive heart disease without (congestive) heart failure,27079,25958
+48,O020,Blighted ovum and nonhydatidiform mole,26284,26063
+49,K746,Other and unspecified cirrhosis of liver,26201,19006
+50,D259,"Leiomyoma of uterus, unspecified",24028,21992
+51,Z470,Follow-up care involving removal of fracture plate and other internal fixation device,23685,23232
+52,I619,"Intracerebral haemorrhage, unspecified",23130,22485
+53,A419,"Septicaemia, unspecified",22399,22105
+54,O828,Other single delivery by caesarean section,21952,21947
+55,K350,Acute appendicitis with generalized peritonitis,21642,21488
+56,O339,"Maternal care for disproportion, unspecified",21533,21519
+57,J441,"Chronic obstructive pulmonary disease with acute exacerbation, unspecified",21120,18301
+58,J40,"Bronchitis, not specified as acute or chronic",21089,20789
+59,C509,"Malignant neoplasm of breast, unspecified",20383,16895
+60,F200,Paranoid schizophrenia,20102,16380
+61,J029,"Acute pharyngitis, unspecified",19429,19048
+62,O034,"Spontaneous abortion, incomplete, without complication",18833,18671
+63,A499,"Bacterial infection, unspecified",18769,18109
+64,K921,Melaena,18627,17410
+65,A150,"Tuberculosis of lung, confirmed by sputum microscopy with or without culture",18477,17416
+66,R560,Febrile convulsions,18157,17045
+67,P071,Other low birth weight,18123,17801
+68,O064,"Unspecified abortion, incomplete, without complication",17917,17725
+69,R104,Other and unspecified abdominal pain,17761,17486
+70,O410,Olihydramnios,17684,17627
+71,I509,"Heart failure, unspecified",17335,15454
+72,J90,"Pleural effusion, not elsewhere classified",17255,15004
+73,O321,Maternal care for breech presentation,17040,16999
+74,J350,Chronic tonsillitis,16866,16717
+75,O630,Prolonged first stage (of labour),16785,16773
+76,N832,Other and unspecified ovarian cysts,16628,16133
+77,I219,"Acute myocardial infarction, unspecified",16594,15868
+78,I200,Unstable angina,16480,15207
+79,P599,"Neonatal jaundice, unspecified",16226,15871
+80,N201,Calculus of ureter,15611,14034
+81,P211,Mild and moderate birth asphyxia,15440,15428
+82,O429,"Premature rupture of membranes, unspecified",15294,15159
+83,H814,Verti of central origin,15163,14749
+84,N132,Hydronephrosis with renal and ureteral calculous obstruction,15096,13605
+85,D210,"Other benign neoplasm of connective and other soft tissue of head, face and neck",15008,14858
+86,D66,Hereditary factor VIII deficiency,14985,1397
+87,O441,Placenta praevia with haemorrhage,14979,13486
+88,O631,Prolonged second stage (of labour),14756,14731
+89,J068,Other acute upper respiratory infections of multiple sites,14705,14491
+90,S099,Unspecified injury of head,14560,14470
+91,E149,Unspecified diabetes mellitus without complications,14518,13719
+92,O322,Maternal care for transverse and oblique lie,14330,14312
+93,H813,Other peripheral verti,14326,13922
+94,E145,Unspecified diabetes mellitus with peripheral circulatory complications,14071,12620
+95,I259,"Chronic ischaemic heart disease, unspecified",13950,13200
+96,D367,Benign neoplasm of other specified sites,13305,13099
+97,H110,Pterygium,12997,12183
+98,R42,Dizziness and giddiness,12982,12698
+99,B519,Plasmodium vivax malaria without complication,12835,12067
+100,D219,"Other benign neoplasm of connective and other soft tissue, unspecified",12760,12673
+TOTAL,,,4145053,3755220
