@@ -171,6 +171,31 @@
   footer { color: var(--muted); font-size: 13px; padding: 18px 0 30px; }
   .callout { background: var(--mint); border: 1px solid #C5DECF; border-radius: 12px; padding: 14px 18px; line-height: 1.5; }
 
+
+  /* panduan + tur */
+  .nb-guide { color: var(--lime) !important; }
+  .chip.tourbtn { background: var(--lime); color: var(--night); border: 0; }
+  .welcome { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: var(--mint); border: 1px solid #C5DECF; border-radius: 12px; padding: 12px 16px; margin-top: 18px; line-height: 1.45; }
+  .welcome[hidden] { display: none; }
+  .welcome .x { background: none; border: 0; font-size: 22px; color: var(--muted); line-height: 1; }
+  .help { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: #E4E2DB; color: var(--muted); font-size: 11px; font-weight: 800; font-style: italic; font-family: Georgia, serif; text-transform: none; letter-spacing: 0; cursor: help; position: relative; vertical-align: 1px; margin-left: 3px; }
+  .help:hover:after, .help:focus:after { content: attr(data-help); position: absolute; top: 22px; left: -10px; width: 250px; background: var(--night); color: #fff; font: 400 13px/1.45 var(--body); font-style: normal; padding: 9px 11px; border-radius: 8px; z-index: 30; white-space: normal; box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+  .kpi:nth-child(n+3) .help:hover:after, .kpi:nth-child(n+3) .help:focus:after, th .help:hover:after, th .help:focus:after { left: auto; right: -10px; }
+  .guide { max-width: 1100px; }
+  h3.gh { font-family: var(--head); font-size: 17px; margin: 28px 0 10px; }
+  .gi { width: 32px; height: 32px; border-radius: 8px; background: var(--green); color: #fff; font-family: var(--head); font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+  ol.steps { margin: 0; padding-left: 22px; line-height: 1.55; } ol.steps li { margin: 8px 0; }
+  table.gloss td:first-child { font-weight: 700; white-space: nowrap; width: 170px; }
+  .faq details { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin: 8px 0; }
+  .faq summary { font-weight: 700; cursor: pointer; }
+  .faq p { margin: 8px 0 0; color: var(--ink); line-height: 1.5; }
+  .tour-spot { position: fixed; border-radius: 12px; box-shadow: 0 0 0 4px var(--lime), 0 0 0 9999px rgba(14,28,32,.55); z-index: 40; pointer-events: none; }
+  .tour-card { position: fixed; z-index: 41; width: 340px; max-width: calc(100vw - 32px); background: #fff; border-radius: 12px; padding: 16px 18px; box-shadow: 0 12px 40px rgba(0,0,0,.25); }
+  .tour-card .n { font-size: 12.5px; font-weight: 700; letter-spacing: .08em; color: var(--green); text-transform: uppercase; }
+  .tour-card h4 { margin: 4px 0 6px; font-family: var(--head); font-size: 16px; }
+  .tour-card p { margin: 0; color: var(--ink); line-height: 1.5; font-size: 14.5px; }
+  .tour-card .row { margin-top: 12px; justify-content: flex-end; }
+  @media (max-width: 720px) { .tourbtn { display: none; } table.gloss td:first-child { width: auto; white-space: normal; } }
   @media (max-width: 1100px) {
     .grid, .cols2, .cols3 { grid-template-columns: 1fr; } .kpis { grid-template-columns: repeat(2, 1fr); } .flow { grid-template-columns: 1fr 1fr; }
     nav.tabs button { padding: 8px 8px; }
@@ -178,7 +203,9 @@
   @media (max-width: 720px) {
     .wrap { padding: 0 16px; }
     header.top .wrap { height: auto; flex-wrap: wrap; padding-top: 10px; padding-bottom: 8px; gap: 8px; }
-    nav.tabs { order: 3; width: 100%; margin: 0; overflow-x: auto; }
+    nav.tabs { order: 3; width: 100%; margin: 0; overflow-x: auto; scrollbar-width: none; }
+    nav.tabs::-webkit-scrollbar { display: none; }
+    nav.tabs button { white-space: nowrap; }
     .hide-s { display: none; }
     .kpis { grid-template-columns: 1fr; } .flow { grid-template-columns: 1fr; }
     .charts, .duo { grid-template-columns: 1fr; }
@@ -204,9 +231,11 @@
       <button data-tab="validasi">Validasi model</button>
       <button data-tab="kualitas">Kualitas data</button>
       <button data-tab="metode">Metodologi</button>
+      <button data-tab="panduan" class="nb-guide">Panduan</button>
     </nav>
     <div class="spacer"></div>
     <span class="chip dark hide-s" id="periode"></span>
+    <button class="chip tourbtn" data-tour>▶ Tur 1 menit</button>
     <span class="chip lime">Data sintetis</span>
   </div>
 </header>
@@ -214,12 +243,16 @@
 <main class="wrap">
 <!-- ============================================================ ANTREAN -->
 <section class="tab on" id="tab-antrean">
+  <div class="welcome" id="welcome" hidden>
+    <div><b>Baru pertama kali membuka PayRay?</b> Dashboard ini menyusun daftar badan usaha yang paling perlu diperiksa lebih dulu. Ikuti tur 1 menit, atau baca panduan berbahasa sehari-hari.</div>
+    <div class="row"><button class="btn small" data-tour>▶ Mulai tur</button><button class="btn small ghost" data-goto="panduan">Baca panduan</button><button class="x" id="welcome-x" aria-label="Tutup">×</button></div>
+  </div>
   <section class="kpis">
-    <div class="kpi"><div class="lab">Badan usaha discan</div><div class="val" id="k-n"></div><div class="sub" id="k-n2"></div></div>
-    <div class="kpi"><div class="lab">Kapasitas pemeriksaan</div><div class="val" id="k-cap"></div>
+    <div class="kpi"><div class="lab">Badan usaha discan <span class="help" tabindex="0" data-help="Jumlah pemberi kerja yang laporannya dipindai periode ini. Antrean berisi yang ditandai aturan atau berpeluang terbukti 50% ke atas.">i</span></div><div class="val" id="k-n"></div><div class="sub" id="k-n2"></div></div>
+    <div class="kpi"><div class="lab">Kapasitas pemeriksaan <span class="help" tabindex="0" data-help="Geser sesuai jumlah kunjungan yang sanggup dilakukan. Dua kotak di kanan dihitung ulang untuk sejumlah badan usaha teratas di antrean.">i</span></div><div class="val" id="k-cap"></div>
       <input type="range" id="cap" min="10" max="500" step="10" value="100" aria-label="Kapasitas pemeriksaan"><div class="sub">geser sesuai jumlah petugas periode ini</div></div>
-    <div class="kpi"><div class="lab">Perkiraan temuan terbukti</div><div class="val" id="k-hit"></div><div class="sub" id="k-hit2"></div></div>
-    <div class="kpi"><div class="lab">Perkiraan iuran tertagih</div><div class="val" id="k-rp"></div><div class="sub" id="k-rp2"></div></div>
+    <div class="kpi"><div class="lab">Perkiraan temuan terbukti <span class="help" tabindex="0" data-help="Jumlah peluang terbukti dari badan usaha teratas sebanyak kapasitas. Contoh: 100 kunjungan dengan rata-rata peluang 87% berarti sekitar 87 temuan.">i</span></div><div class="val" id="k-hit"></div><div class="sub" id="k-hit2"></div></div>
+    <div class="kpi"><div class="lab">Perkiraan iuran tertagih <span class="help" tabindex="0" data-help="Perkiraan iuran per tahun yang bisa kembali bila temuan ditindaklanjuti (peluang × perkiraan rupiah), dibandingkan bila kunjungan dipilih acak.">i</span></div><div class="val" id="k-rp"></div><div class="sub" id="k-rp2"></div></div>
   </section>
 
   <section class="grid">
@@ -242,7 +275,7 @@
       </div>
       <div class="tscroll">
       <table>
-        <thead><tr><th>#</th><th>Badan usaha</th><th>Skor rules</th><th>Peluang terbukti</th><th class="hide-s">Dua metode</th><th class="hide-s">Modul</th><th style="text-align:right">Estimasi/thn</th><th class="hide-s">Status</th></tr></thead>
+        <thead><tr><th>#</th><th>Badan usaha</th><th>Skor rules <span class="help" tabindex="0" data-help="0–100 dari 7 aturan transparan ditambah deteksi pola janggal. Bukan persentase.">i</span></th><th>Peluang terbukti <span class="help" tabindex="0" data-help="Perkiraan peluang pemeriksaan menemukan masalah, dipelajari dari hasil pemeriksaan sebelumnya.">i</span></th><th class="hide-s">Dua metode <span class="help" tabindex="0" data-help="Sepakat: aturan dan machine learning sama-sama menandai (sekitar 95% terbukti).">i</span></th><th class="hide-s">Modul</th><th style="text-align:right">Estimasi/thn</th><th class="hide-s">Status</th></tr></thead>
         <tbody id="rows"></tbody>
       </table>
       </div>
@@ -346,6 +379,100 @@
   <section class="kpis" id="q-kpis"></section>
   <div class="card"><div class="tscroll"><table class="mini" id="q-tab"></table></div></div>
   <p class="note" style="margin-top:10px">Pada prototype ini data berasal dari generator sintetis sehingga semua pemeriksaan lulus. Pada data riil, pemeriksaan yang sama dijalankan terhadap ekspor kepesertaan dan upah (lihat <code>ml/quality.py</code>).</p>
+</section>
+
+<!-- ============================================================ PANDUAN -->
+<section class="tab" id="tab-panduan">
+  <div class="guide">
+  <h2 class="sec">Panduan membaca dashboard PayRay</h2>
+  <p class="lead">Untuk siapa saja, tanpa latar belakang statistik. Baca 5 menit, atau ikuti tur interaktif 1 menit yang menunjuk langsung ke layar.</p>
+  <div class="row" style="margin-bottom:18px"><button class="btn" data-tour>▶ Mulai tur 1 menit</button><button class="btn ghost" data-goto="antrean">Langsung ke antrean</button></div>
+
+  <div class="callout">
+    <h3 style="margin:0 0 6px;font-family:var(--head)">PayRay dalam satu menit</h3>
+    <p style="margin:0">Bayangkan <b>rontgen</b> (X-ray). Dokter tidak membedah semua pasien. Ia memotret dulu, lalu fokus ke yang terlihat bermasalah. PayRay melakukan hal yang sama pada <b>laporan iuran JKN dari ribuan pemberi kerja</b>. Semua laporan "difoto", lalu PayRay menyusun <b>daftar siapa yang paling perlu didatangi lebih dulu</b>.</p>
+    <p style="margin:8px 0 0">Kenapa perlu? Jumlah petugas pemeriksa terbatas. Kalau dipilih acak, hanya sekitar <b>15 dari 100</b> kunjungan yang menemukan masalah. Dengan PayRay, sekitar <b>82 dari 100</b> (diuji pada data simulasi).</p>
+  </div>
+
+  <h3 class="gh">Tiga pola yang dicari</h3>
+  <div class="cols3">
+    <div class="card pad"><div class="gi">U</div><h3>Upah dilaporkan lebih rendah</h3><p class="cap">Upah karyawan dilaporkan pas di UMK atau tidak pernah naik, padahal usaha sejenis di wilayah yang sama membayar lebih tinggi. Iuran dihitung dari upah, jadi upah yang "dikecilkan" berarti iuran ikut kecil.</p></div>
+    <div class="card pad"><div class="gi">H</div><h3>Sebagian pekerja tidak didaftarkan</h3><p class="cap"><b>H = headcount</b> (jumlah orang). Pekerja yang terdaftar jauh lebih sedikit daripada rencana tenaga kerja yang dilaporkan perusahaan sendiri ke OSS (sistem perizinan usaha).</p></div>
+    <div class="card pad"><div class="gi">S</div><h3>Status kerja dipindah</h3><p class="cap">Banyak pekerja tiba-tiba "keluar" dari peserta penerima upah (PPU, iuran dibayar perusahaan), lalu dalam hitungan hari muncul sebagai peserta mandiri (PBPU, iuran dibayar sendiri). Padahal sebenarnya mereka masih bekerja.</p></div>
+  </div>
+
+  <h3 class="gh">Cara pakai dalam 5 langkah</h3>
+  <ol class="steps">
+    <li><b>Lihat ringkasan di atas.</b> Ada berapa badan usaha yang dipindai, dan berapa yang masuk antrean pemeriksaan.</li>
+    <li><b>Geser "Kapasitas pemeriksaan"</b> sesuai jumlah kunjungan yang sanggup dilakukan kantor cabang periode ini (misalnya 100). Dua kotak di sebelahnya langsung memperkirakan berapa kunjungan yang kemungkinan menemukan masalah dan berapa rupiah iuran yang bisa kembali.</li>
+    <li><b>Baca daftar antrean</b> dari atas ke bawah. Urutan teratas adalah yang paling layak didatangi lebih dulu. Gunakan filter wilayah, sektor, atau skala untuk fokus ke wilayah kerja Anda.</li>
+    <li><b>Klik satu baris</b> untuk membuka <b>lembar hasil scan</b>. Di sana ada alasan, grafik bukti, dan perkiraan rupiah. Lembar ini bisa dicetak sebagai bekal kunjungan.</li>
+    <li><b>Catat keputusan</b> setelah memeriksa: <i>Jadwalkan</i>, <i>Tandai wajar</i> (ternyata tidak bermasalah), atau <i>Temuan terbukti</i>. Catatan ini menjadi bahan belajar sistem untuk periode berikutnya.</li>
+  </ol>
+
+  <h3 class="gh">Membaca tabel antrean</h3>
+  <div class="card"><div class="tscroll"><table class="mini">
+    <thead><tr><th>Kolom</th><th>Artinya</th><th>Cara membaca</th></tr></thead>
+    <tbody>
+      <tr><td><b>Skor rules</b> <span class="bar" style="display:inline-block;width:40px;vertical-align:middle"><i style="width:80%"></i></span></td><td>Nilai 0–100 dari 7 aturan pemeriksaan yang bisa dijelaskan satu per satu, ditambah pendeteksi pola janggal.</td><td>Makin tinggi, makin banyak tanda bahaya. Ini bukan persentase.</td></tr>
+      <tr><td><b>Peluang terbukti</b> <span class="bar blue" style="display:inline-block;width:40px;vertical-align:middle"><i style="width:80%"></i></span></td><td>Perkiraan peluang bahwa pemeriksaan di badan usaha ini benar-benar menemukan masalah. Angka ini dipelajari dari hasil pemeriksaan sebelumnya.</td><td>"80%" artinya dari 10 badan usaha seperti ini, sekitar 8 terbukti bermasalah.</td></tr>
+      <tr><td><b>Dua metode</b></td><td>Apakah dua cara penilaian yang terpisah (aturan dan machine learning) sama-sama menandai badan usaha ini.</td><td><span class="badge ag-y">Sepakat</span> paling bisa dipegang (±95% benar). <span class="badge ag-n">Satu metode</span> artinya kumpulkan bukti tambahan dulu sebelum berkunjung.</td></tr>
+      <tr><td><b>Modul</b> <span class="mod on">U</span> <span class="mod">H</span> <span class="mod on">S</span></td><td>Pola mana yang menyala: Upah, Headcount, Status.</td><td>Hijau berarti menyala. Ini membantu petugas menyiapkan dokumen apa yang perlu diminta.</td></tr>
+      <tr><td><b>Estimasi/thn</b></td><td>Perkiraan iuran per tahun yang belum dibayarkan. Angka kecil di bawahnya adalah rentang perkiraan.</td><td>"Rp56 jt (Rp20–88 jt)" artinya perkiraan terbaik Rp56 jt, dan kemungkinan besar nilainya berada di antara Rp20 jt dan Rp88 jt.</td></tr>
+      <tr><td><b>Status</b></td><td>Keputusan petugas yang sudah dicatat.</td><td>Tersimpan di browser Anda sendiri, tidak terkirim ke mana pun.</td></tr>
+    </tbody></table></div></div>
+  <p class="cap" style="margin-top:8px"><b>Pilihan urutan:</b> <i>Peluang terbukti</i> (paling sedikit kunjungan sia-sia), <i>Nilai harapan</i> (paling banyak rupiah kembali; cenderung mendahulukan perusahaan besar), atau <i>Prioritas rules</i> (murni dari aturan yang transparan).</p>
+
+  <h3 class="gh">Membaca lembar hasil scan</h3>
+  <div class="cols2">
+    <div class="card pad"><h3>Bagian atas: ringkasan</h3><p class="cap"><b>Skor rules</b> dan <b>peluang terbukti</b> berdampingan. <b>Alasan utama</b> ditulis dalam kalimat biasa, misalnya "24 pekerja keluar PPU lalu terdaftar PBPU ≤30 hari". Kalimat inilah yang bisa langsung ditanyakan saat kunjungan.</p></div>
+    <div class="card pad"><h3>Bukti data: empat grafik</h3>
+      <ul class="lim" style="font-size:14px">
+        <li><b>Median upah:</b> garis merah adalah badan usaha ini, biru adalah rata-rata usaha sejenis, abu-abu adalah UMK. <i>Curiga</i> kalau garis merah menempel ke abu-abu atau mendatar, sementara garis biru naik.</li>
+        <li><b>Distribusi upah:</b> berapa persen pekerja di tiap tingkat upah. <i>Curiga</i> kalau batang merah (tepat di UMK) sangat tinggi di usaha besar.</li>
+        <li><b>Pekerja terdaftar:</b> garis hijau adalah yang terdaftar JKN, garis putus-putus adalah rencana di OSS. <i>Curiga</i> kalau jaraknya lebar.</li>
+        <li><b>Keluar PPU → PBPU:</b> lonjakan batang di satu tahun adalah pola pemindahan status.</li>
+      </ul></div>
+    <div class="card pad"><h3>"Kenapa model ML menilai begini"</h3><p class="cap">Daftar faktor yang paling memengaruhi penilaian. <b style="color:var(--rust)">Merah</b> mendorong ke arah "berisiko", <b style="color:var(--green)">hijau</b> menahan ke arah "wajar". Bar yang panjang berarti pengaruhnya besar. Dengan begitu, mesin tidak menjadi kotak hitam.</p></div>
+    <div class="card pad"><h3>What-if (bagaimana jika)</h3><p class="cap">Geser slider untuk mencoba skenario. Misalnya, kalau perusahaan menunjukkan bukti bahwa pekerja yang pindah memang sudah berhenti, apakah peluangnya turun? Angka berubah seketika. Ini tidak mengubah data asli.</p></div>
+  </div>
+
+  <h3 class="gh">Kenapa angkanya bisa dipercaya? (tab Validasi model)</h3>
+  <div class="cols2">
+    <div class="card pad"><h3>Precision 82%</h3><p class="cap">Dari 100 badan usaha yang disarankan diperiksa, sekitar 82 benar-benar bermasalah. Bandingkan dengan pilihan acak, yang hanya 15. Angka ini diuji pada <b>data ujian terpisah (holdout)</b> yang tidak pernah dilihat sistem saat belajar, seperti ujian dengan soal yang belum pernah dibocorkan.</p></div>
+    <div class="card pad"><h3>Dua metode sepakat: 95%</h3><p class="cap">Seperti meminta <b>second opinion</b> dari dokter kedua. Aturan dan machine learning bekerja dengan cara berbeda. Kalau keduanya menunjuk badan usaha yang sama, 95 dari 100 terbukti.</p></div>
+    <div class="card pad"><h3>Kalibrasi</h3><p class="cap">Seperti prakiraan cuaca yang jujur. Kalau prakiraannya "hujan 70%", memang hujan sekitar 7 dari 10 hari. Grafik kalibrasi memperlihatkan bahwa "peluang terbukti 70%" di PayRay memang terbukti sekitar 70%. Karena itu perkiraan jumlah temuan di atas antrean bisa dipakai untuk perencanaan.</p></div>
+    <div class="card pad"><h3>Rentang rupiah 84%</h3><p class="cap">Rentang perkiraan rupiah ditargetkan memuat nilai sebenarnya 8 dari 10 kali. Saat diuji, hasilnya 84%. Jadi rentangnya tidak dibuat sempit supaya terlihat meyakinkan.</p></div>
+  </div>
+
+  <h3 class="gh">Kamus istilah</h3>
+  <div class="card"><div class="tscroll"><table class="mini gloss"><tbody>
+    <tr><td>PPU</td><td>Pekerja Penerima Upah. Iuran dibayar bersama oleh pemberi kerja (4%) dan pekerja (1%) dari upah, maksimal dari upah Rp12 jt.</td></tr>
+    <tr><td>PBPU</td><td>Peserta Bukan Penerima Upah (mandiri). Iuran dibayar sendiri dengan nominal tetap, bukan dari upah.</td></tr>
+    <tr><td>UMK</td><td>Upah Minimum Kabupaten/Kota. Usaha mikro dan kecil dikecualikan, dan PayRay memperhitungkan hal ini.</td></tr>
+    <tr><td>OSS</td><td>Online Single Submission, sistem perizinan usaha. Perusahaan mencantumkan rencana jumlah tenaga kerja di sini.</td></tr>
+    <tr><td>Rules</td><td>Aturan pemeriksaan yang ditulis manusia dan bisa dijelaskan, misalnya "upah tidak naik 3 tahun padahal UMK naik".</td></tr>
+    <tr><td>Isolation Forest</td><td>Metode yang mencari badan usaha yang polanya "lain sendiri" dibanding usaha sejenis.</td></tr>
+    <tr><td>Machine learning (ML)</td><td>Program yang belajar dari contoh. Di sini contohnya adalah hasil pemeriksaan petugas: mana yang terbukti, mana yang wajar.</td></tr>
+    <tr><td>Precision</td><td>Dari yang ditandai, berapa persen yang benar. Untuk petugas, ini berarti sedikit kunjungan sia-sia.</td></tr>
+    <tr><td>Recall</td><td>Dari semua yang bermasalah, berapa persen yang berhasil ditemukan.</td></tr>
+    <tr><td>Holdout</td><td>Data ujian yang disimpan terpisah dan tidak dipakai untuk belajar, supaya hasil uji jujur.</td></tr>
+    <tr><td>Feedback loop</td><td>Keputusan petugas dikembalikan ke sistem sebagai bahan belajar, sehingga urutan periode berikutnya makin tajam.</td></tr>
+    <tr><td>Audit acak</td><td>Sebagian kecil pemeriksaan dipilih acak, supaya sistem juga belajar dari badan usaha yang tidak dicurigai.</td></tr>
+    <tr><td>Nilai harapan</td><td>Peluang terbukti × perkiraan rupiah. Ini menyeimbangkan "kemungkinan benar" dengan "besar dampaknya".</td></tr>
+    <tr><td>Data sintetis</td><td>Data buatan yang meniru pola nyata (dikalibrasi ke statistik BPS dan Portal Data BPJS Kesehatan). Tidak ada data peserta asli.</td></tr>
+  </tbody></table></div></div>
+
+  <h3 class="gh">Pertanyaan yang sering muncul</h3>
+  <div class="faq">
+    <details><summary>Apakah PayRay menuduh perusahaan curang?</summary><p>Tidak. PayRay hanya menyusun <b>urutan prioritas</b> kunjungan. Keputusan apakah ada pelanggaran, dan sanksinya, tetap di tangan petugas setelah memeriksa dokumen. Ada juga usaha yang sah membayar UMK (misalnya padat karya). Karena itu ada tombol <i>Tandai wajar</i>.</p></details>
+    <details><summary>Apakah data di sini data perusahaan sungguhan?</summary><p>Bukan. Semua nama dan angka adalah data sintetis untuk prototype. Pola dan besarannya dikalibrasi ke statistik publik supaya realistis.</p></details>
+    <details><summary>Kenapa skor rules tinggi tapi peluang terbukti rendah (atau sebaliknya)?</summary><p>Karena keduanya menilai dengan cara berbeda. Aturan melihat tanda bahaya yang tertulis. Machine learning melihat pola dari hasil pemeriksaan sebelumnya. Kalau berbeda, badge menjadi <i>Satu metode</i>, dan itu tanda untuk mengumpulkan bukti tambahan dulu.</p></details>
+    <details><summary>Ke mana keputusan "Wajar/Terbukti" yang saya klik tersimpan?</summary><p>Hanya di browser Anda (localStorage). Tidak dikirim ke server. Tombol <i>Unduh label feedback (CSV)</i> mengekspor catatan itu supaya bisa dipakai untuk melatih ulang model.</p></details>
+    <details><summary>Apakah perlu internet atau aplikasi khusus?</summary><p>Tidak. Seluruh dashboard, termasuk model machine learning-nya, berjalan langsung di browser dari satu file. Ia tetap bisa dibuka di laptop kantor tanpa server.</p></details>
+    <details><summary>Apa keterbatasannya?</summary><p>Modus yang halus, seperti memotong upah sebagian pekerja saja atau mendaftarkan 80–90% pekerja, masih sulit ditangkap. Angka akurasi berasal dari data simulasi, jadi perlu uji coba di satu kantor cabang sebelum dipakai luas. Detailnya ada di tab Validasi model.</p></details>
+  </div>
+  </div>
 </section>
 
 <!-- ============================================================ METODOLOGI -->
@@ -774,7 +901,7 @@ $("sheet-body").addEventListener("input", (e) => {
 $("close").onclick = closeSheet;
 $("scrim").onclick = closeSheet;
 $("print").onclick = () => window.print();
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") { if (tourI >= 0) tourEnd(); else closeSheet(); } });
 $("prev").onclick = () => { page--; render(); };
 $("next").onclick = () => { page++; render(); };
 ["q", "f-skala", "f-sektor", "f-wil", "f-modul", "f-all", "f-sort"].forEach((id) => $(id).addEventListener("input", applyFilters));
@@ -787,9 +914,80 @@ $("export").onclick = () => {
   a.download = "payray_label_feedback.csv"; a.click();
 };
 
+
+/* ================================================================ tur interaktif */
+const TOUR = [
+  { tab: "antrean", sel: ".kpis", t: "Ringkasan periode ini", x: "Berapa badan usaha yang dipindai, berapa yang masuk antrean pemeriksaan, dan perkiraan hasilnya. Arahkan kursor ke ikon (i) untuk penjelasan singkat." },
+  { tab: "antrean", sel: "#cap", pad: 14, t: "Atur kapasitas pemeriksaan", x: "Geser sesuai jumlah kunjungan yang sanggup dilakukan kantor cabang. Perkiraan temuan dan rupiah di sebelahnya dihitung ulang seketika." },
+  { tab: "antrean", sel: ".filters", t: "Saring dan urutkan", x: "Pilih wilayah kerja, sektor, atau skala usaha. Urutan bisa berdasarkan peluang terbukti (paling sedikit kunjungan sia-sia) atau nilai harapan (paling banyak rupiah kembali)." },
+  { tab: "antrean", sel: "#rows tr:first-child", t: "Satu baris = satu badan usaha", x: "Skor rules (hijau) berasal dari aturan yang transparan, peluang terbukti (biru) dari machine learning. Badge \"Sepakat\" berarti dua metode yang berbeda sama-sama menandai, dan sekitar 95% terbukti." },
+  { tab: "antrean", open: true, sel: "#sheet .sc:nth-child(1)", t: "Lembar hasil scan", x: "Klik baris mana pun untuk membuka lembar ini. Alasan ditulis dalam kalimat biasa, jadi bisa langsung ditanyakan saat kunjungan." },
+  { tab: "antrean", open: true, sel: "#sheet .sc:nth-child(2)", t: "Bukti dalam grafik", x: "Upah dibanding UMK dan usaha sejenis, jumlah pekerja terdaftar dibanding rencana OSS, serta pekerja yang dipindah ke peserta mandiri." },
+  { tab: "antrean", open: true, sel: "#sheet .sc:nth-child(3)", t: "Kenapa mesin menilai begini", x: "Merah menaikkan risiko, hijau menurunkan. Tidak ada kotak hitam: setiap angka bisa ditelusuri ke faktor penyebabnya." },
+  { tab: "antrean", open: true, sel: "#sheet .whatif", t: "Coba skenario what-if", x: "Geser slider untuk melihat apakah satu klarifikasi dari perusahaan akan mengubah prioritasnya. Data asli tidak berubah." },
+  { tab: "antrean", open: true, sel: "#sheet .actions", pad: 10, t: "Keputusan tetap di petugas", x: "Catat hasil pemeriksaan. Catatan Wajar/Terbukti menjadi bahan belajar sistem untuk periode berikutnya (feedback loop)." },
+  { tab: "validasi", sel: "#v-kpis", t: "Seberapa bisa dipercaya?", x: "Diuji pada data ujian terpisah: 82 dari 100 rekomendasi terbukti, sedangkan pilihan acak hanya 15. Penjelasan dengan bahasa sehari-hari ada di tab Panduan." },
+];
+let tourI = -1;
+let tourTick = null;
+function tourEnd() { tourI = -1; clearInterval(tourTick); tourTick = null; document.querySelectorAll(".tour-spot,.tour-card").forEach((e) => e.remove()); window.removeEventListener("resize", tourPlace); }
+function tourPlace() {
+  const s = TOUR[tourI]; if (!s) return;
+  const el = document.querySelector(s.sel), spot = document.querySelector(".tour-spot"), card = document.querySelector(".tour-card");
+  if (!el || !spot) return;
+  const r = el.getBoundingClientRect(), p = s.pad || 6;
+  Object.assign(spot.style, { top: r.top - p + "px", left: r.left - p + "px", width: r.width + 2 * p + "px", height: r.height + 2 * p + "px" });
+  const cw = card.offsetWidth, ch = card.offsetHeight, vw = innerWidth, vh = innerHeight;
+  let top = r.bottom + p + 12, left = Math.min(Math.max(16, r.left), vw - cw - 16);
+  if (top + ch > vh - 10) top = r.top - p - ch - 12;
+  const inSheet = el.closest("#sheet") && vw > 900;
+  if (inSheet) { top = Math.max(80, Math.min(vh - ch - 16, r.top)); left = Math.max(16, $("sheet").getBoundingClientRect().left - cw - 20); }
+  else if (top < 10) {
+    top = Math.max(10, Math.min(vh - ch - 10, r.top + 10));
+    left = r.left > vw / 2 ? Math.max(16, r.left - cw - 20) : Math.min(vw - cw - 16, r.right + 20);
+  }
+  Object.assign(card.style, { top: top + "px", left: left + "px" });
+}
+function tourGo(i) {
+  if (i < 0 || i >= TOUR.length) return tourEnd();
+  tourI = i;
+  const s = TOUR[i];
+  if (!document.getElementById("tab-" + s.tab).classList.contains("on")) showTab(s.tab);
+  if (s.open && !$("sheet").classList.contains("on")) {
+    const sh = $("sheet"); sh.style.transition = "none";  // tanpa animasi supaya posisi sorotan langsung tepat
+    openSheet(view[0].id); void sh.offsetWidth; sh.style.transition = "";
+  }
+  if (!s.open && $("sheet").classList.contains("on")) closeSheet();
+  if (!document.querySelector(".tour-spot")) {
+    document.body.insertAdjacentHTML("beforeend", '<div class="tour-spot"></div><div class="tour-card" role="dialog" aria-live="polite"></div>');
+    window.addEventListener("resize", tourPlace);
+    tourTick = setInterval(tourPlace, 150);  // ikuti animasi drawer & scroll
+  }
+  document.querySelector(".tour-card").innerHTML = `<div class="n">Langkah ${i + 1} dari ${TOUR.length}</div><h4>${s.t}</h4><p>${s.x}</p>
+    <div class="row"><button class="btn small ghost" data-tn="end">Tutup</button>${i ? '<button class="btn small ghost" data-tn="-1">‹ Kembali</button>' : ""}<button class="btn small" data-tn="1">${i === TOUR.length - 1 ? "Selesai ✓" : "Lanjut ›"}</button></div>`;
+  const el = document.querySelector(s.sel);
+  if (el) el.scrollIntoView({ block: "center", behavior: "instant" });
+  requestAnimationFrame(() => requestAnimationFrame(tourPlace));
+  setTimeout(tourPlace, 260);
+}
+document.addEventListener("click", (e) => {
+  if (e.target.closest("[data-tour]")) { hideWelcome(); tourGo(0); return; }
+  const b = e.target.closest("[data-tn]"); if (!b) return;
+  b.dataset.tn === "end" ? tourEnd() : tourGo(tourI + Number(b.dataset.tn));
+});
+document.addEventListener("keydown", (e) => { if (tourI < 0) return; if (e.key === "ArrowRight") tourGo(tourI + 1); if (e.key === "ArrowLeft") tourGo(tourI - 1); });
+$("sheet").addEventListener("scroll", tourPlace);
+window.addEventListener("scroll", tourPlace, { passive: true });
+const WKEY = "payray_welcome_v1";
+function hideWelcome() { $("welcome").hidden = true; try { localStorage.setItem(WKEY, "1"); } catch (e) {} }
+try { if (!localStorage.getItem(WKEY)) $("welcome").hidden = false; } catch (e) { $("welcome").hidden = false; }
+$("welcome-x").onclick = hideWelcome;
+
 side(); applyFilters(); validasi(); kualitas();
 const hash = location.hash.slice(1);
-if (["validasi", "kualitas", "metode"].includes(hash)) showTab(hash);
+if (["validasi", "kualitas", "metode", "panduan"].includes(hash)) showTab(hash);
+const tq = new URLSearchParams(location.search).get("tur");
+if (tq !== null) { hideWelcome(); setTimeout(() => tourGo(+tq || 0), 50); }
 // ?buka=BU00001 membuka lembar hasil scan langsung (untuk demo / screenshot)
 const want = new URLSearchParams(location.search).get("buka");
 if (want) openSheet(want);

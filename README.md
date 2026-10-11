@@ -46,6 +46,7 @@ python dashboard/build_dashboard.py                         # dashboard/index.ht
 - **Kalibrasi:** isotonic pada prediksi out-of-fold. Stacking logistic menggabungkan ML dan persentil rules menjadi peluang terbukti.
 - **Rentang Rp:** conformalized quantile regression yang dilatih dari pelanggar terbukti.
 - **Di browser:** model diekspor ke [ml/artefak/model_payray.json](ml/artefak/model_payray.json) dan dievaluasi oleh JavaScript, termasuk atribusi fitur (Saabas) dan what-if. Ada parity check terhadap Python.
+- **Panduan untuk orang awam:** tab Panduan di dashboard (analogi, cara membaca kolom dan grafik, glosarium, FAQ) dan tur interaktif 10 langkah (tombol "Tur 1 menit", atau `?tur=0`).
 - **Data quality:** 17 pemeriksaan input ([ml/quality.py](ml/quality.py)). Laporan lengkap ada di [ml/artefak/laporan_ml.md](ml/artefak/laporan_ml.md).
 
 | Holdout (top-10%) | Rules + IF | Model ML | **Gabungan** |
