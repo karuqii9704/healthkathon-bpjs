@@ -47,3 +47,16 @@ def test_supervisor_reads_prevalence_view_not_ground_truth(db_url: str) -> None:
 def test_app_inherits_nothing_without_set_role(db_url: str) -> None:
     # payray_app NOINHERIT: tanpa SET LOCAL ROLE, tidak bisa membaca antrean.
     _denied(db_url, "payray_app", "SELECT 1 FROM core.risk_score")
+
+
+def test_pages_role_is_scoring_only(db_url: str) -> None:
+    """007: payray_pages (secret CI di repo publik) hanya bisa jadi payray_scoring; label tertutup."""
+    with psycopg.connect(db_url) as conn:
+        conn.execute("SET ROLE payray_pages")
+        with pytest.raises(errors.InsufficientPrivilege):
+            conn.execute("SELECT 1 FROM label.ground_truth")
+    with psycopg.connect(db_url) as conn:
+        conn.execute("SET ROLE payray_pages")
+        conn.execute("SET ROLE payray_scoring")
+        with pytest.raises(errors.InsufficientPrivilege):
+            conn.execute("SELECT 1 FROM label.inspection_outcome")

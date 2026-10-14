@@ -186,8 +186,8 @@ Diverifikasi 2026-10-14 di venv lokal. Sumber kebenaran: `requirements.txt`.
 ## Deploy & ukuran (v2)
 
 - API + web live: `render.yaml` (Docker, free plan). Secret di dashboard Render: `DATABASE_URL` (login `payray_app`), `PAYRAY_NIK_KEY`.
-- Pages statis: `.github/workflows/deploy-pages.yml` (push ke `main` + manual). Secret `PAGES_DATABASE_URL` (URL owner; script menjalankan `SET ROLE payray_scoring`), variabel `PAYRAY_LIVE_URL`.
-- Backup: `.github/workflows/backup.yml` harian 02:00 WIB, `pg_dump --format=custom`, artefak 7 hari. Secret `BACKUP_DATABASE_URL`.
+- Pages statis: `.github/workflows/deploy-pages.yml` (manual; tidak otomatis di push agar tidak menimpa dashboard v1). Secret `PAGES_DATABASE_URL` memakai role khusus `payray_pages` (migrasi 007, `scripts/provision_pages_role.py`), bukan owner. Variabel `PAYRAY_LIVE_URL`.
+- Backup: `.github/workflows/backup.yml` harian 02:00 WIB, `pg_dump --format=custom` (client 18), **dienkripsi AES-256 sebelum diunggah** karena repo publik, artefak 7 hari. Secret `BACKUP_DATABASE_URL` dan `BACKUP_PASSPHRASE`.
 - Ukuran terukur lokal (2026-10-14, data dev 5.000 BU, cabang demo 3.137 BU): halaman Pages statis 1.912 KB mentah, **199 KB transfer gzip** (target M-10 ≤ 2 MB); bundle live HTML+CSS+JS tanpa font 25,5 KB gzip (target ≤ 150 KB); font 45 KB (target ≤ 200 KB). Pengukuran DevTools throttling 4G di Pages menunggu deploy pertama.
 - Lokal: `python scripts/dev_server.py` (API sebagai `payray_app`), `python -m http.server 8766 --directory web-static` untuk mode statis.
 
