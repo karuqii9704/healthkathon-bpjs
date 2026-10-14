@@ -1,0 +1,33 @@
+name: backup
+
+# Backup harian pg_dump (format custom) ke artefak, retensi 7 hari (§13 Backup & restore).
+on:
+  schedule:
+    - cron: "0 19 * * *"   # 02:00 WIB
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pg_dump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install pg_dump 16
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q postgresql-client-16 || sudo apt-get install -y -q postgresql-client
+          pg_dump --version
+      - name: Dump
+        env:
+          BACKUP_DATABASE_URL: ${{ secrets.BACKUP_DATABASE_URL }}
+        run: |
+          if [ -z "$BACKUP_DATABASE_URL" ]; then echo "Secret BACKUP_DATABASE_URL belum diisi"; exit 1; fi
+          pg_dump --format=custom --no-owner --file "payray-$(date -u +%Y%m%dT%H%MZ).dump" "$BACKUP_DATABASE_URL"
+          ls -l *.dump
+      - uses: actions/upload-artifact@v4
+        with:
+          name: payray-backup
+          path: "*.dump"
+          retention-days: 7
+          if-no-files-found: error
