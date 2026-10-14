@@ -12,3 +12,12 @@ node_modules/
 .DS_Store
 Thumbs.db
 ~$*.pptx
+# secret & data sensitif (GR-8)
+.env
+.env.*
+!.env.example
+*blind_seed*
+data_blind/
+*.dump
+*.sql.gz
+backup/

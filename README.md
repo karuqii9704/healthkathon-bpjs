@@ -135,3 +135,50 @@ Semua ada di [generator/config.py](generator/config.py) dan [generator/reference
 - Tarif iuran PPU 5% (4% + 1%) dan plafon upah Rp12.000.000 (Perpres 64/2020)
 - UMK 2024 per wilayah (perkiraan dari SK Gubernur) dan faktor kenaikan tahunan
 - Pengecualian upah minimum UMKM (PP 36/2021)
+
+## Struktur & cara jalan lokal (v2)
+
+| Folder | Isi |
+|---|---|
+| `api/` | Backend FastAPI (auth, antrean, scan sheet, inspeksi, rescore) |
+| `web/` | Frontend live: HTML/CSS/JS vanilla, di-serve API |
+| `web-static/` | Build read-only untuk GitHub Pages (`scripts/build_static.py`) |
+| `db/migrations/` | Migrasi SQL forward-only `NNN_*.sql` |
+| `scripts/` | Seeder, migrasi, smoke test, build statis, eval |
+| `tests/` | pytest (unit + integrasi ke DB `*_test`) |
+| `design-system/payray/` | `MASTER.md`, acuan tunggal UI |
+| `engine/`, `ml/`, `generator/` | Mesin scan, model, generator data sintetis |
+
+Cara jalan lokal:
+1. `cp .env.example .env`, lalu isi `PAYRAY_NIK_KEY` (≥ 32 byte).
+2. `docker compose up -d` (Postgres 16 di `127.0.0.1:54329`, DB `payray_dev` + `payray_test`). Pakai `127.0.0.1`, bukan `localhost`: di Windows `localhost` resolve ke `::1` dan koneksi menggantung.
+3. `pip install -r requirements.txt`
+4. `python scripts/migrate.py` (forward-only, objek dimiliki `payray_migrator`), lalu seed (`scripts/seed.py`, `scripts/seed_users.py`).
+5. `uvicorn api.main:app --reload`, buka `http://localhost:8000`.
+
+Aturan agent: [AGENTS.md](AGENTS.md). Rencana: [plankit/PRD.md](plankit/PRD.md).
+
+### Versi terpasang (TC-7)
+
+Diverifikasi 2026-10-14 di venv lokal. Sumber kebenaran: `requirements.txt`.
+
+| Komponen | Versi |
+|---|---|
+| Python | 3.12.4 (image `python:3.12-slim`) |
+| PostgreSQL | 16.15 (`postgres:16`) |
+| fastapi | 0.143.0 |
+| uvicorn | 0.54.0 |
+| psycopg[binary] | 3.3.6 |
+| psycopg-pool | 3.3.3 |
+| numpy | 2.5.4 |
+| pandas | 3.0.6 |
+| scikit-learn | 1.9.1 |
+| scipy | 1.18.1 |
+| pytest | 9.1.1 |
+| httpx | 0.28.1 |
+| ruff | 0.17.0 |
+| mypy | 2.4.0 |
+| pip-audit | 2.10.1 |
+| bandit | 1.9.4 |
+
+`requirements-scrape.txt` hanya untuk scraper portal BPJS, tidak dipakai API.
